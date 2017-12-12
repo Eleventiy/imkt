@@ -1,0 +1,385 @@
+	@import "fonts";
+	@import "libs";
+	@import "vars";
+
+// ==================================================
+//  ### COMMON STYLES ###
+// ==================================================
+
+* {
+	box-sizing: border-box;
+	&:before, &:after {
+		box-sizing: border-box
+	}
+}
+
+*::-webkit-input-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+
+html,
+body {
+	height: 100%
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+
+	color: $textColor;
+	font-family: $openSansFont;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 24px;
+
+	background-color: $whiteColor;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	outline: 0;
+}
+
+.container {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+
+// ==================================================
+//  ### 1. MAIN HEADER ###
+// ==================================================
+
+.main-header {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	min-height: 71px;
+	background-color: $whiteColor;
+}
+
+.top-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__list {
+		display: flex;
+		align-items: center;
+
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+		display: block;
+		margin-right: 50px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+		position: relative;
+
+		display: block;
+		overflow: hidden;
+		padding: 18px 0;
+
+		color: $titleColor;
+		font-family: $openSansFont;
+		font-size: 15px;
+		font-weight: bold;
+		line-height: 35px;
+		text-transform: uppercase;
+
+		transition: all 0.25s ease-in-out;
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			left: 0;
+			bottom: 0;
+
+			display: block;
+			height: 3px;
+
+			background-color: transparent;
+			transition: all 0.25s ease-in-out;
+		}
+		&:hover,
+		&:active,
+		&.active {
+			color: $highlightColor;
+
+			&::after {
+				background-color: $highlightColor;
+			}
+		}
+	}
+
+	&__logo {
+		display: block;
+		max-width: 94px;
+	}
+}
+
+
+// ==================================================
+//  ### 2. SECTION "HERO" ###
+// ==================================================
+.sect-hero {
+	padding: 71px 0 380px;
+	background: $blackColor url("../img/backgrounds/hero_bg.jpg") no-repeat;
+	background-size: cover;
+
+	&__content {
+		margin-top: 175px;
+	}
+
+	&__descr {
+		margin-bottom: 25px;
+
+		color: $whiteColor;
+		font-family: $juraFont;
+		font-size: 22px;
+		font-weight: normal;
+		line-height: 32px;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__order {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+	}
+
+	&__link {
+		display: block;
+		padding: 18px 46px;
+
+		color: $whiteColor;
+		font-family: $juraFont;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 1;
+		text-transform: uppercase;
+		text-align: center;
+
+		border: 2px solid transparent;
+		background-color: $highlightColor;
+		transition: all 0.25s ease-in-out;
+		&:hover,
+		&:active,
+		&.active {
+			border-color: $highlightColor;
+			background-color: transparent;
+		}
+	}
+
+	&__separator {
+		display: block;
+		margin: 0 30px;
+
+		color: $whiteColor;
+		font-family: $openSansFont;
+		font-size: 11px;
+		font-weight: bold;
+		line-height: 17px;
+		text-transform: uppercase;
+	}
+
+	&__phones {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__phone {
+		display: block;
+
+		color: $whiteColor;
+		font-family: $juraFont;
+		font-size: 22px;
+		font-weight: bold;
+		line-height: 35px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	&__pointer {
+		position: absolute;
+		top: 94px;
+		left: -180px;
+
+		&-img {
+			position: absolute;
+			top: -65px;
+			right: -85px;
+		}
+
+		&-text {
+			display: block;
+
+			color: $whiteColor;
+			font-family: $juraFont;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 1;
+			text-transform: uppercase;
+
+			&--1 {
+				transform: rotate(-15deg);
+			}
+
+			&--2 {
+				position: absolute;
+				left: 20px;
+				transform: rotate(-25deg);
+			}
+		}
+	}
+}
+
+
+// ==================================================
+//  ### 3. SECTION "SERVICES" ###
+// ==================================================
+.sect-services {
+	background-color: $highlightColor;
+}
+
+.services-items {
+	display: flex;
+}
+
+.services-item {
+	flex: 1;
+	padding: 70px 20px 60px 45px;
+	color: $whiteColor;
+	border-left: 1px solid rgba($borderColor1, 0.4);
+	transition: all 0.25s ease-in-out;
+	&:last-child {
+		border-right: 1px solid rgba($borderColor1, 0.4);
+	}
+	&:hover {
+		color: $highlightColor;
+		background-color: $whiteColor;
+		.services-item__icon svg {
+			fill: $highlightColor;
+		}
+	}
+
+	&__icon {
+		svg {
+			fill: $whiteColor;
+		}
+
+		&--1,
+		&--3 {
+			svg {
+				width: 71px;
+				height: 70px;
+			}
+		}
+
+		&--2 {
+			svg {
+				width: 78px;
+				height: 70px;
+			}
+		}
+	}
+
+	&__title {
+		font-family: $openSansFont;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 28px;
+		text-transform: uppercase;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		&-item {
+			position: relative;
+
+			display: block;
+			padding-left: 8px;
+
+			font-family: $openSansFont;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 24px;
+			&::after {
+				content: '-';
+				position: absolute;
+				top: 50%;
+				left: 0;
+
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+
+// ==================================================
+//  ### 4. SECTION "WHY US" ###
+// ==================================================
+.sect-whyUs {
+	padding: 100px 0;
+
+	&__title {
+		color: $titleColor;
+		font-family: $openSansFont;
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 28px;
+		text-transform: uppercase;
+		text-align: center;
+
+		span {
+			color: $highlightColor  ;
+		}
+	}
+}
+
+
+// ==================================================
+//  ### 5. SECTION "FEATURES" ###
+// ==================================================
+.sect-features {
+	background-color: $highlightColor;
+}
