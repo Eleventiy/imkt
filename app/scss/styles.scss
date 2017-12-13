@@ -79,6 +79,7 @@ a {
 	width: 100%;
 	min-height: 71px;
 	background-color: $whiteColor;
+	box-shadow: 0 5px 5px rgba($blackColor, 0.4);
 }
 
 .top-nav {
@@ -134,7 +135,8 @@ a {
 		}
 		&:hover,
 		&:active,
-		&.active {
+		&.active,
+		&.mPS2id-highlight {
 			color: $highlightColor;
 
 			&::after {
@@ -155,7 +157,7 @@ a {
 // ==================================================
 .sect-hero {
 	padding: 71px 0 380px;
-	background: $blackColor url("../img/backgrounds/hero_bg.jpg") no-repeat;
+	background: $blackColor url("../img/backgrounds/hero_bg.jpg") no-repeat center;
 	background-size: cover;
 
 	&__content {
@@ -359,9 +361,11 @@ a {
 //  ### 4. SECTION "WHY US" ###
 // ==================================================
 .sect-whyUs {
-	padding: 100px 0;
+	padding: 94px 0;
 
 	&__title {
+		margin: 0 0 45px;
+
 		color: $titleColor;
 		font-family: $openSansFont;
 		font-size: 30px;
@@ -376,10 +380,762 @@ a {
 	}
 }
 
+.whyUs-slider {
+	display: flex;
+	justify-content: space-between;
+
+	&__thumbs {
+		position: relative;
+		flex: 1 40%;
+		max-width: 40%;
+	}
+
+	&__accordion {
+		flex: 1 50%;
+		max-width: 50%;
+	}
+}
+
+.slider-thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: none;
+
+	transition: all 0.25s linear;
+
+	&.active {
+		display: block;
+	}
+}
+
+.accordion-tab {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 40px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	input[type="radio"] {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+
+	label {
+		position: relative;
+		cursor: pointer;
+	}
+
+	&__content {
+		max-height: 0;
+		overflow: hidden;
+		padding-left: 100px;
+		transition: max-height 0.25s linear;
+
+		font-size: 16px;
+		line-height: 24px;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	/* :checked */
+	input[type="radio"]:checked ~ .accordion-tab__content {
+		max-height: 10em;
+	}
+	input[type="radio"]:checked ~ .accordion-tab__head svg path {
+		fill: $whiteColor;
+	}
+
+	&__head {
+		display: flex;
+		align-items: center;
+
+		svg {
+			width: 58px;
+			height: 58px;
+			margin-right: 20px;
+			transition: max-height 0.25s linear;
+
+			path {
+				fill-rule:evenodd;
+				clip-rule:evenodd;
+				fill:#2C8ECE;
+				stroke:#2C8ECE;
+				stroke-width:0.5;
+				stroke-miterlimit:10;
+			}
+		}
+	}
+
+	&__title {
+		color: $titleColor;
+		font-family: $openSansFont;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 28px;
+	}
+}
+
 
 // ==================================================
 //  ### 5. SECTION "FEATURES" ###
 // ==================================================
 .sect-features {
+	padding: 70px 0 60px;
 	background-color: $highlightColor;
+}
+
+.features-list {
+	display: flex;
+	align-items: baseline;
+}
+
+.features-item {
+	flex: 1;
+	color: $whiteColor;
+	font-family: $openSansFont;
+	text-align: center;
+
+	&__descr {
+		font-size: 18px;
+		font-weight: normal;
+		line-height: 24px;
+	}
+}
+
+.features-head {
+	margin-bottom: 20px;
+
+	&__num {
+		font-size: 42px;
+		font-weight: normal;
+		line-height: 24px;
+		text-transform: uppercase;
+	}
+}
+
+
+// ==================================================
+//  ### 6. SECTION "PORTFOLIO" ###
+// ==================================================
+.sect-portfolio {
+	padding: 97px 0;
+
+	&__title {
+		margin-top: 0;
+
+		color: $titleColor;
+		font-size: 45px;
+		font-weight: bold;
+		line-height: 51px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+.portfolio-slide {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 100%;
+	height: 620px;
+	overflow: hidden;
+
+	&__img {
+		position: absolute;
+
+		&--ipad {
+			right: 0;
+			bottom: 0;
+		}
+
+		&--iphone {
+			right: 27%;
+			bottom: 0;
+		}
+
+		//&--imac,
+		//&--macbook {
+		//	top: 0;
+		//	left: 0;
+		//}
+	}
+}
+
+
+// ==================================================
+//  ### 7. SECTION "TESTIMONIALS" ###
+// ==================================================
+.sect-testimonials {
+	padding: 97px 0 93px;
+	background: #000 url("../img/backgrounds/testimonials_bg.jpg") no-repeat center;
+	background-size: cover;
+
+	&__title {
+		margin: 0 0 55px;
+
+		color: $whiteColor;
+		font-family: $openSansFont;
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 28px;
+		text-transform: uppercase;
+		text-align: center;
+
+		span {
+			color: $highlightColor;
+		}
+	}
+}
+
+.testimonials-list {
+	display: flex;
+	align-items: baseline;
+}
+
+.testimonials-item {
+	flex: 1;
+
+	color: $whiteColor;
+	text-align: center;
+
+	&__descr {
+		font-family: $openSansFont;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 24px;
+		letter-spacing: -0.01em;
+	}
+}
+
+.testimonials-head {
+	position: relative;
+	margin-bottom: 20px;
+	padding-bottom: 30px;
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+
+		display: block;
+		width: 47px;
+		height: 3px;
+		background-color: $borderColor2;
+
+		transform: translateX(-50%);
+	}
+
+	&__name {
+		display: block;
+		margin-top: 30px;
+
+		font-family: $openSansFont;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 24px;
+		text-transform: uppercase;
+	}
+}
+
+
+// ==================================================
+//  ### 8. SECTION "CORRUPT" ###
+// ==================================================
+.sect-corrupt {
+	padding: 32px 0;
+	background-color: $highlightColor;
+
+	&__descr {
+		margin: 0;
+
+		color: $whiteColor;
+		font-family: $juraFont;
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 38px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+
+// ==================================================
+//  ### 9. SECTION "PRICING" ###
+// ==================================================
+.sect-pricing {
+	padding: 97px 0 50px;
+
+	&__title {
+		margin: 0 0 47px;
+
+		color: $titleColor;
+		font-family: $openSansFont;
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 28px;
+		text-transform: uppercase;
+		text-align: center;
+
+		span {
+			color: $highlightColor;
+		}
+	}
+}
+
+.pricing-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.pricing-box {
+	flex: 1 282px;
+	max-width: 282px;
+	margin-bottom: 50px;
+	padding-bottom: 30px;
+
+	color: $blackColor;
+	font-family: $openSansFont;
+	text-align: center;
+
+	background-color: $whiteGrayColor;
+	transform: scale(1);
+	transition: all 0.15s linear;
+
+	&--share {
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			top: -8px;
+			right: 0;
+			left: -8px;
+			bottom: 0;
+
+			background: transparent url("../img/icons/share.png") no-repeat;
+		}
+	}
+
+	&__head {
+		padding: 35px 0;
+		color: $highlightColor;
+
+		background-color: $grayColor;
+	}
+
+	&__service {
+		display: block;
+		margin-bottom: 15px;
+
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 24px;
+	}
+
+	&__price {
+		display: block;
+
+		font-family: $juraFont;
+		font-size: 64px;
+		font-weight: normal;
+		line-height: 45px;
+		text-transform: uppercase;
+
+		small {
+			font-size: 20px;
+			line-height: 29px;
+		}
+	}
+
+	&__month {
+		display: block;
+
+		color: $darkGrayColor;
+		font-family: Arial, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 35px;
+	}
+
+	&__list {
+		margin: 0 0 20px;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+		display: block;
+
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 38px;
+		&:nth-child(even) {
+			background-color: $grayColor;
+		}
+	}
+
+	&__order {
+		display: inline-block;
+		padding: 15px 41px;
+
+		color: $highlightColor;
+		font-family: Arial, Tahoma, sans-serif;
+		font-size: 14px;
+		//font-weight: bold;
+		font-weight: normal;
+		line-height: 1;
+		text-transform: uppercase;
+		text-align: center;
+
+		border: 2px solid $highlightColor;
+		background-color: transparent;
+		transition: all 0.25s ease-in-out;
+	}
+
+	&:hover {
+		color: $whiteColor;
+
+		background-color: $highlightColor;
+		box-shadow: 0 12px 18px 0 rgba(0, 0, 0, 0.25);
+		transform: scale(1.022);
+
+		.pricing-box__head {
+			color: $whiteColor;
+			background-color: $highlightColor;
+		}
+
+		.pricing-box__month {
+			color: $whiteColor;
+		}
+
+		.pricing-box__item:nth-child(even) {
+			background-color: $highlightColor;
+		}
+
+		.pricing-box__order {
+			background-color: $whiteColor;
+			border-color: $whiteColor;
+		}
+	}
+}
+
+
+// ==================================================
+//  ### 10. SECTION "TECHNOLOGIES" ###
+// ==================================================
+.sect-tech {
+	padding: 97px 0 110px;
+	background: $blackColor url("../img/backgrounds/testimonials_bg.jpg") no-repeat center;
+	background-size: cover;
+
+	&__title {
+		margin: 0 0 55px;
+
+		color: $whiteColor;
+		font-family: $openSansFont;
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 28px;
+		text-transform: uppercase;
+		text-align: center;
+
+		span {
+			color: $highlightColor;
+		}
+	}
+}
+
+.tech-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+// ==================================================
+//  ### 11. SECTION "MAP" ###
+// ==================================================
+.google-map {
+	width: 100%;
+	max-height: 320px;
+	iframe {
+		width: 100%;
+		height: 320px;
+
+		border: none;
+	}
+}
+
+
+// ==================================================
+//  ### MAIN FOOTER ###
+// ==================================================
+.main-footer {
+	width: 100%;
+	padding-top: 50px;
+
+	background-color: $highlightColor;
+}
+
+.footer-contacts {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	&__info {
+		width: 100%;
+		max-width: 300px;
+
+		color: $whiteColor;
+		font-family: $openSansFont;
+	}
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 31px;
+		height: 31px;
+		margin-right: 20px;
+
+		border-radius: 100%;
+		background-color: $whiteColor;
+
+		svg {
+			fill: $highlightColor;
+		}
+
+		&--phone {
+			svg {
+				width: 15px;
+				height: 15px;
+			}
+		}
+
+		&--mail {
+			svg {
+				width: 19px;
+				height: 11px;
+			}
+		}
+
+		&--address {
+			svg {
+				width: 13px;
+				height: 17px;
+			}
+		}
+	}
+
+	&__phones {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__phone {
+		display: block;
+		font-size: 14px;
+		font-weight: 600;
+		//line-height: 43px;
+	}
+
+	&__mail {
+		display: flex;
+		align-items: center;
+
+		&-link {
+			color: $whiteColor;
+			font-family: $openSansFont;
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 43px;
+			transition: all 0.25s ease-in-out;
+
+			&:hover,
+			&:active,
+			&.active {
+				color: $titleColor;
+			}
+		}
+	}
+
+	&__address {
+		display: flex;
+		align-items: center;
+	}
+
+	&__location {
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 43px;
+	}
+
+	&__welcome {
+		color: #e3e2e2;
+		font-family: $juraFont;
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 24px;
+	}
+
+	&__form {
+		width: 100%;
+		max-width: 460px;
+		overflow: hidden;
+		margin-bottom: 70px;
+	}
+
+	&__socials {
+		flex: 1 100%;
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__soc-icon {
+		display: block;
+		width: 30px;
+		height: 30px;
+		margin-right: 60px;
+
+		text-align: center;
+	}
+}
+
+.contacts-form {
+
+	&__wrapper {
+		margin: 0;
+		padding: 0;
+
+		border: none;
+	}
+
+	&__title {
+		display: block;
+		margin: 0 0 25px;
+		padding: 0;
+
+		color: $whiteColor;
+		font-family: $openSansFont;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 24px;
+	}
+
+	&__control {
+		display: inline-block;
+		width: 100%;
+		max-width: 220px;
+
+		&--name {
+			margin-right: 15px;
+		}
+
+		&--textarea {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			margin-top: 20px;
+		}
+
+		&--button {
+			max-width: 100%;
+			margin-top: 20px;
+
+			text-align: right;
+		}
+
+		input,
+		textarea {
+			box-sizing: border-box;
+			display: block;
+			width: 100%;
+			padding: 12px 15px;
+
+			color: $whiteColor;
+			font-family: $openSansFont;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1.4;
+
+			border: 1px solid $whiteColor;
+			border-radius: 0;
+			background-color: transparent;
+			outline: 0;
+			transition: all 0.25s ease-in-out;
+			&:hover,
+			&:focus {
+				box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
+			}
+			&:focus {
+				border-color: rgba($whiteColor, 0.7);
+			}
+		}
+
+		input {
+			max-height: 45px;
+		}
+
+		textarea {
+			width: 100%;
+			height: 90px;
+			resize: none;
+		}
+
+		button {
+			box-sizing: border-box;
+			display: inline-block;
+			padding: 14px 25px;
+
+			color: $highlightColor;
+			font-family: Arial, Tahoma, sans-serif;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1;
+			text-align: center;
+
+			border: 1px solid $whiteColor;
+			background-color: $whiteColor;
+			transition: all 0.25s ease-in-out;
+			cursor: pointer;
+			outline: 0;
+
+			&:hover,
+			&:active,
+			&.active {
+				color: $whiteColor;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+.footer-copyrights {
+	margin-top: 50px;
+	padding: 15px 0;
+
+	color: #c3c3c3;
+	font-family: $openSansFont;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 24px;
+	text-align: center;
+
+	background-color: #363636;
+
+	small {
+		font-size: 12px;
+	}
 }

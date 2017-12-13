@@ -4,8 +4,7 @@
 	<head>
 		<!-- Meta tags -->
 		<meta charset="UTF-8">
-		<meta name="viewport"
-		      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<!--/. Meta tags -->
 
@@ -17,6 +16,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Jura:400,700|Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
 		<!--/. Google Fonts -->
 		<!-- Stylesheets -->
+		<link rel="stylesheet" href="/app/libs/slick-carousel/slick/slick-theme.css">
 		<link rel="stylesheet" href="css/styles.min.css">
 		<!--/. Stylesheets -->
 	</head>
@@ -29,9 +29,9 @@
 				<nav class="top-nav">
 
 					<ul class="top-nav__list">
-						<li class="top-nav__item"><a class="top-nav__link" href="#">УСЛУГИ</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="#">почему мы</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="#">портфолио</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#services" rel="m_PageScroll2id">УСЛУГИ</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#why-us" rel="m_PageScroll2id">почему мы</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#portfolio" rel="m_PageScroll2id">портфолио</a></li>
 					</ul>
 
 					<a class="top-nav__logo" href="#">
@@ -39,9 +39,9 @@
 					</a>
 
 					<ul class="top-nav__list">
-						<li class="top-nav__item"><a class="top-nav__link" href="#">цены</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="#">ОТЗЫВЫ</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="#">контакты</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#testimonials" rel="m_PageScroll2id">ОТЗЫВЫ</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#pricing" rel="m_PageScroll2id">цены</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#contacts" rel="m_PageScroll2id">контакты</a></li>
 					</ul>
 
 				</nav>
@@ -83,7 +83,7 @@
 		<!--/. SECTION "HERO" -->
 
 		<!-- SECTION "SERVICES" -->
-		<section class="sect-services">
+		<section class="sect-services" id="services">
 			<div class="container">
 				<div class="services-items">
 
@@ -213,9 +213,226 @@
 		<!--/. SECTION "SERVICES" -->
 
 		<!-- SECTION "WHY US" -->
-		<section class="sect-whyUs">
+		<section class="sect-whyUs" id="why-us">
 			<div class="container">
 				<h2 class="sect-whyUs__title">Почему <span>мы?</span></h2>
+
+				<div class="whyUs-slider">
+
+					<div class="whyUs-slider__thumbs">
+
+						<!-- Slider thumb #1 -->
+						<div class="slider-thumb  active" id="tabThumb1">
+							<img src="img/phone/1.png" alt="Качество">
+						</div>
+						<!--/. Slider thumb #1 -->
+
+						<!-- Slider thumb #2 -->
+						<div class="slider-thumb" id="tabThumb2">
+							<img src="img/phone/2.png" alt="Качество">
+						</div>
+						<!--/. Slider thumb #2 -->
+
+						<!-- Slider thumb #3 -->
+						<div class="slider-thumb" id="tabThumb3">
+							<img src="img/phone/3.png" alt="Качество">
+						</div>
+						<!--/. Slider thumb #3 -->
+
+						<!-- Slider thumb #4 -->
+						<div class="slider-thumb" id="tabThumb4">
+							<img src="img/phone/4.png" alt="Качество">
+						</div>
+						<!--/. Slider thumb #4 -->
+
+						<!-- Slider thumb #5 -->
+						<div class="slider-thumb" id="tabThumb5">
+							<img src="img/phone/5.png" alt="Качество">
+						</div>
+						<!--/. Slider thumb #5 -->
+
+					</div>
+
+					<div class="whyUs-slider__accordion">
+
+						<!-- Accordion item #1 -->
+						<div class="accordion-tab">
+
+							<input id="tab1" type="radio" name="tabs" checked>
+							<label class="accordion-tab__head" for="tab1">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 57.7 57.7"
+								     xml:space="preserve"
+								     width="58" height="58">
+
+									<path d="M15.2,20.4c0-0.4,0.3-0.7,0.7-0.7c8.8,0,17,0,25.8,0c0.4,0,0.7,0.3,0.7,0.7v6.1
+										c0.9,0.1,1.7,0.3,2.6,0.5V14.1c0-0.8-0.6-1.4-1.4-1.4c-9.9,0-19.7,0-29.6,0c-0.8,0-1.4,0.6-1.4,1.4v13c0.8-0.2,1.7-0.3,2.6-0.5V20.4
+										L15.2,20.4z M34.6,27.5c4.2,0.3,8.2,0.9,11.9,1.7v1.1l-1.8,1.8h-4.1l4.1,0.9l1.8,3V37c-3.6-1-7.7-1.6-12.1-1.9
+										c-1.2,1.7-3.2,2.7-5.4,2.7c-2.2,0-4.2-1.1-5.4-2.7c-4.4,0.3-8.6,1-12.3,2V36l1.8-3l4-0.9H13l-1.7-1.7v-1.1c3.7-0.9,7.7-1.4,12-1.7
+										c1.2-1.9,3.3-3.1,5.7-3.1C31.3,24.4,33.4,25.7,34.6,27.5L34.6,27.5z M28.9,25.7l1.2,3.7l3.9,0l-3.1,2.3l1.2,3.7l-3.1-2.3l-3.1,2.3
+										l1.2-3.7l-3.1-2.3l3.9,0L28.9,25.7L28.9,25.7z M42.4,38v3.7c0,0.4-0.3,0.7-0.7,0.7H15.9c-0.4,0-0.7-0.3-0.7-0.7v-3.7
+										c-0.9,0.2-1.7,0.3-2.6,0.5v5c0,0.8,0.6,1.4,1.4,1.4h29.6c0.8,0,1.4-0.6,1.4-1.4v-5C44.2,38.4,43.3,38.2,42.4,38L42.4,38z M20.8,14.8
+										c0.7,0,1.4,0.6,1.4,1.4c0,0.7-0.6,1.4-1.4,1.4c-0.8,0-1.4-0.6-1.4-1.4C19.4,15.4,20,14.8,20.8,14.8L20.8,14.8z M25,14.8
+										c0.7,0,1.4,0.6,1.4,1.4c0,0.7-0.6,1.4-1.4,1.4c-0.7,0-1.4-0.6-1.4-1.4C23.6,15.4,24.3,14.8,25,14.8L25,14.8z M16.6,14.8
+										c0.7,0,1.4,0.6,1.4,1.4c0,0.7-0.6,1.4-1.4,1.4s-1.4-0.6-1.4-1.4C15.2,15.4,15.8,14.8,16.6,14.8L16.6,14.8z M28.8,0.5
+										c15.7,0,28.3,12.7,28.3,28.3c0,15.7-12.7,28.3-28.3,28.3c-15.7,0-28.3-12.7-28.3-28.3C0.5,13.2,13.2,0.5,28.8,0.5z"></path>
+								</svg>
+
+								<b class="accordion-tab__title">Качество</b>
+							</label>
+
+							<div class="accordion-tab__content">
+								<p>За адекватную цену вы получаете индивидуальный дизайн, оптимизированную структуру, нацеленную на увеличение конверсии.</p>
+							</div>
+
+						</div>
+						<!--/. Accordion item #1 -->
+
+						<!-- Accordion item #2 -->
+						<div class="accordion-tab">
+
+							<input id="tab2" type="radio" name="tabs">
+							<label class="accordion-tab__head" for="tab2">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 56.7 56.7"
+								     xml:space="preserve"
+								     width="58" height="58">
+
+									<path d="M28.3,0C44,0,56.7,12.7,56.7,28.3C56.7,44,44,56.7,28.3,56.7S0,44,0,28.3
+										C0,12.7,12.7,0,28.3,0L28.3,0z M35.1,21.9c-0.6,0-1.2,0.5-1.2,1.2v8.8v8.8c0,0.6,0.5,1.2,1.2,1.2h9.4c0.6,0,1.2-0.5,1.2-1.2V23.1
+										c0-0.6-0.5-1.2-1.2-1.2H35.1L35.1,21.9z M38.2,23.2c-0.1,0-0.3,0.1-0.3,0.3v0c0,0.1,0.1,0.3,0.3,0.3h3.2c0.1,0,0.3-0.1,0.3-0.3v0
+										c0-0.1-0.1-0.3-0.3-0.3H38.2L38.2,23.2z M39.8,39.2c-0.5,0-1,0.4-1,1c0,0.5,0.4,1,1,1c0.5,0,1-0.4,1-1
+										C40.7,39.7,40.3,39.2,39.8,39.2L39.8,39.2z M24.5,39.8c-0.6,0-1,0.5-1,1l0,0c0,0.6,0.5,1,1,1h7v-2H24.5L24.5,39.8z M12.1,14.9
+										c-0.6,0-1,0.5-1,1V37c0,0.6,0.5,1,1,1h19.4v-4.8h-18c-0.2,0-0.4-0.2-0.4-0.4V17.3c0-0.2,0.2-0.4,0.4-0.4h29.7c0.2,0,0.4,0.2,0.4,0.4
+										v2.2h2v-3.6c0-0.6-0.5-1-1-1H12.1L12.1,14.9z M35.2,25.1c-0.2,0-0.4,0.2-0.4,0.4v12.7c0,0.2,0.2,0.4,0.4,0.4h9.1
+										c0.2,0,0.4-0.2,0.4-0.4V25.5c0-0.2-0.2-0.4-0.4-0.4H35.2z"></path>
+								</svg>
+
+								<b class="accordion-tab__title">Многоплатформенность</b>
+							</label>
+
+							<div class="accordion-tab__content">
+								<p>За адекватную цену вы получаете индивидуальный дизайн, оптимизированную структуру, нацеленную на увеличение конверсии.</p>
+							</div>
+
+						</div>
+						<!--/. Accordion item #2 -->
+
+						<!-- Accordion item #3 -->
+						<div class="accordion-tab">
+
+							<input id="tab3" type="radio" name="tabs">
+							<label class="accordion-tab__head" for="tab3">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 57.7 57.7"
+								     xml:space="preserve"
+								     width="58" height="58">
+
+									<path d="M31.3,25.7l4.5-2.6c-0.1-0.5-0.2-1-0.2-1.6c0-0.5,0.1-0.9,0.2-1.4l-4.3-2.4
+										c-0.7,0.6-1.6,1-2.6,1c-0.5,0-1-0.1-1.5-0.3l-7.3,7.8c0.4,0.7,0.7,1.6,0.7,2.5c0,0.8-0.2,1.5-0.5,2.2l5.9,5.4
+										c0.8-0.5,1.7-0.7,2.6-0.7c2.8,0,5,2.3,5,5c0,2.8-2.3,5-5,5c-1.9,0-3.6-1.1-4.4-2.6l-2.5,0.5c-0.3,1.9-1.9,3.4-3.9,3.4
+										c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c1.4,0,2.6,0.7,3.4,1.8l2.5-0.5c0-0.6,0.2-1.2,0.5-1.8l-5.9-5.3c-0.8,0.5-1.7,0.7-2.6,0.7
+										c-2.8,0-5-2.3-5-5s2.3-5,5-5c0.8,0,1.6,0.2,2.3,0.5l7.3-7.8c-0.3-0.5-0.4-1.1-0.4-1.8c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4
+										c0,0.2,0,0.4,0,0.5l4.3,2.4c1-1.1,2.5-1.8,4.2-1.8c3.1,0,5.7,2.5,5.7,5.7c0,3.1-2.5,5.7-5.7,5.7c-1.6,0-3-0.6-4-1.7l-4.5,2.6
+										c0,0.2,0.1,0.4,0.1,0.7c0,2.2-1.8,4-4,4c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4C29.8,24.9,30.7,25.2,31.3,25.7L31.3,25.7z M41.3,18.5
+										c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1c1.7,0,3.1-1.4,3.1-3.1C44.4,19.8,43,18.5,41.3,18.5L41.3,18.5z M28.8,13.3
+										c-0.8,0-1.5,0.6-1.5,1.5c0,0.8,0.6,1.5,1.5,1.5s1.5-0.7,1.5-1.5C30.3,14,29.6,13.3,28.8,13.3L28.8,13.3z M15.7,26.4
+										c-1.3,0-2.4,1.1-2.4,2.4c0,1.3,1.1,2.4,2.4,2.4c1.3,0,2.4-1.1,2.4-2.4C18.2,27.5,17.1,26.4,15.7,26.4L15.7,26.4z M28.8,38.2
+										c-1.3,0-2.4,1.1-2.4,2.4c0,1.3,1.1,2.4,2.4,2.4s2.4-1.1,2.4-2.4C31.3,39.3,30.2,38.2,28.8,38.2L28.8,38.2z M18,41.5
+										c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.6,1.5,1.5,1.5c0.8,0,1.5-0.6,1.5-1.5C19.4,42.1,18.8,41.5,18,41.5L18,41.5z M28.8,27.4
+										c-0.8,0-1.5,0.6-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5c0.8,0,1.5-0.7,1.5-1.5C30.3,28,29.6,27.4,28.8,27.4L28.8,27.4z M28.8,0.5
+										C13.2,0.5,0.5,13.2,0.5,28.8c0,15.7,12.7,28.3,28.3,28.3s28.3-12.7,28.3-28.3C57.2,13.2,44.5,0.5,28.8,0.5z"></path>
+								</svg>
+
+								<b class="accordion-tab__title">Современные технологии</b>
+							</label>
+
+							<div class="accordion-tab__content">
+								<p>За адекватную цену вы получаете индивидуальный дизайн, оптимизированную структуру, нацеленную на увеличение конверсии.</p>
+							</div>
+
+						</div>
+						<!--/. Accordion item #3 -->
+
+						<!-- Accordion item #4 -->
+						<div class="accordion-tab">
+
+							<input id="tab4" type="radio" name="tabs">
+							<label class="accordion-tab__head" for="tab4">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 57.2 57.2"
+								     xml:space="preserve"
+								     width="58" height="58">
+
+									<path d="M43.2,29.6l-7.2-0.9l0.3-0.4c0.3-0.3,0.4-0.8,0.3-1.2l0.8-0.8
+										c1.8,1.4,4.5,1.3,6.1-0.4c1.8-1.8,1.8-4.8,0-6.6c-1.8-1.8-4.8-1.8-6.6,0c-1.7,1.7-1.8,4.3-0.4,6.1l-0.8,0.8c-0.4-0.1-0.9,0-1.2,0.3
+										l-1.7,1.7l-4.3-0.5l3.5,7.3h14.7L43.2,29.6L43.2,29.6z M31.5,10.1l5.9,2.7c0.4,0.2,0.6,0.7,0.4,1.1l-5.1,11
+										c-0.2,0.4-0.7,0.6-1.1,0.4l-5.9-2.7c-0.4-0.2-0.6-0.7-0.4-1.1l5.1-11C30.6,10.1,31.1,9.9,31.5,10.1L31.5,10.1z M33,11.9
+										c-0.1,0-0.2,0-0.2,0.1v0c0,0.1,0,0.2,0.1,0.2l2,0.9c0.1,0,0.2,0,0.2-0.1v0c0-0.1,0-0.2-0.1-0.2L33,11.9L33,11.9z M29.3,22.3
+										c0.3,0.2,0.5,0.5,0.3,0.9c-0.2,0.3-0.5,0.5-0.9,0.3c-0.3-0.2-0.5-0.5-0.3-0.9C28.6,22.3,29,22.2,29.3,22.3L29.3,22.3z M30.7,12.2
+										l5.5,2.6c0.1,0.1,0.2,0.2,0.1,0.3l-3.7,8c-0.1,0.1-0.2,0.2-0.3,0.1l-5.5-2.6c-0.1-0.1-0.2-0.2-0.1-0.3l3.7-8
+										C30.4,12.2,30.6,12.2,30.7,12.2L30.7,12.2z M13.9,23.5L13.9,23.5c-1.2-2.2-0.4-4.9,1.8-6.1l0,0c0.2-0.1,0.5,0,0.6,0.2
+										c0.1,0.2,0,0.5-0.2,0.6c-1.7,0.9-2.4,3.1-1.5,4.9c0.1,0.2,0,0.5-0.2,0.6C14.3,23.8,14,23.8,13.9,23.5L13.9,23.5z M14.9,15.9
+										c3-1.6,6.8-0.5,8.5,2.5c0.7,1.4,0.9,2.9,0.6,4.4c-0.3,1.3-0.3,2.7,0,4.1l0,0c0.1,0.3-0.1,0.6-0.3,0.7l0,0l-1.8,1
+										c2.3-0.3,4.5-0.5,6.8-0.8l-3.5,7.3H10.3l3.6-5.5l4.5-0.5c-0.8-0.8-1.8-1.3-2.8-1.7c-1.4-0.6-2.6-1.5-3.3-2.9
+										C10.7,21.3,11.8,17.5,14.9,15.9L14.9,15.9z M37.9,20.2c1.3-1.3,3.5-1.3,4.9,0c1.3,1.3,1.3,3.5,0,4.9c-1.4,1.3-3.5,1.3-4.9,0
+										C36.6,23.7,36.6,21.5,37.9,20.2L37.9,20.2z M14,36.2v9.3l14.4,1.7l-0.8-14.7l-1.8,3.7H14L14,36.2z M28.8,47.2l0.8-14.7l1.8,3.7h11.8
+										v9.3L28.8,47.2L28.8,47.2z M28.6,0.3c15.7,0,28.3,12.7,28.3,28.3c0,15.7-12.7,28.3-28.3,28.3S0.3,44.3,0.3,28.6
+										C0.3,12.9,12.9,0.3,28.6,0.3z"></path>
+								</svg>
+
+								<b class="accordion-tab__title">Удобство для клиентов</b>
+							</label>
+
+							<div class="accordion-tab__content">
+								<p>За адекватную цену вы получаете индивидуальный дизайн, оптимизированную структуру, нацеленную на увеличение конверсии.</p>
+							</div>
+
+						</div>
+						<!--/. Accordion item #4 -->
+
+						<!-- Accordion item #5 -->
+						<div class="accordion-tab">
+
+							<input id="tab5" type="radio" name="tabs">
+							<label class="accordion-tab__head" for="tab5">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 57.2 57.2"
+								     xml:space="preserve"
+								     width="58" height="58">
+
+									<path d="M28.6,0.3c15.7,0,28.3,12.7,28.3,28.3S44.3,56.9,28.6,56.9
+										c-15.7,0-28.3-12.7-28.3-28.3S12.9,0.3,28.6,0.3L28.6,0.3z M28.6,20.6c-1.8,0-3.4,0.4-3.8,0.9l0,0l0,0c-0.5,0.6-0.8,2-0.8,3.6
+										c0,1.6,0.3,3,0.8,3.6c0.4,0.6,2,1,3.8,1c1.8,0,3.4-0.4,3.8-1l0,0l0,0c0.5-0.6,0.8-2,0.8-3.6c0-1.6-0.3-3-0.8-3.6
+										C32,21,30.5,20.6,28.6,20.6L28.6,20.6z M28.6,37.4c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3c1.6,0,3-1.3,3-3C31.6,38.7,30.2,37.4,28.6,37.4
+										L28.6,37.4z M34.4,19.6c0.6,1.4,0.9,2.8,1.1,4.4l5.2,1.2l-5.2,1.2c-0.1,1.5-0.5,3-1.1,4.4c2.9,2.2,6.3,4,10,4c1.3,0,2.3-4.7,2.3-9.6
+										c0-4.9-1-9.6-2.3-9.6C40.7,15.6,37.3,17.4,34.4,19.6L34.4,19.6z M22.8,19.6c-2.9-2.2-6.3-4-10-4c-1.3,0-2.3,4.7-2.3,9.6
+										c0,4.9,1,9.6,2.3,9.6c3.7,0,7.1-1.9,10-4c-0.6-1.4-0.9-2.8-1.1-4.4l-5.2-1.2l5.2-1.2C21.9,22.4,22.2,21,22.8,19.6z"></path>
+								</svg>
+
+								<b class="accordion-tab__title">Надежность</b>
+							</label>
+
+							<div class="accordion-tab__content">
+								<p>За адекватную цену вы получаете индивидуальный дизайн, оптимизированную структуру, нацеленную на увеличение конверсии.</p>
+							</div>
+
+						</div>
+						<!--/. Accordion item #5 -->
+
+					</div>
+
+				</div>
 			</div>
 		</section>
 		<!--/. SECTION "WHY US" -->
@@ -232,7 +449,7 @@
 							<span class="features-head__num">83</span>
 						</div>
 
-						<span class="features-item__descr">постоянных клиентов</span>
+						<span class="features-item__descr">постоянных <br> клиентов</span>
 					</div>
 					<!--/. Feature item #1 -->
 
@@ -254,18 +471,18 @@
 							<span class="features-head__num">189</span>
 						</div>
 
-						<span class="features-item__descr">положительных отзывов</span>
+						<span class="features-item__descr">положительных <br> отзывов</span>
 					</div>
 					<!--/. Feature item #3 -->
 
 					<!-- Feature item #4 -->
 					<div class="features-item">
 						<div class="features-head">
-							<img class="features-head__icon" src="" alt="Иконка коментарий">
-							<span class="features-head__num"></span>
+							<img class="features-head__icon" src="img/icons/feature-4.png" alt="Иконка звезды">
+							<span class="features-head__num">8.5</span>
 						</div>
 
-						<span class="features-item__descr"></span>
+						<span class="features-item__descr">средняя оценка нашихклиентов</span>
 					</div>
 					<!--/. Feature item #4 -->
 
@@ -274,7 +491,486 @@
 		</section>
 		<!--/. SECTION "FEATURES" -->
 
+		<!-- SECTION "PORTFOLIO" -->
+		<section class="sect-portfolio" id="portfolio">
+			<div class="container">
+				<h2 class="sect-portfolio__title">ПРОДВИЖЕНИЕ И СОЗДАНИЕ <br> НА ПРИМЕРЕ НАШИХ КЛИЕНТОВ</h2>
 
+				<div class="portfolio-slider">
+
+					<!-- Portfolio slide #1 -->
+					<div class="portfolio-slide">
+						
+						<div class="portfolio-slide__img  portfolio-slide__img--imac">
+							<img src="img/portfolio/1-mac.png" alt="Подарки Imac">
+						</div>
+
+						<div class="portfolio-slide__img  portfolio-slide__img--ipad">
+							<img src="img/portfolio/1-ipad.png" alt="Подарки Ipad">
+						</div>
+
+						<div class="portfolio-slide__img  portfolio-slide__img--iphone">
+							<img src="img/portfolio/1-iphone.png" alt="Подарки Iphone">
+						</div>
+						
+					</div>
+					<!--/. Portfolio slide #1 -->
+
+					<!-- Portfolio slide #2 -->
+					<div class="portfolio-slide">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--imac">
+							<img src="img/portfolio/2-mac.png" alt="Кофе Imac">
+						</div>
+
+						<div class="portfolio-slide__img  portfolio-slide__img--ipad">
+							<img src="img/portfolio/2-ipad.png" alt="Кофе Ipad">
+						</div>
+
+						<div class="portfolio-slide__img  portfolio-slide__img--iphone">
+							<img src="img/portfolio/2-iphone.png" alt="Кофе Iphone">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #2 -->
+
+					<!-- Portfolio slide #3 -->
+					<div class="portfolio-slide">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--imac">
+							<img src="img/portfolio/3-mac.png" alt="Тренинг Imac">
+						</div>
+
+						<div class="portfolio-slide__img  portfolio-slide__img--ipad">
+							<img src="img/portfolio/3-ipad.png" alt="Тренинг Ipad">
+						</div>
+
+						<div class="portfolio-slide__img  portfolio-slide__img--iphone">
+							<img src="img/portfolio/3-iphone.png" alt="Тренинг Iphone">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #3 -->
+
+					<!-- Portfolio slide #4 -->
+					<div class="portfolio-slide">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
+							<img src="img/portfolio/4-macbook.png" alt="SEO MAZ-UA Macbook">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #4 -->
+
+					<!-- Portfolio slide #5 -->
+					<div class="portfolio-slide">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
+							<img src="img/portfolio/5-macbook.png" alt="Мойдодыр Macbook">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #5 -->
+
+					<!-- Portfolio slide #6 -->
+					<div class="portfolio-slide">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
+							<img src="img/portfolio/6-macbook.png" alt="Optimax Macbook">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #6 -->
+
+				</div>
+			</div>
+		</section>
+		<!--/. SECTION "PORTFOLIO" -->
+
+		<!-- SECTION "TESTIMONIALS" -->
+		<section class="sect-testimonials" id="testimonials">
+			<div class="container">
+				<h2 class="sect-testimonials__title">отзывы <span>наших клиентов</span></h2>
+
+				<div class="testimonials-list">
+
+					<!-- Testimonials item #1 -->
+					<div class="testimonials-item">
+						<div class="testimonials-head">
+							<img src="img/testimonials/1.png" alt="Логотип Decorum-elite">
+							<b class="testimonials-head__name">Decorum-elite</b>
+						</div>
+
+						<span class="testimonials-item__descr">Хотим поблагодарить Intellec- <br> tus Studio за отличную работу. <br> Сайт сделан качественно, <br> оригинально и, как и было <br> обещано.</span>
+					</div>
+					<!--/. Testimonials item #1 -->
+
+					<!-- Testimonials item #2 -->
+					<div class="testimonials-item">
+						<div class="testimonials-head">
+							<img src="img/testimonials/2.png" alt="Логотип Aqua-help">
+							<b class="testimonials-head__name">Aqua-help</b>
+						</div>
+
+						<span class="testimonials-item__descr">Надежная компания. Работа <br> выполнена в срок, все <br> необходимые правки внесли <br> вовремя. Рекомендуем к <br> сотрудничеству.</span>
+					</div>
+					<!--/. Testimonials item #2 -->
+
+					<!-- Testimonials item #3 -->
+					<div class="testimonials-item">
+						<div class="testimonials-head">
+							<img src="img/testimonials/3.png" alt="Логотип Wine&Food">
+							<b class="testimonials-head__name">Wine&Food</b>
+						</div>
+
+						<span class="testimonials-item__descr">Качественные внутренние <br> изменения пошли сайту на <br> пользу. Отдельное спасибо за <br> внутренний ре-дизайн и <br> мобильную версию.</span>
+					</div>
+					<!--/. Testimonials item #3 -->
+
+					<!-- Testimonials item #4 -->
+					<div class="testimonials-item">
+						<div class="testimonials-head">
+							<img src="img/testimonials/4.png" alt="Логотип Qeensland">
+							<b class="testimonials-head__name">Qeensland</b>
+						</div>
+
+						<span class="testimonials-item__descr">Проект получился <br> внушительным, как мы того и <br> хотели. В общем, так должен <br> выглядеть сайт компании, <br> которая на рынке более 10 лет.</span>
+					</div>
+					<!--/. Testimonials item #4 -->
+
+				</div>
+			</div>
+		</section>
+		<!--/. SECTION "TESTIMONIALS" -->
+
+		<!-- SECTION "CORRUPT" -->
+		<section class="sect-corrupt">
+			<div class="container">
+				<p class="sect-corrupt__descr">Забудьте о ненадежных услугах фрилансеров - наши специалисты обеспечат Вам эффективный и продающий интернет-ресурс в срок</p>
+			</div>
+		</section>
+		<!--/. SECTION "CORRUPT" -->
+
+		<!-- SECTION "PRICING" -->
+		<section class="sect-pricing" id="pricing">
+			<div class="container">
+				<h2 class="sect-pricing__title">Цены на <span>наши услуги</span></h2>
+
+				<div class="pricing-grid">
+
+					<!-- Pricing box #1 -->
+					<div class="pricing-box  pricing-box--share">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">Landing <br> Page</b>
+							<span class="pricing-box__price">5000<small>грн.</small></span>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">Шаблона под задачи клиента (до 5 шт.)</li>
+							<li class="pricing-box__item">Удобная система управления сайтом</li>
+							<li class="pricing-box__item">Удобная верстка</li>
+							<li class="pricing-box__item">Создание меню сайта</li>
+							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
+							<li class="pricing-box__item">Регистрация домена и хостинга</li>
+							<li class="pricing-box__item">Установка Google analitics</li>
+							<li class="pricing-box__item">Обучение и тех.поддержка - 1 мес.</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #1 -->
+
+					<!-- Pricing box #2 -->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">Сайт <br> визитка</b>
+							<span class="pricing-box__price">6000<small>грн.</small></span>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">Шаблона под задачи клиента (до 5 шт.)</li>
+							<li class="pricing-box__item">Удобная система управления сайтом</li>
+							<li class="pricing-box__item">Удобная верстка</li>
+							<li class="pricing-box__item">Создание меню сайта</li>
+							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
+							<li class="pricing-box__item">Регистрация домена и хостинга</li>
+							<li class="pricing-box__item">Создание 5 страниц сайта</li>
+							<li class="pricing-box__item">Обучение и тех.поддержка - 1 месяц</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #2 -->
+
+					<!-- Pricing box #3 -->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">Интернет <br> магазин</b>
+							<span class="pricing-box__price">10 000<small>грн.</small></span>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">Шаблона под задачи клиента (до 3 шт.)</li>
+							<li class="pricing-box__item">Удобная система управления сайтом</li>
+							<li class="pricing-box__item">Удобная верстка</li>
+							<li class="pricing-box__item">Создание меню сайта</li>
+							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
+							<li class="pricing-box__item">Регистрация домена и хостинга</li>
+							<li class="pricing-box__item">Установка Google analitics</li>
+							<li class="pricing-box__item">Консультация по работе с сайтом - 1 мес</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #3 -->
+
+					<!-- Pricing box #4 -->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">Реклама<br>в Facebook</b>
+							<span class="pricing-box__price">1500<small>грн.</small></span>
+							<span class="pricing-box__month">месяц</span>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">Создание рекламного аккаунта</li>
+							<li class="pricing-box__item">Определение целевой аудитории</li>
+							<li class="pricing-box__item">Настройка и запуск рекламной компании</li>
+							<li class="pricing-box__item">Оптимизация рекламной компании</li>
+							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #4 -->
+
+					<!-- Pricing box #5 -->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">Реклама<br>в Google</b>
+							<span class="pricing-box__price">1500<small>грн.</small></span>
+							<span class="pricing-box__month">месяц</span>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">Анализируем бизнес направление</li>
+							<li class="pricing-box__item">Создание рекламных кампаний</li>
+							<li class="pricing-box__item">Отслеживание статистики переходов</li>
+							<li class="pricing-box__item">Анализ полученного результата</li>
+							<li class="pricing-box__item">Рекомендации по улучшению кампании</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #5 -->
+
+					<!-- Pricing box #6-->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">SEO<br>продвижение</b>
+							<span class="pricing-box__price">3500<small>грн.</small></span>
+							<span class="pricing-box__month">месяц</span>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">50 поисковых запросов</li>
+							<li class="pricing-box__item">СЕО-оптимизация включена</li>
+							<li class="pricing-box__item">Мета-теги</li>
+							<li class="pricing-box__item">Копирайт текстов</li>
+							<li class="pricing-box__item">Ведение проекта в ручном режиме</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #6 -->
+
+				</div>
+			</div>
+		</section>
+		<!--/. SECTION "PRICING" -->
+
+		<!-- SECTION "TECHNOLOGIES" -->
+		<section class="sect-tech">
+			<div class="container">
+				<h2 class="sect-tech__title">Современные технологии - <span>залог вашего успеха!</span></h2>
+
+				<div class="tech-list">
+
+					<!-- Technologies item #1 -->
+					<div class="tech-item">
+						<img src="img/brands/drupal.png" alt="Логотип Drupal">
+					</div>
+					<!--/. Technologies item #1 -->
+
+					<!-- Technologies item #2 -->
+					<div class="tech-item">
+						<img src="img/brands/wordpress.png" alt="Логотип Wordpress">
+					</div>
+					<!--/. Technologies item #2 -->
+
+					<!-- Technologies item #1 -->
+					<div class="tech-item">
+						<img src="img/brands/html5.png" alt="Логотип HTML5">
+					</div>
+					<!--/. Technologies item #1 -->
+
+					<!-- Technologies item #1 -->
+					<div class="tech-item">
+						<img src="img/brands/joomla.png" alt="Логотип Joomla">
+					</div>
+					<!--/. Technologies item #1 -->
+
+					<!-- Technologies item #1 -->
+					<div class="tech-item">
+						<img src="img/brands/opencart.png" alt="Логотип Opencart">
+					</div>
+					<!--/. Technologies item #1 -->
+
+				</div>
+
+			</div>
+		</section>
+		<!--/. SECTION "TECHNOLOGIES" -->
+
+		<!-- SECTION "CORRUPT" -->
+		<section class="sect-corrupt">
+			<div class="container">
+				<p class="sect-corrupt__descr">Веб сайт под ключ – это идеальное РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</p>
+			</div>
+		</section>
+		<!--/. SECTION "CORRUPT" -->
+
+		<!-- SECTION "MAP" -->
+		<section class="sect-map">
+			<div class="google-map" id="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.2470975699785!2d30.64755081557397!3d50.39923239893536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c450d6f4d0ad%3A0x6e7634ebcf8bba5c!2z0L_RgNC-0YHQvy4g0J3QuNC60L7Qu9Cw0Y8g0JHQsNC20LDQvdCwLCAzNiwg0JrQuNC10LI!5e0!3m2!1sru!2sua!4v1513155492793" allowfullscreen></iframe>
+			</div>
+		</section>
+		<!--/. SECTION "MAP" -->
+
+		<!-- MAIN FOOTER -->
+		<footer class="main-footer" id="contacts">
+			<div class="container">
+
+				<div class="footer-contacts">
+
+					<div class="footer-contacts__info">
+						<div class="footer-contacts__phones">
+							<div class="footer-contacts__icon  footer-contacts__icon--phone">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 21.9 21.9"
+								     xml:space="preserve"
+								     width="15" height="15"
+								     fill="#0093e5">
+									<path d="M20.9,15.9v3c0,1.1-0.9,2-2,2c-0.1,0-0.1,0-0.2,0c-3.1-0.3-6-1.4-8.6-3.1c-2.4-1.5-4.5-3.6-6-6
+										C2.4,9.2,1.3,6.3,1,3.2C0.9,2.1,1.7,1.1,2.8,1C2.9,1,2.9,1,3,1h3c1,0,1.9,0.7,2,1.7c0.1,1,0.4,1.9,0.7,2.8C9,6.3,8.8,7.1,8.2,7.6
+										L7,8.9c1.4,2.5,3.5,4.6,6,6l1.3-1.3c0.6-0.5,1.4-0.7,2.1-0.4c0.9,0.3,1.8,0.6,2.8,0.7C20.2,14,20.9,14.9,20.9,15.9z"></path>
+								</svg>
+							</div>
+
+							<div class="footer-contacts__phones-block">
+								<span class="footer-contacts__phone">+38 (044) 451 51 49</span>
+								<span class="footer-contacts__phone">+38 (093) 949 04 31</span>
+							</div>
+						</div>
+
+						<div class="footer-contacts__mail">
+							<div class="footer-contacts__icon  footer-contacts__icon--mail">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 512 311.1"
+								     xml:space="preserve"
+								     width="19" height="11"
+								     fill="#0093e5">
+									<path d="M511.6,26.2c0-14.4-11.8-26.2-26.2-26.2c0,0,0,0,0,0L26.2,0.6c-7,0-13.6,2.7-18.5,7.7C2.7,13.3,0,19.9,0,26.9l0.4,258
+										c0,7,2.7,13.6,7.7,18.5c5,4.9,11.5,7.7,18.5,7.7c0,0,0,0,0,0l459.2-0.6c14.5,0,26.2-11.8,26.2-26.3L511.6,26.2z M456.6,26.3
+										L256,165.7L55,26.8L456.6,26.3z M340.8,192l119,92.3l-408,0.6L171.5,192c5.7-4.4,6.8-12.7,2.3-18.4c-4.4-5.7-12.7-6.8-18.4-2.3
+										l-128.9,100L26.2,38.8l222.3,153.7c2.2,1.6,4.8,2.3,7.5,2.3c2.6,0,5.2-0.8,7.5-2.3L485.4,38.2l0.3,233.1l-128.9-99.9
+										c-5.7-4.4-14-3.4-18.4,2.3C334.1,179.4,335.1,187.6,340.8,192z"></path>
+								</svg>
+							</div>
+
+							<a class="footer-contacts__mail-link" href="mailto:info@intellectus-studio.com">Info@intellectus-studio.com</a>
+						</div>
+
+						<div class="footer-contacts__address">
+							<div class="footer-contacts__icon  footer-contacts__icon--address">
+								<svg version="1.1"
+								     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								     x="0px" y="0px"
+								     viewBox="0 0 65.3 87.9"
+								     xml:space="preserve"
+								     width="13" height="17"
+								     fill="#0093e5">
+									<g>
+										<path d="M9.5,9.5c-10.9,11-12.7,28.1-4.2,41.1l23.1,35.1c1.5,2.3,4.6,2.9,6.9,1.4c0.6-0.4,1.1-0.9,1.4-1.4l23.1-35.1
+											c9.9-15.1,5.7-35.3-9.3-45.2C37.6-3.1,20.5-1.4,9.5,9.5z M54.9,47.3L32.6,81.1L10.4,47.3C2.3,35,5.7,18.5,18,10.4S46.8,5.7,54.9,18
+											C60.8,26.9,60.8,38.4,54.9,47.3z"></path>
+										<path d="M32.6,12.7c-10.9,0-19.7,8.8-19.7,19.7s8.8,19.7,19.7,19.7s19.7-8.8,19.7-19.7C52.3,21.5,43.5,12.7,32.6,12.7z M32.6,46.1
+											c-7.6,0-13.7-6.1-13.7-13.7c0-7.6,6.1-13.7,13.7-13.7s13.7,6.1,13.7,13.7c0,0,0,0,0,0C46.3,39.9,40.2,46,32.6,46.1z"></path>
+									</g>
+								</svg>
+							</div>
+
+							<span class="footer-contacts__location">02068  |  Киев  |  Урловская 38</span>
+						</div>
+
+						<div class="footer-contacts__welcome">
+							<p>Мы рады видеть Вас в гостях с Понедельника по Пятницу с 9.00 до 18.00</p>
+						</div>
+
+					</div>
+
+					<div class="footer-contacts__form">
+						<form class="contacts-form" action="#" method="post">
+							<fieldset class="contacts-form__wrapper">
+								<legend class="contacts-form__title">ПИШИТЕ НАМ</legend>
+
+								<div class="contacts-form__control  contacts-form__control--name">
+									<input type="text" name="client-name" placeholder="Ваше имя" required>
+								</div>
+
+								<div class="contacts-form__control  contacts-form__control--email">
+									<input type="email" name="client-email" placeholder="Ваш E-mail" required>
+								</div>
+
+								<div class="contacts-form__control  contacts-form__control--textarea">
+									<textarea name="client-message" placeholder="Сообщение"></textarea>
+								</div>
+
+								<div class="contacts-form__control  contacts-form__control--button">
+									<button type="submit">ОТПРАВИТЬ</button>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+
+					<div class="footer-contacts__socials">
+						<a class="footer-contacts__soc-icon" href="#">
+							<img src="img/icons/facebook.png" alt="Логотип Facebook">
+						</a>
+
+						<a class="footer-contacts__soc-icon" href="#">
+							<img src="img/icons/google-plus.png" alt="Логотип Google+">
+						</a>
+
+						<a class="footer-contacts__soc-icon" href="#">
+							<img src="img/icons/twitter.png" alt="Логотип Twitter">
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="footer-copyrights">
+				<small>&copy; IMKT.Pro. All right reserved.</small>
+			</div>
+		</footer>
+		<!--/. MAIN FOOTER -->
 
 
 		<!-- JavaScript -->
