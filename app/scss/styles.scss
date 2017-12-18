@@ -1,6 +1,5 @@
-	@import "fonts";
-	@import "libs";
-	@import "vars";
+@import "vars";
+@import "_mixins/common";
 
 // ==================================================
 //  ### COMMON STYLES ###
@@ -74,7 +73,6 @@ a {
 	position: fixed;
 	z-index: 100;
 	top: 0;
-	left: 0;
 
 	width: 100%;
 	min-height: 71px;
@@ -132,6 +130,8 @@ a {
 
 			background-color: transparent;
 			transition: all 0.25s ease-in-out;
+
+			transform: translateX(-100%);
 		}
 		&:hover,
 		&:active,
@@ -141,6 +141,7 @@ a {
 
 			&::after {
 				background-color: $highlightColor;
+				transform: translateX(0);
 			}
 		}
 	}
@@ -186,26 +187,7 @@ a {
 	}
 
 	&__link {
-		display: block;
-		padding: 18px 46px;
-
-		color: $whiteColor;
-		font-family: $juraFont;
-		font-size: 14px;
-		font-weight: bold;
-		line-height: 1;
-		text-transform: uppercase;
-		text-align: center;
-
-		border: 2px solid transparent;
-		background-color: $highlightColor;
-		transition: all 0.25s ease-in-out;
-		&:hover,
-		&:active,
-		&.active {
-			border-color: $highlightColor;
-			background-color: transparent;
-		}
+		@include button(inline-block);
 	}
 
 	&__separator {
@@ -295,6 +277,16 @@ a {
 	&:hover {
 		color: $highlightColor;
 		background-color: $whiteColor;
+		&:first-child {
+			box-shadow: -4px 4px 24px 0 rgba(0, 0, 0, 0.21);
+		}
+		&:nth-child(2) {
+			box-shadow: 0 5px 24px 0 rgba(0, 0, 0, 0.21);
+		}
+		&:last-child {
+			box-shadow: 4px 4px 24px 0 rgba(0, 0, 0, 0.21);
+		}
+
 		.services-item__icon svg {
 			fill: $highlightColor;
 		}
@@ -347,10 +339,8 @@ a {
 			&::after {
 				content: '-';
 				position: absolute;
-				top: 50%;
+				top: 0;
 				left: 0;
-
-				transform: translateY(-50%);
 			}
 		}
 	}
@@ -510,11 +500,17 @@ a {
 }
 
 .features-head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin-bottom: 20px;
 
 	&__num {
+		margin-left: 12px;
+
+		font-family: $juraFont;
 		font-size: 42px;
-		font-weight: normal;
+		font-weight: bold;
 		line-height: 24px;
 		text-transform: uppercase;
 	}
@@ -585,6 +581,8 @@ a {
 	overflow: hidden;
 	margin: 0 10px;
 
+	outline: 0;
+
 	&__img {
 		position: absolute;
 
@@ -603,6 +601,8 @@ a {
 // Custom Slick Carousel styles
 .slick-prev,
 .slick-next {
+	top: 30%;
+
 	width: 25px;
 	height: 25px;
 
@@ -1167,10 +1167,7 @@ a {
 			transition: all 0.25s ease-in-out;
 			&:hover,
 			&:focus {
-				box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
-			}
-			&:focus {
-				border-color: rgba($whiteColor, 0.7);
+				border-color: rgba($whiteColor, 0.5);
 			}
 		}
 
@@ -1261,5 +1258,21 @@ a {
 	&.active {
 		color: $highlightColor;
 		background-color: $whiteColor;
+	}
+}
+
+
+// ==================================================
+//  ### ANIMATIONS ###
+// ==================================================
+@keyframes btn-gradient {
+	0%{
+		background-position:88% 0%;
+	}
+	50%{
+		background-position:13% 100%;
+	}
+	100%{
+		background-position:88% 0%;
 	}
 }
