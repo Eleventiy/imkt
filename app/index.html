@@ -15,8 +15,12 @@
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Jura:400,700|Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
 		<!--/. Google Fonts -->
+
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="/app/libs/slick-carousel/slick/slick-theme.css">
+		<!--<link rel="stylesheet" href="libs/owl.carousel/dist/assets/owl.carousel.min.css">-->
+		<!--<link rel="stylesheet" href="libs/owl.carousel/dist/assets/owl.theme.default.min.css">-->
+		<link rel="stylesheet" href="libs/slick-carousel/slick/slick.css">
+		<link rel="stylesheet" href="libs/slick-carousel/slick/slick-theme.css">
 		<link rel="stylesheet" href="css/styles.min.css">
 		<!--/. Stylesheets -->
 	</head>
@@ -495,12 +499,13 @@
 		<section class="sect-portfolio" id="portfolio">
 			<div class="container">
 				<h2 class="sect-portfolio__title">ПРОДВИЖЕНИЕ И СОЗДАНИЕ <br> НА ПРИМЕРЕ НАШИХ КЛИЕНТОВ</h2>
+				<p class="sect-portfolio__subtitle">Закажите поисковую оптимизацию и органическое продвижение сайтов в компании Intellectus Studio и наши квалифицированные специалисты сделают все необходимое для роста посещаемости и роста продаж Вашего интернет-ресурса.</p>
 
-				<div class="portfolio-slider">
+				<div class="portfolio-slider" id="portfolioSlider">
 
 					<!-- Portfolio slide #1 -->
-					<div class="portfolio-slide">
-						
+					<div class="portfolio-slide" data-title="Подарки">
+
 						<div class="portfolio-slide__img  portfolio-slide__img--imac">
 							<img src="img/portfolio/1-mac.png" alt="Подарки Imac">
 						</div>
@@ -512,12 +517,12 @@
 						<div class="portfolio-slide__img  portfolio-slide__img--iphone">
 							<img src="img/portfolio/1-iphone.png" alt="Подарки Iphone">
 						</div>
-						
+
 					</div>
 					<!--/. Portfolio slide #1 -->
 
 					<!-- Portfolio slide #2 -->
-					<div class="portfolio-slide">
+					<div class="portfolio-slide" data-title="Кофе">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--imac">
 							<img src="img/portfolio/2-mac.png" alt="Кофе Imac">
@@ -535,7 +540,7 @@
 					<!--/. Portfolio slide #2 -->
 
 					<!-- Portfolio slide #3 -->
-					<div class="portfolio-slide">
+					<div class="portfolio-slide" data-title="Треннинг">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--imac">
 							<img src="img/portfolio/3-mac.png" alt="Тренинг Imac">
@@ -553,7 +558,7 @@
 					<!--/. Portfolio slide #3 -->
 
 					<!-- Portfolio slide #4 -->
-					<div class="portfolio-slide">
+					<div class="portfolio-slide" data-title="МАЗ">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
 							<img src="img/portfolio/4-macbook.png" alt="SEO MAZ-UA Macbook">
@@ -563,7 +568,7 @@
 					<!--/. Portfolio slide #4 -->
 
 					<!-- Portfolio slide #5 -->
-					<div class="portfolio-slide">
+					<div class="portfolio-slide" data-title="Мойдодыр">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
 							<img src="img/portfolio/5-macbook.png" alt="Мойдодыр Macbook">
@@ -573,7 +578,7 @@
 					<!--/. Portfolio slide #5 -->
 
 					<!-- Portfolio slide #6 -->
-					<div class="portfolio-slide">
+					<div class="portfolio-slide" data-title="Optimax">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
 							<img src="img/portfolio/6-macbook.png" alt="Optimax Macbook">
@@ -808,23 +813,23 @@
 					</div>
 					<!--/. Technologies item #2 -->
 
-					<!-- Technologies item #1 -->
+					<!-- Technologies item #3 -->
 					<div class="tech-item">
 						<img src="img/brands/html5.png" alt="Логотип HTML5">
 					</div>
-					<!--/. Technologies item #1 -->
+					<!--/. Technologies item #3 -->
 
-					<!-- Technologies item #1 -->
+					<!-- Technologies item #4 -->
 					<div class="tech-item">
 						<img src="img/brands/joomla.png" alt="Логотип Joomla">
 					</div>
-					<!--/. Technologies item #1 -->
+					<!--/. Technologies item #4 -->
 
-					<!-- Technologies item #1 -->
+					<!-- Technologies item #5 -->
 					<div class="tech-item">
 						<img src="img/brands/opencart.png" alt="Логотип Opencart">
 					</div>
-					<!--/. Technologies item #1 -->
+					<!--/. Technologies item #5 -->
 
 				</div>
 
@@ -843,7 +848,7 @@
 		<!-- SECTION "MAP" -->
 		<section class="sect-map">
 			<div class="google-map" id="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.2470975699785!2d30.64755081557397!3d50.39923239893536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c450d6f4d0ad%3A0x6e7634ebcf8bba5c!2z0L_RgNC-0YHQvy4g0J3QuNC60L7Qu9Cw0Y8g0JHQsNC20LDQvdCwLCAzNiwg0JrQuNC10LI!5e0!3m2!1sru!2sua!4v1513155492793" allowfullscreen></iframe>
+				<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.2470975699785!2d30.64755081557397!3d50.39923239893536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c450d6f4d0ad%3A0x6e7634ebcf8bba5c!2z0L_RgNC-0YHQvy4g0J3QuNC60L7Qu9Cw0Y8g0JHQsNC20LDQvdCwLCAzNiwg0JrQuNC10LI!5e0!3m2!1sru!2sua!4v1513155492793" allowfullscreen></iframe>-->
 			</div>
 		</section>
 		<!--/. SECTION "MAP" -->
@@ -972,9 +977,19 @@
 		</footer>
 		<!--/. MAIN FOOTER -->
 
+		<!-- BOTTOM LINK -->
+		<!--<a href="#" class="page-bottom-link">Портфолио</a>-->
+		<!--/. BOTTOM LINK -->
+
 
 		<!-- JavaScript -->
-		<script src="js/scripts.min.js"></script>
+		<script src="libs/jquery/dist/jquery.min.js"></script>
+		<!--<script src="libs/owl.carousel/dist/owl.carousel.min.js"></script>-->
+		<script src="libs/page-scroll-to-id/jquery.malihu.PageScroll2id.js"></script>
+		<script src="libs/slick-carousel/slick/slick.min.js"></script>
+		<!-- User map-->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqQ_bBw186KJnMcRByvn5ffZueg88wp1E"></script>
+		<script src="js/common.min.js"></script>
 		<!--/. JavaScript -->
 
 	</body>

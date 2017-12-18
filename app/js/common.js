@@ -52,6 +52,16 @@ $(function() {
 	});
 
 	// Slick slider init on Section "Portfolio"
-	$('.portfolio-slider').slick({});
+	$('#portfolioSlider').not('.slick-initialized').slick({
+		draggable: false,
+		dots: true,
+		autoplay: true,
+		autoplaySpeed: 2500,
+
+		customPaging : function(slider, i) {
+			var title = $(slider.$slides[i]).data('title');
+			return '<a class="portfolio-slider__pager"> '+title+' </a>';
+		}
+	});
 
 });

@@ -47,26 +47,23 @@ gulp.task('sass', function() {
 });
 
 // JavaScript
-gulp.task('common-js', function() {
-	return gulp.src([
-				'app/js/common.js'
-			])
+gulp.task('js', function() {
+	return gulp.src('app/js/**/*.js')
+			.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 			.pipe(concat('common.min.js'))
 			.pipe(uglify())
-			.pipe(gulp.dest('app/js'));
-});
-gulp.task('js', ['common-js'], function() {
-	return gulp.src([
-				'app/libs/jquery/dist/jquery.min.js',
-				'app/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
-				'app/libs/slick-carousel/slick/slick.min.js',
-				'app/js/common.min.js' // Всегда в конце
-			])
-			.pipe(concat('scripts.min.js'))
-			.pipe(uglify()) // Минимизировать весь js (на выбор)
 			.pipe(gulp.dest('app/js'))
 			.pipe(browserSync.reload({stream: true}));
 });
+// gulp.task('js', ['common-js'], function() {
+// 	return gulp.src([
+// 				'app/js/common.min.js' // Всегда в конце
+// 			])
+// 			.pipe(concat('scripts.min.js'))
+// 			.pipe(uglify()) // Минимизировать весь js (на выбор)
+// 			.pipe(gulp.dest('app/js'))
+// 			.pipe(browserSync.reload({stream: true}));
+// });
 
 // Images
 gulp.task('imagemin', function() {
@@ -110,21 +107,22 @@ gulp.task('clean:dist', function() {
 	return del.sync(['dist', '!dist/img', '!dist/img/**/*']);
 });
 
-// Build application
-// gulp.task('build', function(callback) {
-// 	runSequence(
-// 			'clean:dist',
-// 			'sass',
-// 			['img', 'fonts'],
-// 			callback
-// 	);
-//
-// 	var buildCss = gulp.src('app/css/**/*.css')
-// 			.pipe(gulp.dest('dist/css'));
-//
-// 	var buildScripts = gulp.src('app/js/**/*.js')
-// 			.pipe(gulp.dest('dist/js'));
-//
-// 	var buildHtml = gulp.src('app/*.html')
-// 			.pipe(gulp.dest('dist/'));
-// });
+// Build taks
+gulp.task('build', ['imagemin'], function() {
+
+	var buildHtml = gulp.src('app/*.html')
+		.pipe(gulp.dest('dist/'));
+
+	var buildCss = gulp.src('app/css/**/*.css')
+			.pipe(gulp.dest('dist/css'));
+
+	var buildScripts = gulp.src('app/js/**/*.js')
+			.pipe(gulp.dest('dist/js'));
+
+	var buildLibs = gulp.src('app/libs/**/*')
+		.pipe(gulp.dest('dist/libs'));
+
+	var buildImg = gulp.src('app/libs/**/*')
+		.pipe(gulp.dest('dist/libs'));
+
+});
