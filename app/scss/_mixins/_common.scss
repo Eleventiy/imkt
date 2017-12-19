@@ -16,9 +16,12 @@
 	line-height: 1;
 	text-transform: uppercase;
 
+	border: none;
 	background: linear-gradient(135deg, $linearColor2, $linearColor1);
 	box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.15);
 	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+	outline: 0;
 	&::before {
 		content: '';
 		position: absolute;

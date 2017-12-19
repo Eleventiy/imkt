@@ -64,6 +64,18 @@ $(function() {
 		}
 	});
 
+	// Slick slider init on Section "Portfolio"
+	$('#techSlider').not('.slick-initialized').slick({
+		draggable: false,
+		arrows: false,
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		pauseOnFocus: false,
+		slidesToShow: 5,
+		slidesToScroll: 1
+	});
+
 });
 
 
@@ -79,10 +91,10 @@ function init() {
 	// For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
 	var mapOptions = {
 		// How zoomed in you want the map to start at (always required)
-		zoom: 15,
+		zoom: 16,
 
 		// The latitude and longitude to center the map (always required)
-		center: new google.maps.LatLng(50.3991845, 30.6501579), // Kiev
+		center: new google.maps.LatLng(50.3993646,30.6501465), // Kiev
 
 		scrollwheel: false,
 
@@ -90,20 +102,113 @@ function init() {
 		// How you would like to style the map.
 		// This is where you would paste any style found on Snazzy Maps.
 		styles: [
-			{"featureType":"water", "elementType":"geometry", "stylers":[{"color":"#afafaf"},{"lightness":1}]},
-			{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#dddddd"},{"lightness":1}]},
-			{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":1}]},
-			{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#aaaaaa"},{"lightness":1},{"weight":1}]},
-			{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":1}]},
-			{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":1}]},
-			{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":1}]},
-			{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":1}]},
-			{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":1}]},
-			{"elementType":"labels.text.fill","stylers":[{"color":"#333333"},{"lightness":1}]},
-			// {"elementType":"labels.icon","stylers":[{"color":"#333333"}]},
-			{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":1}]},
-			{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#bebebe"},{"lightness":1}]},
-			{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#bebebe"},{"lightness":1},{"weight":1.2}]}]
+			{
+				"stylers": [
+					{
+						"saturation": -100
+					}
+				]
+			},
+			{
+				"featureType": "landscape",
+				"elementType": "geometry.fill",
+				"stylers": [
+					{
+						"color": "#f7f7f7"
+					}
+				]
+			},
+			{
+				"featureType": "landscape.man_made",
+				"elementType": "geometry.fill",
+				"stylers": [
+					{
+						"color": "#f7f7f7"
+					}
+				]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "labels.icon",
+				"stylers": [
+					{
+						"saturation": -100
+					}
+				]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "labels.text.fill",
+				"stylers": [
+					{
+						"color": "#333333"
+					}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry.fill",
+				"stylers": [
+					{
+						"color": "#ffffff"
+					}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry.stroke",
+				"stylers": [
+					{
+						"color": "#e7e7e7"
+					}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "labels.icon",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "labels.text.fill",
+				"stylers": [
+					{
+						"color": "#5f5f5f"
+					}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "labels.text.stroke",
+				"stylers": [
+					{
+						"weight": 1.5
+					}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "geometry.fill",
+				"stylers": [
+					{
+						"color": "#afafaf"
+					}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "labels.text.fill",
+				"stylers": [
+					{
+						"color": "#333333"
+					}
+				]
+			}
+		]
 	};
 
 	// Get the HTML DOM element that will contain your map
