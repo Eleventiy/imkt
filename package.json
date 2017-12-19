@@ -29,6 +29,7 @@
     "jquery-migrate": "^3.0.1",
     "normalize.css": "^7.0.0",
     "page-scroll-to-id": "^1.5.8",
+    "sass-mediaqueries": "^1.6.1",
     "slick-carousel": "^1.8.1"
   }
 }

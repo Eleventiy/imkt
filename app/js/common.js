@@ -1,4 +1,29 @@
+'use strict';
+
 $(function() {
+
+	// Mobile burger
+	var mBurger = $('#mSandwich'),
+			mHeader = $('#mHeader'),
+			mNavLink = $('.top-nav__link'),
+			mNavLogo = $('.top-nav__logo');
+
+	mBurger.click(function(e) {
+		e.preventDefault();
+
+		$(this).toggleClass('active');
+		mHeader.toggleClass('active');
+	});
+
+	mNavLink.click(function() {
+		mHeader.removeClass('active');
+		mBurger.removeClass('active');
+	});
+
+	mNavLogo.click(function() {
+		mHeader.removeClass('active');
+		mBurger.removeClass('active');
+	});
 
 	// PageScrollToId init
 	$(window).on("load", function() {

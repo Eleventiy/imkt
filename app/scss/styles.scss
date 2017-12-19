@@ -1,5 +1,6 @@
 @import "vars";
 @import "_mixins/common";
+@import "./node_modules/sass-mediaqueries/media-queries";
 
 // ==================================================
 //  ### COMMON STYLES ###
@@ -70,6 +71,61 @@ a {
 
 
 // ==================================================
+//  ### MOBILE SANDWICH ###
+// ==================================================
+.m-sandwich {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	z-index: 200;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background-color: $whiteColor;
+	box-shadow: 0 0 15px 0 rgba($blackColor, 0.5);
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 25px;
+		height: 2px;
+		background-color: $titleColor;
+		transform: translate(-50%, -50%);
+		transform-origin: center;
+		transition: all 0.25s ease-in-out;
+	}
+
+	&__top-line {
+		margin-top: -7px;
+	}
+
+	&__bottom-line {
+		margin-top: 7px;
+	}
+
+	&.active {
+		.m-sandwich__top-line {
+			margin: 0;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		.m-sandwich__middle-line {
+			opacity: 0;
+		}
+		.m-sandwich__bottom-line {
+			margin: 0;
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+
+	@include min-screen($mobile) {
+		display: none;
+	}
+}
+
+
+// ==================================================
 //  ### 1. MAIN HEADER ###
 // ==================================================
 
@@ -77,11 +133,22 @@ a {
 	position: fixed;
 	z-index: 100;
 	top: 0;
-
 	width: 100%;
 	min-height: 71px;
 	background-color: $whiteColor;
 	box-shadow: 0 5px 5px rgba($blackColor, 0.4);
+	transition: all 0.5s ease-in-out;
+
+	&.active {
+		left: 0;
+	}
+
+
+	@include max-screen($mobile) {
+		height: 100%;
+		padding-top: 100px;
+		left: -100%;
+	}
 }
 
 .top-nav {
@@ -92,35 +159,44 @@ a {
 	&__list {
 		display: flex;
 		align-items: center;
-
 		margin: 0;
 		padding: 0;
 		list-style: none;
+
+
+		@include max-screen($mobile) {
+			flex-direction: column;
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	&__item {
 		display: block;
 		margin-right: 50px;
-
 		&:last-child {
 			margin-right: 0;
+		}
+
+
+		@include max-screen($mobile) {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 15px;
 		}
 	}
 
 	&__link {
 		position: relative;
-
 		display: block;
 		overflow: hidden;
 		padding: 18px 0;
-
 		color: $titleColor;
 		font-family: $openSansFont;
 		font-size: 15px;
 		font-weight: bold;
 		line-height: 35px;
 		text-transform: uppercase;
-
 		transition: all 0.25s ease-in-out;
 		&::after {
 			content: '';
@@ -128,14 +204,15 @@ a {
 			right: 0;
 			left: 0;
 			bottom: 0;
-
 			display: block;
 			height: 3px;
-
 			background-color: transparent;
 			transition: all 0.25s ease-in-out;
-
 			transform: translateX(-100%);
+
+			@include max-screen($mobile) {
+				display: none;
+			}
 		}
 		&:hover,
 		&:active,
@@ -143,16 +220,40 @@ a {
 		&.mPS2id-highlight {
 			color: $highlightColor;
 
+
+			@include max-screen($mobile) {
+				color: $whiteColor;
+				background-color: $highlightColor;
+			}
 			&::after {
 				background-color: $highlightColor;
 				transform: translateX(0);
 			}
 		}
+
+
+		@include max-screen($mobile) {
+			width: 100%;
+			padding: 15px 0;
+		}
 	}
 
 	&__logo {
 		display: block;
+		width: 100%;
 		max-width: 94px;
+
+
+		@include max-screen($mobile) {
+			order: -1;
+			max-width: 150px;
+			margin-bottom: 50px;
+		}
+	}
+
+
+	@include max-screen($mobile) {
+		flex-direction: column;
 	}
 }
 
@@ -171,7 +272,6 @@ a {
 
 	&__descr {
 		margin-bottom: 25px;
-
 		color: $whiteColor;
 		font-family: $juraFont;
 		font-size: 22px;
@@ -181,13 +281,26 @@ a {
 		p {
 			margin: 0;
 		}
+
+
+		@include max-screen($mobile) {
+			max-width: 80%;
+			margin: 0 auto 40px;
+			font-size: 18px;
+			line-height: 1.4;
+			text-align: center;
+		}
 	}
 
 	&__order {
 		position: relative;
-
 		display: flex;
 		align-items: center;
+
+
+		@include max-screen($mobile) {
+			flex-direction: column;
+		}
 	}
 
 	&__link {
@@ -197,7 +310,6 @@ a {
 	&__separator {
 		display: block;
 		margin: 0 30px;
-
 		color: $whiteColor;
 		font-family: $openSansFont;
 		font-size: 11px;
@@ -213,7 +325,6 @@ a {
 
 	&__phone {
 		display: block;
-
 		color: $whiteColor;
 		font-family: $juraFont;
 		font-size: 22px;
@@ -236,7 +347,6 @@ a {
 
 		&-text {
 			display: block;
-
 			color: $whiteColor;
 			font-family: $juraFont;
 			font-size: 14px;
