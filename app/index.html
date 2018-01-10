@@ -3,10 +3,15 @@
 
 	<head>
 		<!-- Meta tags -->
-		<meta charset="UTF-8">
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="">
 		<!--/. Meta tags -->
+
+		<!-- Manifest -->
+		<link rel="manifest" href="#">
+		<!--/. Manifest -->
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="favicon.png" sizes="31x31" type="image/png">
@@ -32,19 +37,30 @@
 
 	<body>
 
-		<!-- Mobile sandwich -->
-		<a href="#" class="m-sandwich" id="mSandwich">
-			<span class="m-sandwich__top-line"></span>
-			<span class="m-sandwich__middle-line"></span>
-			<span class="m-sandwich__bottom-line"></span>
-		</a>
-		<!--/. Mobile sandwich -->
+		<!--[if lte IE 9]>
+			<p class="browserupgrade">Вы используете <strong>устаревшую версию</strong> браузера. Пожалуйста <a href="https://browsehappy.com/">обновитесь до новой версии</a> для безопасности данных и вашего удобства.</p>
+		<![endif]-->
 
 		<!-- MAIN HEADER -->
-		<header class="main-header" id="mHeader">
+		<header class="main-header">
 			<div class="container">
-				<nav class="top-nav">
 
+				<!-- Mobile top line -->
+				<div class="m-top-line">
+					<button class="m-top-line__sandwich" id="mSandwich">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+
+					<div class="m-top-line__logo">
+						<a href="#"><img src="img/logos/header-logo.png" alt="IMKT логотип"></a>
+					</div>
+				</div>
+				<!--/. Mobile top line -->
+
+				<!-- Main header navigation -->
+				<nav class="top-nav" id="mTopNav">
 					<ul class="top-nav__list">
 						<li class="top-nav__item"><a class="top-nav__link" href="#services" rel="m_PageScroll2id">УСЛУГИ</a></li>
 						<li class="top-nav__item"><a class="top-nav__link" href="#why-us" rel="m_PageScroll2id">почему мы</a></li>
@@ -60,8 +76,9 @@
 						<li class="top-nav__item"><a class="top-nav__link" href="#pricing" rel="m_PageScroll2id">цены</a></li>
 						<li class="top-nav__item"><a class="top-nav__link" href="#contacts" rel="m_PageScroll2id">контакты</a></li>
 					</ul>
-
 				</nav>
+				<!--/. Main header navigation -->
+
 			</div>
 		</header>
 		<!--/. MAIN HEADER -->
@@ -71,12 +88,12 @@
 			<div class="container">
 				<div class="sect-hero__content">
 					<div class="sect-hero__descr">
-						<p>Только те компании, <br> которые попали в первую десятку, смогут <br> завоевать потенциального покупателя.</p>
+						<p>Только те компании, которые попали <br> в первую десятку, смогут завоевать <br> потенциального покупателя.</p>
 					</div>
 
 					<div class="sect-hero__order">
 						<div class="sect-hero__button">
-							<a class="sect-hero__link" href="#">
+							<a class="sect-hero__link" href="#contacts" rel="m_PageScroll2id">
 								<span>Заказать</span>
 							</a>
 						</div>
@@ -89,7 +106,7 @@
 						</div>
 
 						<div class="sect-hero__pointer">
-							<!--<img class="sect-hero__pointer-img" src="img/icons/arrow.png" alt="Иконка стрелки">-->
+							<img class="sect-hero__pointer-img" src="img/icons/arrow.svg" alt="Иконка стрелки">
 							<span class="sect-hero__pointer-text  sect-hero__pointer-text--1">Бесплатная</span>
 							<span class="sect-hero__pointer-text  sect-hero__pointer-text--2">консультация</span>
 						</div>
@@ -132,14 +149,22 @@
 
 						<h3 class="services-item__title">Создание сайтов</h3>
 
-						<ul class="services-item__list">
-							<li class="services-item__list-item">лендинг</li>
-							<li class="services-item__list-item">сайт визитка</li>
-							<li class="services-item__list-item">корпоративный сайт</li>
-							<li class="services-item__list-item">сайт Каталог</li>
-							<li class="services-item__list-item">интернет магазин</li>
-							<li class="services-item__list-item">портал</li>
-						</ul>
+						<button class="service-accordion-btn" id="servAccordBtn1">
+							<span></span>
+							<span></span>
+						</button>
+
+						<div class="services-item__content" id="servContent1">
+							<ul class="services-item__list">
+								<li class="services-item__list-item">лендинг</li>
+								<li class="services-item__list-item">сайт визитка</li>
+								<li class="services-item__list-item">корпоративный сайт</li>
+								<li class="services-item__list-item">сайт Каталог</li>
+								<li class="services-item__list-item">интернет магазин</li>
+								<li class="services-item__list-item">портал</li>
+							</ul>
+						</div>
+
 					</div>
 					<!--/. Service item #1 -->
 
@@ -174,13 +199,21 @@
 
 						<h3 class="services-item__title">РЕКЛАМА САЙТОВ</h3>
 
-						<ul class="services-item__list">
-							<li class="services-item__list-item">запуск рекламной кампании</li>
-							<li class="services-item__list-item">звонки и заказы в первый день</li>
-							<li class="services-item__list-item">анализ бизнеса</li>
-							<li class="services-item__list-item">отчеты и варианты оптимизации</li>
-							<li class="services-item__list-item">настраиваем площадки: Google, Facebook, Instagram</li>
-						</ul>
+						<button class="service-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+
+						<div class="services-item__content">
+							<ul class="services-item__list">
+								<li class="services-item__list-item">запуск рекламной кампании</li>
+								<li class="services-item__list-item">звонки и заказы в первый день</li>
+								<li class="services-item__list-item">анализ бизнеса</li>
+								<li class="services-item__list-item">отчеты и варианты оптимизации</li>
+								<li class="services-item__list-item">настраиваем площадки: Google, Facebook, Instagram</li>
+							</ul>
+						</div>
+
 					</div>
 					<!--/. Service item #2 -->
 
@@ -216,14 +249,22 @@
 
 						<h3 class="services-item__title">SEo продвижение</h3>
 
-						<ul class="services-item__list">
-							<li class="services-item__list-item">аудит и исправление ошибок</li>
-							<li class="services-item__list-item">составление семантического ядра</li>
-							<li class="services-item__list-item">поисковая оптимизация</li>
-							<li class="services-item__list-item">вывод в ТОП10</li>
-							<li class="services-item__list-item">увеличение целевого трафика</li>
-							<li class="services-item__list-item">прозрачная отчетность</li>
-						</ul>
+						<button class="service-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+
+						<div class="services-item__content">
+							<ul class="services-item__list">
+								<li class="services-item__list-item">аудит и исправление ошибок</li>
+								<li class="services-item__list-item">составление семантического ядра</li>
+								<li class="services-item__list-item">поисковая оптимизация</li>
+								<li class="services-item__list-item">вывод в ТОП10</li>
+								<li class="services-item__list-item">увеличение целевого трафика</li>
+								<li class="services-item__list-item">прозрачная отчетность</li>
+							</ul>
+						</div>
+
 					</div>
 					<!--/. Service item #3 -->
 				</div>
@@ -242,37 +283,37 @@
 
 						<!-- Slider thumb #1 -->
 						<div class="slider-thumb  active" id="tabThumb1">
-							<img src="img/phone/1.png" alt="Качество">
+							<img src="img/why-us/1.png" alt="Изображение Качество">
 						</div>
 						<!--/. Slider thumb #1 -->
 
 						<!-- Slider thumb #2 -->
 						<div class="slider-thumb" id="tabThumb2">
-							<img src="img/phone/2.png" alt="Качество">
+							<img src="img/why-us/2.png" alt="Изображение Многоплатформенность">
 						</div>
 						<!--/. Slider thumb #2 -->
 
 						<!-- Slider thumb #3 -->
 						<div class="slider-thumb" id="tabThumb3">
-							<img src="img/phone/3.png" alt="Качество">
+							<img src="img/why-us/3.png" alt="Изображение Современные технологии">
 						</div>
 						<!--/. Slider thumb #3 -->
 
 						<!-- Slider thumb #4 -->
 						<div class="slider-thumb" id="tabThumb4">
-							<img src="img/phone/4.png" alt="Качество">
+							<img src="img/why-us/4.png" alt="Изображение Удобство для клиентов">
 						</div>
 						<!--/. Slider thumb #4 -->
 
 						<!-- Slider thumb #5 -->
 						<div class="slider-thumb" id="tabThumb5">
-							<img src="img/phone/5.png" alt="Качество">
+							<img src="img/why-us/5.png" alt="Изображение Надежность">
 						</div>
 						<!--/. Slider thumb #5 -->
 
 					</div>
 
-					<div class="whyUs-slider__accordion">
+					<div class="whyUs-slider__accordion" id="whyUsAccordion">
 
 						<!-- Accordion item #1 -->
 						<div class="accordion-tab">
@@ -335,7 +376,7 @@
 							</label>
 
 							<div class="accordion-tab__content">
-								<p>Используем наиболее популярные и удобные системы редактирования сайтов</p>
+								<p>Используем наиболее популярные <br> и удобные системы редактирования <br> сайтов</p>
 							</div>
 
 						</div>
@@ -373,7 +414,7 @@
 							</label>
 
 							<div class="accordion-tab__content">
-								<p>Постоянно отслеживаем самые передовые технологии и актуальные тенденции</p>
+								<p>Постоянно отслеживаем самые <br> передовые технологии и актуальные тенденции</p>
 							</div>
 
 						</div>
@@ -514,6 +555,7 @@
 		<section class="sect-portfolio" id="portfolio">
 			<div class="container">
 				<h2 class="sect-portfolio__title">ПРОДВИЖЕНИЕ И СОЗДАНИЕ <br> НА ПРИМЕРЕ НАШИХ КЛИЕНТОВ</h2>
+				<h2 class="m-sect-portfolio__title">ПРИМЕРЫ <span>НАШИХ РАБОТ</span></h2>
 				<p class="sect-portfolio__subtitle">Закажите поисковую оптимизацию и органическое продвижение сайтов в компании Intellectus Studio и наши квалифицированные специалисты сделают все необходимое для роста посещаемости и роста продаж Вашего интернет-ресурса.</p>
 
 				<div class="portfolio-slider" id="portfolioSlider">
@@ -593,7 +635,7 @@
 					<!--/. Portfolio slide #5 -->
 
 					<!-- Portfolio slide #6 -->
-					<div class="portfolio-slide" data-title="Optimax">
+					<div class="portfolio-slide" data-title="Оптимакс">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
 							<img src="img/portfolio/6.png" alt="Optimax Macbook">
@@ -612,51 +654,69 @@
 			<div class="container">
 				<h2 class="sect-testimonials__title">отзывы <span>наших клиентов</span></h2>
 
-				<div class="testimonials-list">
+				<div class="testimonials-list" id="testimonialSlider">
 
 					<!-- Testimonials item #1 -->
 					<div class="testimonials-item">
-						<div class="testimonials-head">
-							<img src="img/testimonials/1.png" alt="Логотип Decorum-elite">
-							<b class="testimonials-head__name">Decorum-elite</b>
-						</div>
+						<img src="img/testimonials/new/1.png" alt="Логотип Atiker">
 
-						<span class="testimonials-item__descr">Хотим поблагодарить Intellec- <br> tus Studio за отличную работу. <br> Сайт сделан качественно, <br> оригинально и, как и было <br> обещано.</span>
+						<!--<div class="testimonials-head">-->
+							<!--<b class="testimonials-head__name">Decorum-elite</b>-->
+						<!--</div>-->
+						<!--<p class="testimonials-item__descr">Хотим поблагодарить Intellec- <br> tus Studio за отличную работу. <br> Сайт сделан качественно, <br> оригинально и, как и было <br> обещано.</p>-->
 					</div>
 					<!--/. Testimonials item #1 -->
 
 					<!-- Testimonials item #2 -->
 					<div class="testimonials-item">
-						<div class="testimonials-head">
-							<img src="img/testimonials/2.png" alt="Логотип Aqua-help">
-							<b class="testimonials-head__name">Aqua-help</b>
-						</div>
+						<img src="img/testimonials/new/2.png" alt="Логотип Interstone">
 
-						<span class="testimonials-item__descr">Надежная компания. Работа <br> выполнена в срок, все <br> необходимые правки внесли <br> вовремя. Рекомендуем к <br> сотрудничеству.</span>
+						<!--<div class="testimonials-head">-->
+							<!--<b class="testimonials-head__name">Aqua-help</b>-->
+						<!--</div>-->
+						<!--<p class="testimonials-item__descr">Надежная компания. Работа <br> выполнена в срок, все <br> необходимые правки внесли <br> вовремя. Рекомендуем к <br> сотрудничеству.</p>-->
 					</div>
 					<!--/. Testimonials item #2 -->
 
 					<!-- Testimonials item #3 -->
 					<div class="testimonials-item">
-						<div class="testimonials-head">
-							<img src="img/testimonials/3.png" alt="Логотип Wine&Food">
-							<b class="testimonials-head__name">Wine&Food</b>
-						</div>
+						<img src="img/testimonials/new/3.png" alt="Логотип Ukraine Press Academy">
 
-						<span class="testimonials-item__descr">Качественные внутренние <br> изменения пошли сайту на <br> пользу. Отдельное спасибо за <br> внутренний ре-дизайн и <br> мобильную версию.</span>
+						<!--<div class="testimonials-head">-->
+							<!--<b class="testimonials-head__name">Wine&amp;Food</b>-->
+						<!--</div>-->
+						<!--<p class="testimonials-item__descr">Качественные внутренние <br> изменения пошли сайту на <br> пользу. Отдельное спасибо за <br> внутренний ре-дизайн и <br> мобильную версию.</p>-->
 					</div>
 					<!--/. Testimonials item #3 -->
 
 					<!-- Testimonials item #4 -->
 					<div class="testimonials-item">
-						<div class="testimonials-head">
-							<img src="img/testimonials/4.png" alt="Логотип Qeensland">
-							<b class="testimonials-head__name">Qeensland</b>
-						</div>
+						<img src="img/testimonials/new/4.png" alt="Логотип Regent Hill">
 
-						<span class="testimonials-item__descr">Проект получился <br> внушительным, как мы того и <br> хотели. В общем, так должен <br> выглядеть сайт компании, <br> которая на рынке более 10 лет.</span>
+						<!--<div class="testimonials-head">-->
+							<!--<b class="testimonials-head__name">Qeensland</b>-->
+						<!--</div>-->
+						<!--<p class="testimonials-item__descr">Проект получился <br> внушительным, как мы того и <br> хотели. В общем, так должен <br> выглядеть сайт компании, <br> которая на рынке более 10 лет.</p>-->
 					</div>
 					<!--/. Testimonials item #4 -->
+
+					<!-- Testimonials item #5 -->
+					<div class="testimonials-item">
+						<img src="img/testimonials/new/5.jpg" alt="Логотип Wine and Food">
+					</div>
+					<!--/. Testimonials item #5 -->
+
+					<!-- Testimonials item #6 -->
+					<div class="testimonials-item">
+						<img src="img/testimonials/new/6.png" alt="Логотип Zoloche">
+					</div>
+					<!--/. Testimonials item #6 -->
+
+					<!-- Testimonials item #5 -->
+					<div class="testimonials-item">
+						<img src="img/testimonials/new/7.png" alt="Логотип MagnoliaTV">
+					</div>
+					<!--/. Testimonials item #5 -->
 
 				</div>
 			</div>
@@ -679,10 +739,90 @@
 				<div class="pricing-grid">
 
 					<!-- Pricing box #1 -->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">Реклама<br>в Facebook</b>
+							<span class="pricing-box__price">1500<small>грн.</small></span>
+							<span class="pricing-box__month">месяц</span>
+
+							<button class="pricing-accordion-btn" id="priceAccordBtn1">
+								<span></span>
+								<span></span>
+							</button>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">Создание рекламного аккаунта</li>
+							<li class="pricing-box__item">Определение целевой аудитории</li>
+							<li class="pricing-box__item">Настройка и запуск рекламной кампании</li>
+							<li class="pricing-box__item">Оптимизация рекламной компании</li>
+							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #1 -->
+
+					<!-- Pricing box #2 -->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">Реклама<br>в Google</b>
+							<span class="pricing-box__price">1500<small>грн.</small></span>
+							<span class="pricing-box__month">месяц</span>
+
+							<button class="pricing-accordion-btn" id="priceAccordBtn2">
+								<span></span>
+								<span></span>
+							</button>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">Анализируем бизнес направление</li>
+							<li class="pricing-box__item">Создание рекламных кампаний</li>
+							<li class="pricing-box__item">Отслеживание статистики переходов</li>
+							<li class="pricing-box__item">Анализ полученного результата</li>
+							<li class="pricing-box__item">Рекомендации по улучшению кампании</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #2 -->
+
+					<!-- Pricing box #3 -->
+					<div class="pricing-box">
+						<div class="pricing-box__head">
+							<b class="pricing-box__service">SEO<br>продвижение</b>
+							<span class="pricing-box__price">3500<small>грн.</small></span>
+							<span class="pricing-box__month">месяц</span>
+
+							<button class="pricing-accordion-btn" id="priceAccordBtn3">
+								<span></span>
+								<span></span>
+							</button>
+						</div>
+
+						<ul class="pricing-box__list">
+							<li class="pricing-box__item">50 поисковых запросов</li>
+							<li class="pricing-box__item">СЕО-оптимизация включена</li>
+							<li class="pricing-box__item">Мета-теги</li>
+							<li class="pricing-box__item">Копирайт текстов</li>
+							<li class="pricing-box__item">Ведение проекта в ручном режиме</li>
+						</ul>
+
+						<a class="pricing-box__order" href="#">Заказать</a>
+					</div>
+					<!--/. Pricing box #3 -->
+
+					<!-- Pricing box #4 -->
 					<div class="pricing-box  pricing-box--share">
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Landing <br> Page</b>
 							<span class="pricing-box__price">5000<small>грн.</small></span>
+
+							<button class="pricing-accordion-btn" id="priceAccordBtn4">
+								<span></span>
+								<span></span>
+							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -698,13 +838,18 @@
 
 						<a class="pricing-box__order" href="#">Заказать</a>
 					</div>
-					<!--/. Pricing box #1 -->
+					<!--/. Pricing box #4 -->
 
-					<!-- Pricing box #2 -->
+					<!-- Pricing box #5 -->
 					<div class="pricing-box">
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Сайт <br> визитка</b>
 							<span class="pricing-box__price">6000<small>грн.</small></span>
+
+							<button class="pricing-accordion-btn" id="priceAccordBtn5">
+								<span></span>
+								<span></span>
+							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -720,13 +865,18 @@
 
 						<a class="pricing-box__order" href="#">Заказать</a>
 					</div>
-					<!--/. Pricing box #2 -->
+					<!--/. Pricing box #5 -->
 
-					<!-- Pricing box #3 -->
+					<!-- Pricing box #6 -->
 					<div class="pricing-box">
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Интернет <br> магазин</b>
 							<span class="pricing-box__price">10 000<small>грн.</small></span>
+
+							<button class="pricing-accordion-btn" id="priceAccordBtn6">
+								<span></span>
+								<span></span>
+							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -742,66 +892,6 @@
 
 						<a class="pricing-box__order" href="#">Заказать</a>
 					</div>
-					<!--/. Pricing box #3 -->
-
-					<!-- Pricing box #4 -->
-					<div class="pricing-box">
-						<div class="pricing-box__head">
-							<b class="pricing-box__service">Реклама<br>в Facebook</b>
-							<span class="pricing-box__price">1500<small>грн.</small></span>
-							<span class="pricing-box__month">месяц</span>
-						</div>
-
-						<ul class="pricing-box__list">
-							<li class="pricing-box__item">Создание рекламного аккаунта</li>
-							<li class="pricing-box__item">Определение целевой аудитории</li>
-							<li class="pricing-box__item">Настройка и запуск рекламной кампании</li>
-							<li class="pricing-box__item">Оптимизация рекламной компании</li>
-							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
-						</ul>
-
-						<a class="pricing-box__order" href="#">Заказать</a>
-					</div>
-					<!--/. Pricing box #4 -->
-
-					<!-- Pricing box #5 -->
-					<div class="pricing-box">
-						<div class="pricing-box__head">
-							<b class="pricing-box__service">Реклама<br>в Google</b>
-							<span class="pricing-box__price">1500<small>грн.</small></span>
-							<span class="pricing-box__month">месяц</span>
-						</div>
-
-						<ul class="pricing-box__list">
-							<li class="pricing-box__item">Анализируем бизнес направление</li>
-							<li class="pricing-box__item">Создание рекламных кампаний</li>
-							<li class="pricing-box__item">Отслеживание статистики переходов</li>
-							<li class="pricing-box__item">Анализ полученного результата</li>
-							<li class="pricing-box__item">Рекомендации по улучшению кампании</li>
-						</ul>
-
-						<a class="pricing-box__order" href="#">Заказать</a>
-					</div>
-					<!--/. Pricing box #5 -->
-
-					<!-- Pricing box #6-->
-					<div class="pricing-box">
-						<div class="pricing-box__head">
-							<b class="pricing-box__service">SEO<br>продвижение</b>
-							<span class="pricing-box__price">3500<small>грн.</small></span>
-							<span class="pricing-box__month">месяц</span>
-						</div>
-
-						<ul class="pricing-box__list">
-							<li class="pricing-box__item">50 поисковых запросов</li>
-							<li class="pricing-box__item">СЕО-оптимизация включена</li>
-							<li class="pricing-box__item">Мета-теги</li>
-							<li class="pricing-box__item">Копирайт текстов</li>
-							<li class="pricing-box__item">Ведение проекта в ручном режиме</li>
-						</ul>
-
-						<a class="pricing-box__order" href="#">Заказать</a>
-					</div>
 					<!--/. Pricing box #6 -->
 
 				</div>
@@ -813,6 +903,7 @@
 		<section class="sect-tech">
 			<div class="container">
 				<h2 class="sect-tech__title">Современные технологии - <span>залог вашего успеха!</span></h2>
+				<h2 class="m-sect-tech__title">применяем <span>Современные технологии</span></h2>
 
 				<div class="tech-carousel" id="techSlider">
 
@@ -995,8 +1086,8 @@
 							</div>
 
 							<div class="footer-contacts__phones-block">
-								<span class="footer-contacts__phone">+38 (044) 451 51 49</span>
-								<span class="footer-contacts__phone">+38 (093) 949 04 31</span>
+								<a class="footer-contacts__phone" href="tel:+38(044)4515149">+38 (044) 451 51 49</a>
+								<a class="footer-contacts__phone" href="tel:+38(093)9490431">+38 (093) 949 04 31</a>
 							</div>
 						</div>
 
@@ -1007,12 +1098,12 @@
 					</div>
 
 					<div class="footer-contacts__form">
-						<form class="contacts-form" action="#" method="post">
+						<form class="contacts-form" id="requestForm" action="form.php" method="post">
 							<fieldset class="contacts-form__wrapper">
 								<legend class="contacts-form__title">ПИШИТЕ НАМ</legend>
 
 								<div class="contacts-form__control  contacts-form__control--name">
-									<input type="text" name="client-name" placeholder="Ваше имя" required>
+									<input type="text" name="client-name" placeholder="Ваше имя" minlength="2" required>
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--email">
@@ -1047,12 +1138,20 @@
 
 		<!-- JavaScript -->
 		<script src="js/libs.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 		<!-- User map-->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqQ_bBw186KJnMcRByvn5ffZueg88wp1E"></script>
 
 		<script src="js/common.js"></script>
 		<!--/. JavaScript -->
+
+		<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+		<!--<script>-->
+			<!--window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;-->
+			<!--ga('create','UA-XXXXX-Y','auto');ga('send','pageview')-->
+		<!--</script>-->
+		<!--<script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
 
 	</body>
 

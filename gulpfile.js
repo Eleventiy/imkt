@@ -22,7 +22,7 @@ gulp.task('browser-sync', function() {
 // Compile SCSS to CSS
 gulp.task('sass', function() {
 	return gulp.src('app/scss/**/*.scss')
-			.pipe(plugins.plumber({errorHandler: plugins.notify.onError("Error: <%= error.message %>")}))
+			.pipe(plugins.plumber({ errorHandler: plugins.notify.onError("Error: <%= error.message %>") }))
 			.pipe(plugins.sass())
 			.pipe(plugins.autoprefixer({
 				browsers: ['last 5 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4', 'Firefox >= 4'],
@@ -31,9 +31,12 @@ gulp.task('sass', function() {
 			.pipe(plugins.csso({
 				debug: true
 			}))
-			.pipe(plugins.rename({suffix: '.min', prefix : ''}))
+			.pipe(plugins.rename({
+				suffix: '.min',
+				prefix : ''
+			}))
 			.pipe(gulp.dest('app/css'))
-			.pipe(browserSync.reload({stream: true}));
+			.pipe(browserSync.reload({ stream: true }));
 });
 
 // JavaScript libraries
@@ -41,17 +44,18 @@ gulp.task('js-libs', function() {
 	return gulp.src([
 				'./node_modules/jquery/dist/jquery.min.js',
 				'./node_modules/jquery-migrate/dist/jquery-migrate.min.js',
+				'./node_modules/jquery-validation/dist/jquery.validate.min.js',
 				'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 				'./node_modules/slick-carousel/slick/slick.min.js'
 			])
 			.pipe(plugins.concat('libs.min.js'))
 			.pipe(plugins.uglify())
 			.pipe(gulp.dest('app/js'))
-			.pipe(browserSync.reload({stream: true}));
+			.pipe(browserSync.reload({ stream: true }));
 });
 
 // Watching for changes
-gulp.task('watch', ['sass', 'js-libs', 'browser-sync'], function() {
+gulp.task('watch', ['browser-sync', 'sass', 'js-libs'], function() {
 	gulp.watch('app/scss/**/*.scss', ['sass']);
 	gulp.watch('app/js/common.js', browserSync.reload);
 	gulp.watch('app/*.html', browserSync.reload);
@@ -96,10 +100,10 @@ gulp.task('clear', function() {
 });
 
 // Building application
-gulp.task('build', ['imagemin', 'fonts'], function() {
+gulp.task('build', ['clear', 'clean', 'imagemin', 'fonts'], function() {
 
 	var buildHtml = gulp.src('app/*.html')
-		.pipe(gulp.dest('dist'));
+			.pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src('app/css/**/*.css')
 			.pipe(gulp.dest('dist/css'));

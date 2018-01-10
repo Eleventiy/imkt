@@ -1,6 +1,7 @@
 // Colors
 $whiteColor: #fff;
 $whiteGrayColor: #f6f6f6;
+$darkGrayColor: #afafaf;
 $blackColor: #000;
 $grayColor: #eee;
 $darkGrayColor: #7d7d7d;
@@ -20,7 +21,10 @@ $juraFont: "Jura", Arial, Tahoma, sans-serif;
 // Breakpoints
 $mobile: 480px;
 $tablet: 768px;
-$laptop: 1024px;
-$desktop: 1200px;
+$laptop: 960px;
 
 $grid: 960px;
+
+
+// Placeholders
+%visually-hidden {}

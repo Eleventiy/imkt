@@ -2,33 +2,13 @@
 
 $(function() {
 
-	// Mobile burger
-	var mBurger = $('#mSandwich'),
-			mHeader = $('#mHeader'),
-			mNavLink = $('.top-nav__link'),
-			mNavLogo = $('.top-nav__logo');
-
-	mBurger.click(function(e) {
-		e.preventDefault();
-
-		$(this).toggleClass('active');
-		mHeader.toggleClass('active');
-	});
-
-	mNavLink.click(function() {
-		mHeader.removeClass('active');
-		mBurger.removeClass('active');
-	});
-
-	mNavLogo.click(function() {
-		mHeader.removeClass('active');
-		mBurger.removeClass('active');
-	});
-
 	// PageScrollToId init
 	$(window).on("load", function() {
 		$('a[rel="m_PageScroll2id"]').mPageScroll2id();
 	});
+
+	// JqueryUI accordions
+	// $('#whyUsAccordion').accordion();
 
 	// Toggle tabs on Section "Why us"
 	$('#tab1').click(function() {
@@ -82,31 +62,127 @@ $(function() {
 		dots: true,
 		autoplay: true,
 		autoplaySpeed: 2500,
-
 		customPaging : function(slider, i) {
 			var title = $(slider.$slides[i]).data('title');
 			return '<a class="portfolio-slider__pager"> '+title+' </a>';
-		}
+		},
+
+		responsive: [
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					draggable: true
+				}
+			}
+			// You can unslick at a given breakpoint now by adding:
+			// settings: "unslick"
+			// instead of a settings object
+		]
 	});
 
-	// Slick slider init on Section "Portfolio"
+	// Slick slider init on Section "Technologies"
 	$('#techSlider').not('.slick-initialized').slick({
 		draggable: false,
 		arrows: false,
 		infinite: true,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 1500,
+		pauseOnFocus: false,
+		slidesToShow: 5,
+		slidesToScroll: 1,
+
+		responsive: [
+			{
+				breakpoint: 481,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					draggable: true,
+					dots: true,
+					autoplay: false
+				}
+			}
+		]
+		// You can unslick at a given breakpoint now by adding:
+		// settings: "unslick"
+		// instead of a settings object
+	});
+
+	$('#testimonialSlider').not('.slick-initialized').slick({
+		draggable: false,
+		arrows: false,
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: 1500,
 		pauseOnFocus: false,
 		slidesToShow: 5,
 		slidesToScroll: 1
 	});
 
+	// Jquery Validation form
+	var requestForm = $('#requestForm');
+
+	requestForm.validate();
+
+
+	// *** Scripts for mobile ***
+	// ==========================
+
+	// Mobile burger
+	var mSandwich = $('#mSandwich'),
+		mTopNav = $('#mTopNav'),
+		mNavLink = $('.top-nav__link'),
+		mNavLogo = $('.top-nav__logo');
+
+	mSandwich.click(function(e) {
+		e.preventDefault();
+
+		$(this).toggleClass('active');
+		mTopNav.toggleClass('active');
+	});
+
+	mNavLink.click(function() {
+		mTopNav.removeClass('active');
+		mSandwich.removeClass('active');
+	});
+
+	mNavLogo.click(function() {
+		mTopNav.removeClass('active');
+		mSandwich.removeClass('active');
+	});
+
+	// Mobile accordions
+	var servAccordBtn1 = $('#servAccordBtn1'),
+			servContent1 = $('#servContent1');
+
+	servAccordBtn1.click(function(e) {
+		e.preventDefault();
+
+		$(this).toggleClass('active');
+		servContent1.toggleClass('active');
+	});
+
+
+	// *** Functions ***
+	// =================
+	// function custom_accordion(id) {
+	// 	var elm = document.getElementById(id);
+	// 	if (elm.className.indexOf("show") == -1) {
+	// 		elm.className += " show";
+	// 	} else {
+	// 		elm.className = elm.className.replace(" show", "");
+	// 	}
+	//
+	// }
+
 });
 
 
-/////////////////////////////////////////////////////////////////
-// Map
-/////////////////////////////////////////////////////////////////
+
+// *** Map ***
+// ===========
 
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);

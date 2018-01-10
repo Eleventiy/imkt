@@ -2,33 +2,32 @@
 @import "_mixins/common";
 @import "./node_modules/sass-mediaqueries/media-queries";
 
-// ==================================================
-//  ### COMMON STYLES ###
-// ==================================================
 
-* {
+// *** COMMON STYLES ***
+// =====================
+
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
-	&:before, &:after {
-		box-sizing: border-box
-	}
 }
 
-*::-webkit-input-placeholder {
+::-webkit-input-placeholder {
 	color: $titleColor;
 	font-weight: normal;
 	opacity: 1;
 }
-*:-moz-placeholder {
+:-moz-placeholder {
 	color: $titleColor;
 	font-weight: normal;
 	opacity: 1;
 }
-*::-moz-placeholder {
+::-moz-placeholder {
 	color: $titleColor;
 	font-weight: normal;
 	opacity: 1;
 }
-*:-ms-input-placeholder {
+:-ms-input-placeholder {
 	color: $titleColor;
 	font-weight: normal;
 	opacity: 1;
@@ -42,13 +41,11 @@ body {
 body {
 	position: relative;
 	overflow-x: hidden;
-
 	color: $textColor;
 	font-family: $openSansFont;
 	font-size: 16px;
 	font-weight: normal;
 	line-height: 24px;
-
 	background-color: $whiteColor;
 }
 
@@ -67,68 +64,79 @@ a {
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 0 10px;
+
+	@include max-screen($laptop) {
+		padding: 0 15px;
+	}
 }
 
 
-// ==================================================
-//  ### MOBILE SANDWICH ###
-// ==================================================
-.m-sandwich {
-	position: fixed;
-	top: 20px;
-	left: 20px;
-	z-index: 200;
-	width: 50px;
-	height: 50px;
-	border-radius: 100%;
+// *** MOBILE TOP LINE ***
+// =======================
+.m-top-line {
+	display: flex;
+	align-items: center;
 	background-color: $whiteColor;
-	box-shadow: 0 0 15px 0 rgba($blackColor, 0.5);
-
-	span {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		display: block;
-		width: 25px;
-		height: 2px;
-		background-color: $titleColor;
-		transform: translate(-50%, -50%);
-		transform-origin: center;
-		transition: all 0.25s ease-in-out;
+	@include min-screen($tablet) {
+		@include vis-hid;
 	}
 
-	&__top-line {
-		margin-top: -7px;
-	}
-
-	&__bottom-line {
-		margin-top: 7px;
-	}
-
-	&.active {
-		.m-sandwich__top-line {
-			margin: 0;
-			transform: translate(-50%, -50%) rotate(45deg);
+	&__sandwich {
+		position: relative;
+		z-index: 201;
+		flex: 1;
+		max-width: 24px;
+		@include btn-tag;
+		&.active {
+			span {
+				margin-bottom: 0;
+				&:first-child {
+					position: relative;
+					top: 2px;
+					max-width: 100%;
+					transform: rotate(45deg);
+				}
+				&:nth-child(2) {
+					@include vis-hid;
+				}
+				&:last-child {
+					transform: rotate(-45deg);
+				}
+			}
 		}
-		.m-sandwich__middle-line {
-			opacity: 0;
-		}
-		.m-sandwich__bottom-line {
-			margin: 0;
-			transform: translate(-50%, -50%) rotate(-45deg);
+
+		span {
+			display: block;
+			height: 2px;
+			margin-bottom: 5px;
+			background-color: $titleColor;
+			transition: all 0.25s ease-in-out;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:first-child {
+				max-width: 21px;
+			}
+			&:nth-child(2) {
+				max-width: 17px;
+			}
 		}
 	}
 
-	@include min-screen($mobile) {
-		display: none;
+	&__logo {
+		flex: 1;
+		max-width: 77px;
+		margin: 0 auto;
+
+		img {
+			vertical-align: middle;
+		}
 	}
 }
 
 
-// ==================================================
-//  ### 1. MAIN HEADER ###
-// ==================================================
-
+// *** 1. MAIN HEADER ***
+// ======================
 .main-header {
 	position: fixed;
 	z-index: 100;
@@ -137,17 +145,11 @@ a {
 	min-height: 71px;
 	background-color: $whiteColor;
 	box-shadow: 0 5px 5px rgba($blackColor, 0.4);
-	transition: all 0.5s ease-in-out;
-
-	&.active {
-		left: 0;
-	}
-
 
 	@include max-screen($mobile) {
-		height: 100%;
-		padding-top: 100px;
-		left: -100%;
+		display: flex;
+		align-items: center;
+		min-height: 47px;
 	}
 }
 
@@ -156,13 +158,29 @@ a {
 	justify-content: space-between;
 	align-items: center;
 
+	@include max-screen($mobile) {
+		position: fixed;
+		top: 0;
+		left: -100vw;
+		z-index: 200;
+		justify-content: center;
+		width: 100%;
+		height: 100vh;
+		overflow: auto;
+		padding-top: 50px;
+		background-color: $whiteColor;
+		transition: all 0.25s ease-in-out;
+	}
+	&.active {
+		left: 0;
+	}
+
 	&__list {
 		display: flex;
 		align-items: center;
 		margin: 0;
 		padding: 0;
 		list-style: none;
-
 
 		@include max-screen($mobile) {
 			flex-direction: column;
@@ -177,7 +195,6 @@ a {
 		&:last-child {
 			margin-right: 0;
 		}
-
 
 		@include max-screen($mobile) {
 			width: 100%;
@@ -197,7 +214,7 @@ a {
 		font-weight: bold;
 		line-height: 35px;
 		text-transform: uppercase;
-		transition: all 0.25s ease-in-out;
+		transition: all 0.15s ease-in-out;
 		&::after {
 			content: '';
 			position: absolute;
@@ -220,7 +237,6 @@ a {
 		&.mPS2id-highlight {
 			color: $highlightColor;
 
-
 			@include max-screen($mobile) {
 				color: $whiteColor;
 				background-color: $highlightColor;
@@ -230,7 +246,6 @@ a {
 				transform: translateX(0);
 			}
 		}
-
 
 		@include max-screen($mobile) {
 			width: 100%;
@@ -243,7 +258,6 @@ a {
 		width: 100%;
 		max-width: 94px;
 
-
 		@include max-screen($mobile) {
 			order: -1;
 			max-width: 150px;
@@ -251,23 +265,34 @@ a {
 		}
 	}
 
-
 	@include max-screen($mobile) {
 		flex-direction: column;
 	}
 }
 
 
-// ==================================================
-//  ### 2. SECTION "HERO" ###
-// ==================================================
+// *** 2. SECTION "HERO" ***
+// =========================
 .sect-hero {
+	height: 100vh;
 	padding: 71px 0 380px;
 	background: $blackColor url("../img/backgrounds/hero_bg.jpg") no-repeat center;
 	background-size: cover;
 
+	@include max-screen($mobile) {
+		height: auto;
+		margin-top: 47px;
+		padding: 85px 0 50px;
+		background: $blackColor url("../img/backgrounds/mobile/hero_bg.jpg") no-repeat center;
+		background-size: cover;
+	}
+
 	&__content {
 		margin-top: 175px;
+
+		@include max-screen($mobile) {
+			margin-top: 0;
+		}
 	}
 
 	&__descr {
@@ -278,17 +303,15 @@ a {
 		font-weight: normal;
 		line-height: 32px;
 
-		p {
-			margin: 0;
+		@include max-screen($mobile) {
+			margin-bottom: 60px;
+			font-size: 18px;
+			line-height: 24px;
+			text-align: center;
 		}
 
-
-		@include max-screen($mobile) {
-			max-width: 80%;
-			margin: 0 auto 40px;
-			font-size: 18px;
-			line-height: 1.4;
-			text-align: center;
+		p {
+			margin: 0;
 		}
 	}
 
@@ -296,7 +319,6 @@ a {
 		position: relative;
 		display: flex;
 		align-items: center;
-
 
 		@include max-screen($mobile) {
 			flex-direction: column;
@@ -316,11 +338,22 @@ a {
 		font-weight: bold;
 		line-height: 17px;
 		text-transform: uppercase;
+
+		@include max-screen($mobile) {
+			order: -1;
+			margin: 7px 0 15px;
+			font-size: 9px;
+			line-height: 17px;
+		}
 	}
 
 	&__phones {
 		display: flex;
 		flex-direction: column;
+
+		@include max-screen($mobile) {
+			order: -2;
+		}
 	}
 
 	&__phone {
@@ -332,22 +365,33 @@ a {
 		line-height: 35px;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
+
+		@include max-screen($mobile) {
+			font-size: 18px;
+			line-height: 30px;
+		}
 	}
 
 	&__pointer {
 		position: absolute;
-		top: 94px;
-		left: -180px;
+		top: 65px;
+		left: -135px;
+
+		@include max-screen($mobile) {
+			@include vis-hid;
+		}
 
 		&-img {
 			position: absolute;
-			top: -65px;
-			right: -85px;
+			top: -37px;
+			right: -96px;
 		}
 
 		&-text {
 			display: block;
-			color: $whiteColor;
+			width: 28px;
+			height: 28px;
+			color: $darkGrayColor;
 			font-family: $juraFont;
 			font-size: 14px;
 			font-weight: bold;
@@ -355,28 +399,31 @@ a {
 			text-transform: uppercase;
 
 			&--1 {
-				transform: rotate(-15deg);
+				transform: rotate(-10deg);
 			}
 
 			&--2 {
 				position: absolute;
-				left: 20px;
-				transform: rotate(-25deg);
+				top: 15px;
+				left: 25px;
+				transform: rotate(-15deg);
 			}
 		}
 	}
 }
 
 
-// ==================================================
-//  ### 3. SECTION "SERVICES" ###
-// ==================================================
+// *** 3. SECTION "SERVICES" ***
+// =============================
 .sect-services {
 	background-color: $highlightColor;
 }
 
 .services-items {
 	display: flex;
+	@include max-screen($mobile) {
+		flex-direction: column;
+	}
 }
 
 .services-item {
@@ -385,24 +432,55 @@ a {
 	color: $whiteColor;
 	border-left: 1px solid rgba($borderColor1, 0.4);
 	transition: all 0.25s ease-in-out;
+	@include max-screen($mobile) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0 -15px;
+		padding: 40px 0 50px;
+		border-left: 0;
+		border-bottom: 1px solid rgba($borderColor1, 0.4);
+	}
+
 	&:last-child {
 		border-right: 1px solid rgba($borderColor1, 0.4);
+		@include max-screen($mobile) {
+			border-right: 0;
+		}
 	}
 	&:hover {
 		color: $highlightColor;
 		background-color: $whiteColor;
+		@include max-screen($mobile) {
+			color: $whiteColor;
+			background-color: transparent;
+		}
+
 		&:first-child {
 			box-shadow: -4px 4px 24px 0 rgba(0, 0, 0, 0.21);
+			@include max-screen($mobile) {
+				box-shadow: none;
+			}
 		}
 		&:nth-child(2) {
 			box-shadow: 0 5px 24px 0 rgba(0, 0, 0, 0.21);
+			@include max-screen($mobile) {
+				box-shadow: none;
+			}
 		}
 		&:last-child {
 			box-shadow: 4px 4px 24px 0 rgba(0, 0, 0, 0.21);
+			@include max-screen($mobile) {
+				box-shadow: none;
+			}
 		}
 
 		.services-item__icon svg {
 			fill: $highlightColor;
+			@include max-screen($mobile) {
+				fill: $whiteColor;
+			}
 		}
 	}
 
@@ -427,12 +505,33 @@ a {
 		}
 	}
 
+	&__content {
+		@include max-screen($mobile) {
+			width: 100%;
+			padding: 28px 40px 16px;
+			color: $titleColor;
+			background-color: $whiteColor;
+			//transform-origin: top;
+			//transform: scaleY(0);
+			transition: all 0.25s ease-in-out;
+			&.active {
+
+			}
+		}
+	}
+
 	&__title {
 		font-family: $openSansFont;
 		font-size: 20px;
 		font-weight: bold;
 		line-height: 28px;
 		text-transform: uppercase;
+
+		@include max-screen($mobile) {
+			margin: 7px 0 0;
+			font-size: 18px;
+			line-height: 24px;
+		}
 	}
 
 	&__list {
@@ -460,16 +559,54 @@ a {
 	}
 }
 
+.service-accordion-btn {
+	@include btn-tag;
+	position: relative;
+	top: 19px;
+	z-index: 2;
+	width: 38px;
+	height: 38px;
+	border-radius: 100%;
+	background-color: $whiteColor;
+	box-shadow: 0 3px 10px 0 rgba($blackColor, 0.23);
+	&.active {
+		span {
+			&:last-child {
+				@include vis-hid;
+			}
+		}
+	}
+	@include min-screen($tablet) {
+		@include vis-hid;
+	}
 
-// ==================================================
-//  ### 4. SECTION "WHY US" ###
-// ==================================================
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 12px;
+		height: 2px;
+		background-color: $highlightColor;
+		transform: translate(-50%, -50%);
+		transition: all 0.25s ease-in-out;
+		&:last-child {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+	}
+}
+
+
+// *** 4. SECTION "WHY US" ***
+// ===========================
 .sect-whyUs {
 	padding: 94px 0;
+	@include max-screen($mobile) {
+		padding: 45px 0 50px;
+	}
 
 	&__title {
 		margin: 0 0 45px;
-
 		color: $titleColor;
 		font-family: $openSansFont;
 		font-size: 30px;
@@ -477,6 +614,11 @@ a {
 		line-height: 28px;
 		text-transform: uppercase;
 		text-align: center;
+		@include max-screen($mobile) {
+			margin: 0 0 35px;
+			font-size: 24px;
+			line-height: 28px;
+		}
 
 		span {
 			color: $highlightColor  ;
@@ -487,26 +629,28 @@ a {
 .whyUs-slider {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 
 	&__thumbs {
-		position: relative;
 		flex: 1 40%;
 		max-width: 40%;
+		@include max-screen($mobile) {
+			@include vis-hid;
+		}
 	}
 
 	&__accordion {
 		flex: 1 50%;
 		max-width: 50%;
+		@include max-screen($mobile) {
+			flex: 1 100%;
+			max-width: 100%;
+		}
 	}
 }
 
 .slider-thumb {
-	position: absolute;
-	top: 0;
-	left: 0;
-
 	display: none;
-
 	transition: all 0.25s linear;
 
 	&.active {
@@ -519,29 +663,51 @@ a {
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: 40px;
+	@include max-screen($mobile) {
+		margin-bottom: 0;
+		padding-bottom: 40px;
+	}
 	&:last-child {
 		margin-bottom: 0;
+		@include max-screen($mobile) {
+			padding-bottom: 0;
+		}
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 30px;
+		z-index: -1;
+		width: 1px;
+		height: 100%;
+		background-color: $highlightColor;
+		@include min-screen($laptop) {
+			@include vis-hid;
+		}
 	}
 
 	input[type="radio"] {
+		box-sizing: border-box;
 		position: absolute;
-		opacity: 0;
 		z-index: -1;
-	}
-
-	label {
-		position: relative;
-		cursor: pointer;
+		padding: 0;
+		opacity: 0;
 	}
 
 	&__content {
+		//display: none;
 		max-height: 0;
 		overflow: hidden;
 		padding-left: 100px;
 		transition: max-height 0.25s linear;
-
 		font-size: 16px;
 		line-height: 24px;
+		@include max-screen($mobile) {
+			padding-left: 64px;
+			font-size: 14px;
+			line-height: 22px;
+		}
 
 		p {
 			margin: 0;
@@ -550,21 +716,28 @@ a {
 
 	/* :checked */
 	input[type="radio"]:checked ~ .accordion-tab__content {
-		max-height: 10em;
+		//display: block;
+		max-height: 4.4em;
 	}
 	input[type="radio"]:checked ~ .accordion-tab__head svg path {
 		fill: $whiteColor;
 	}
 
 	&__head {
+		position: relative;
 		display: flex;
 		align-items: center;
+		cursor: pointer;
 
 		svg {
-			width: 58px;
+			width: 100%;
+			max-width: 58px;
 			height: 58px;
 			margin-right: 20px;
 			transition: max-height 0.25s linear;
+			@include max-screen($mobile) {
+				margin-right: 12px;
+			}
 
 			path {
 				fill-rule:evenodd;
@@ -578,26 +751,40 @@ a {
 	}
 
 	&__title {
+		display: block;
 		color: $titleColor;
 		font-family: $openSansFont;
 		font-size: 24px;
 		font-weight: 600;
 		line-height: 28px;
+		@include max-screen($mobile) {
+			max-width: 50%;
+			font-size: 20px;
+			line-height: 28px;
+			word-break: break-all;
+		}
 	}
 }
 
 
-// ==================================================
-//  ### 5. SECTION "FEATURES" ###
-// ==================================================
+// *** 5. SECTION "FEATURES" ***
+// =============================
 .sect-features {
 	padding: 70px 0 60px;
 	background-color: $highlightColor;
+	@include max-screen($mobile) {
+		padding: 50px 0 40px;
+	}
 }
 
 .features-list {
 	display: flex;
 	align-items: baseline;
+	@include max-screen($mobile) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .features-item {
@@ -605,11 +792,22 @@ a {
 	color: $whiteColor;
 	font-family: $openSansFont;
 	text-align: center;
+	@include max-screen($mobile) {
+		max-width: 70%;
+		margin-bottom: 33px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 
 	&__descr {
 		font-size: 18px;
 		font-weight: normal;
 		line-height: 24px;
+		@include max-screen($mobile) {
+			font-size: 16px;
+			line-height: 22px;
+		}
 	}
 }
 
@@ -618,6 +816,9 @@ a {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 20px;
+	@include max-screen($mobile) {
+		margin-bottom: 15px;
+	}
 
 	&__num {
 		margin-left: 12px;
@@ -631,30 +832,54 @@ a {
 }
 
 
-// ==================================================
-//  ### 6. SECTION "PORTFOLIO" ###
-// ==================================================
+// *** 6. SECTION "PORTFOLIO" ***
+// ==============================
 .sect-portfolio {
 	padding: 97px 0;
+	@include max-screen($mobile) {
+		padding: 40px 0;
+	}
 
 	&__title {
 		margin: 0 0 15px;
-
 		color: $titleColor;
 		font-size: 45px;
 		font-weight: bold;
 		line-height: 51px;
 		text-transform: uppercase;
 		text-align: center;
+		@include max-screen($mobile) {
+			@include vis-hid;
+		}
 	}
 
 	&__subtitle {
 		margin: 0;
-
 		color: $titleColor;
 		font-size: 16px;
 		line-height: 26px;
 		text-align: center;
+		@include max-screen($mobile) {
+			@include vis-hid;
+		}
+	}
+}
+
+.m-sect-portfolio__title {
+	margin: 0;
+	color: $titleColor;
+	font-family: $openSansFont;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 32px;
+	text-align: center;
+	@include min-screen($laptop) {
+		@include vis-hid;
+	}
+
+	span {
+		display: block;
+		color: $highlightColor;
 	}
 }
 
@@ -686,6 +911,69 @@ a {
 			background-color: $highlightColor;
 		}
 	}
+
+	// Custom Slick Carousel styles
+	.slick-prev,
+	.slick-next {
+		top: 30%;
+
+		width: 25px;
+		height: 25px;
+
+		border: solid $highlightColor;
+		border-width: 0 2px 2px 0;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+
+			opacity: 1;
+		}
+		&:before {
+			color: inherit;
+			font-family: inherit;
+			font-size: 0;
+			line-height: inherit;
+		}
+	}
+
+	.slick-prev {
+		left: -45px;
+		transform: rotate(135deg);
+	}
+
+	.slick-next {
+		right: -45px;
+		transform: rotate(-45deg);
+	}
+
+	.slick-dots {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		bottom: auto;
+		top: -140px;
+
+
+		li {
+			display: block;
+			width: auto;
+			height: auto;
+			margin: 2px;
+
+			&.slick-active {
+				a {
+					color: $whiteColor;
+					background-color: $highlightColor;
+				}
+			}
+		}
+	}
 }
 
 .portfolio-slide {
@@ -712,73 +1000,9 @@ a {
 	}
 }
 
-// Custom Slick Carousel styles
-.slick-prev,
-.slick-next {
-	top: 30%;
 
-	width: 25px;
-	height: 25px;
-
-	border: solid $highlightColor;
-	border-width: 0 2px 2px 0;
-	&:before,
-	&:after {
-		content: '';
-		position: absolute;
-
-		display: inline-block;
-		width: 100%;
-		height: 100%;
-
-		opacity: 1;
-	}
-	&:before {
-		color: inherit;
-		font-family: inherit;
-		font-size: 0;
-		line-height: inherit;
-	}
-}
-
-.slick-prev {
-	left: -45px;
-	transform: rotate(135deg);
-}
-
-.slick-next {
-	right: -45px;
-	transform: rotate(-45deg);
-}
-
-.slick-dots {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	bottom: auto;
-	top: -140px;
-
-
-	li {
-		display: block;
-		width: auto;
-		height: auto;
-		margin: 2px;
-
-		&.slick-active {
-			a {
-				color: $whiteColor;
-				background-color: $highlightColor;
-			}
-		}
-	}
-}
-
-
-// ==================================================
-//  ### 7. SECTION "TESTIMONIALS" ###
-// ==================================================
+// *** 7. SECTION "TESTIMONIALS" ***
+// =================================
 .sect-testimonials {
 	padding: 97px 0 93px;
 	background: #000 url("../img/backgrounds/testimonials_bg.jpg") no-repeat center;
@@ -799,16 +1023,21 @@ a {
 			color: $highlightColor;
 		}
 	}
+
+	.slick-track {
+		display: flex;
+		align-items: center;
+	}
 }
 
 .testimonials-list {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 }
 
 .testimonials-item {
 	flex: 1;
-
+	margin: 0 10px;
 	color: $whiteColor;
 	text-align: center;
 
@@ -818,6 +1047,10 @@ a {
 		font-weight: normal;
 		line-height: 24px;
 		letter-spacing: -0.01em;
+	}
+
+	img {
+		margin: 0 auto;
 	}
 }
 
@@ -852,12 +1085,14 @@ a {
 }
 
 
-// ==================================================
-//  ### 8. SECTION "CORRUPT" ###
-// ==================================================
+// *** 8. SECTION "CORRUPT" ***
+// ============================
 .sect-corrupt {
 	padding: 32px 0;
 	background-color: $highlightColor;
+	@include max-screen($mobile) {
+		@include vis-hid;
+	}
 
 	&__descr {
 		margin: 0;
@@ -873,15 +1108,16 @@ a {
 }
 
 
-// ==================================================
-//  ### 9. SECTION "PRICING" ###
-// ==================================================
+// *** 9. SECTION "PRICING" ***
+// ============================
 .sect-pricing {
 	padding: 97px 0 50px;
+	@include max-screen($mobile) {
+		padding: 42px 0 50px;
+	}
 
 	&__title {
 		margin: 0 0 47px;
-
 		color: $titleColor;
 		font-family: $openSansFont;
 		font-size: 30px;
@@ -889,9 +1125,17 @@ a {
 		line-height: 28px;
 		text-transform: uppercase;
 		text-align: center;
+		@include max-screen($mobile) {
+			margin: 0 0 22px;
+			font-size: 24px;
+			line-height: 32px;
+		}
 
 		span {
 			color: $highlightColor;
+			@include max-screen($mobile) {
+				display: block;
+			}
 		}
 	}
 }
@@ -900,21 +1144,35 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	@include max-screen($mobile) {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .pricing-box {
 	flex: 1 282px;
+	width: 100%;
 	max-width: 282px;
 	margin-bottom: 50px;
 	padding-bottom: 30px;
-
 	color: $blackColor;
 	font-family: $openSansFont;
 	text-align: center;
-
 	background-color: $whiteGrayColor;
 	transform: scale(1);
 	transition: all 0.15s linear;
+	@include max-screen($mobile) {
+		flex: 1;
+		max-width: 85%;
+		margin-bottom: 30px;
+		border-radius: 5px;
+		background-color: $highlightColor;
+		box-shadow: 0 9px 24px 0 rgba($blackColor, 0.25);
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 
 	&--share {
 		position: relative;
@@ -922,10 +1180,10 @@ a {
 			content: '';
 			position: absolute;
 			top: -8px;
-			right: 0;
 			left: -8px;
-			bottom: 0;
-
+			display: block;
+			width: 84px;
+			height: 86px;
 			background: transparent url("../img/icons/share.png") no-repeat;
 		}
 	}
@@ -933,56 +1191,84 @@ a {
 	&__head {
 		padding: 35px 0;
 		color: $highlightColor;
-
 		background-color: $grayColor;
+		@include max-screen($mobile) {
+			position: relative;
+			padding: 25px 0 30px;
+			color: $whiteColor;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-bottom: 1px solid rgba($whiteColor, 0.2);
+			background-color: $highlightColor;
+			box-shadow: 0 9px 24px 0 rgba($blackColor, 0.25);
+		}
 	}
 
 	&__service {
 		display: block;
 		margin-bottom: 15px;
-
 		font-size: 20px;
 		font-weight: bold;
 		line-height: 24px;
+		@include max-screen($mobile) {
+			margin-bottom: 0;
+			font-size: 22px;
+		}
 	}
 
 	&__price {
 		display: block;
-
 		font-family: $juraFont;
 		font-size: 64px;
 		font-weight: normal;
 		line-height: 45px;
 		text-transform: uppercase;
+		@include max-screen($mobile) {
+			font-size: 48px;
+		}
 
 		small {
 			font-size: 20px;
 			line-height: 29px;
+			@include max-screen($mobile) {
+				margin-left: 10px;
+				font-size: 16px;
+			}
 		}
 	}
 
 	&__month {
 		display: block;
-
 		color: $darkGrayColor;
 		font-family: Arial, Tahoma, sans-serif;
 		font-size: 14px;
 		font-weight: normal;
 		line-height: 35px;
+		@include max-screen($mobile) {
+			@include vis-hid;
+		}
 	}
 
 	&__list {
 		margin: 0 0 20px;
 		padding: 0;
 		list-style: none;
+		@include max-screen($mobile) {
+			margin: 0;
+			padding: 26px 0 0;
+			background-color: $whiteGrayColor;
+		}
 	}
 
 	&__item {
 		display: block;
-
 		font-size: 12px;
 		font-weight: normal;
 		line-height: 38px;
+		@include max-screen($mobile) {
+			font-size: 11px;
+		}
+
 		&:nth-child(even) {
 			background-color: $grayColor;
 		}
@@ -991,7 +1277,6 @@ a {
 	&__order {
 		display: inline-block;
 		padding: 15px 41px;
-
 		color: $highlightColor;
 		font-family: Arial, Tahoma, sans-serif;
 		font-size: 14px;
@@ -1000,18 +1285,26 @@ a {
 		line-height: 1;
 		text-transform: uppercase;
 		text-align: center;
-
 		border: 2px solid $highlightColor;
 		background-color: transparent;
 		transition: all 0.25s ease-in-out;
+		@include max-screen($mobile) {
+			margin-top: 30px;
+			color: $whiteColor;
+			border: 1px solid $whiteColor;
+		}
 	}
 
 	&:hover {
 		color: $whiteColor;
-
 		background-color: $highlightColor;
 		box-shadow: 0 12px 18px 0 rgba(0, 0, 0, 0.25);
 		transform: scale(1.022);
+		@include max-screen($mobile) {
+			color: $blackColor;
+			box-shadow: 0 9px 24px 0 rgba($blackColor, 0.25);
+			transform: none;
+		}
 
 		.pricing-box__head {
 			color: $whiteColor;
@@ -1024,27 +1317,70 @@ a {
 
 		.pricing-box__item:nth-child(even) {
 			background-color: $highlightColor;
+			@include max-screen($mobile) {
+				background-color: $grayColor;
+			}
 		}
 
 		.pricing-box__order {
 			background-color: $whiteColor;
 			border-color: $whiteColor;
+			@include max-screen($mobile) {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+.pricing-accordion-btn {
+	@include min-screen($laptop) {
+		@include vis-hid;
+	}
+	@include btn-tag;
+	position: absolute;
+	left: 50%;
+	bottom: -18px;
+	z-index: 2;
+	display: inline-flex;
+	justify-content: center;
+	align-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 100%;
+	background-color: $whiteColor;
+	box-shadow: 0 3px 10px 0 rgba($blackColor, 0.23);
+	transition: all 0.25s ease-in-out;
+	transform: translateX(-50%);
+	&.active {
+		transform: translateX(-50%) rotate(180deg);
+	}
+
+	span {
+		display: block;
+		width: 6px;
+		height: 2px;
+		background-color: $highlightColor;
+		transform: rotate(45deg);
+		&:last-child {
+			margin-left: -2px;
+			transform: rotate(-45deg);
 		}
 	}
 }
 
 
-// ==================================================
-//  ### 10. SECTION "TECHNOLOGIES" ###
-// ==================================================
+// *** 10. SECTION "TECHNOLOGIES" ***
+// ==================================
 .sect-tech {
 	padding: 97px 0 110px;
 	background: $blackColor url("../img/backgrounds/testimonials_bg.jpg") no-repeat center;
 	background-size: cover;
+	@include max-screen($mobile) {
+		padding: 42px 0;
+	}
 
 	&__title {
 		margin: 0 0 55px;
-
 		color: $whiteColor;
 		font-family: $openSansFont;
 		font-size: 30px;
@@ -1052,15 +1388,65 @@ a {
 		line-height: 28px;
 		text-transform: uppercase;
 		text-align: center;
+		@include max-screen($mobile) {
+			@include vis-hid;
+		}
 
 		span {
 			color: $highlightColor;
 		}
 	}
 
+	// Custom "Slick Carousel" styles
 	.slick-track {
 		display: flex;
 		align-items: center;
+	}
+	.slick-dots {
+		bottom: -30px;
+		li {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			width: 15px;
+			height: 15px;
+			margin: 0 9px;
+			button {
+				width: 11px;
+				height: 11px;
+				border-radius: 100%;
+				background-color: #d1d1d1;
+				transition: all 0.25s ease-in-out;
+				&::before {
+					@include vis-hid;
+				}
+			}
+			&.slick-active {
+				button {
+					width: 15px;
+					height: 15px;
+					background-color: $highlightColor;
+				}
+			}
+		}
+	}
+}
+
+.m-sect-tech__title {
+	margin: 0 0 10px;
+	color: $whiteColor;
+	font-family: $openSansFont;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 32px;
+	text-align: center;
+	text-transform: uppercase;
+	@include min-screen($laptop) {
+		@include vis-hid;
+	}
+
+	span {
+		color: $highlightColor;
 	}
 }
 
@@ -1073,9 +1459,9 @@ a {
 	}
 }
 
-// ==================================================
-//  ### 11. SECTION "MAP" ###
-// ==================================================
+
+// *** 11. SECTION "MAP" ***
+// =========================
 .sect-map {
 	position: relative;
 
@@ -1110,9 +1496,8 @@ a {
 }
 
 
-// ==================================================
-//  ### MAIN FOOTER ###
-// ==================================================
+// *** MAIN FOOTER ***
+// ===================
 .main-footer {
 	width: 100%;
 
@@ -1123,15 +1508,20 @@ a {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-
 	padding: 70px 0 45px;
+	@include max-screen($mobile) {
+		padding: 50px 0 0;
+	}
 
 	&__info {
 		width: 100%;
 		max-width: 380px;
-
 		color: $titleColor;
 		font-family: $openSansFont;
+		@include max-screen($mobile) {
+			max-width: 100%;
+			padding-bottom: 44px;
+		}
 	}
 
 	&__icon {
@@ -1141,10 +1531,15 @@ a {
 		width: 31px;
 		height: 31px;
 		margin-right: 20px;
-
 		border-radius: 100%;
 		border: 1px solid $highlightColor;
 		background-color: transparent;
+		@include max-screen($mobile) {
+			width: 50px;
+			height: 50px;
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
 
 		svg {
 			fill: $highlightColor;
@@ -1154,6 +1549,10 @@ a {
 			svg {
 				width: 15px;
 				height: 15px;
+				@include max-screen($mobile) {
+					width: 24px;
+					height: 24px;
+				}
 			}
 		}
 
@@ -1161,6 +1560,10 @@ a {
 			svg {
 				width: 19px;
 				height: 11px;
+				@include max-screen($mobile) {
+					width: 31px;
+					height: 18px;
+				}
 			}
 		}
 
@@ -1168,6 +1571,10 @@ a {
 			svg {
 				width: 13px;
 				height: 17px;
+				@include max-screen($mobile) {
+					width: 21px;
+					height: 27px;
+				}
 			}
 		}
 	}
@@ -1175,21 +1582,36 @@ a {
 	&__phones {
 		display: flex;
 		flex-wrap: wrap;
-
 		margin-bottom: 58px;
+
+		@include max-screen($mobile) {
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 40px;
+		}
 	}
 
 	&__phone {
 		display: block;
+		color: $titleColor;
 		font-size: 14px;
 		font-weight: 600;
+
+		&:hover,
+		&:active,
+		&.active {
+			color: $highlightColor;
+		}
 	}
 
 	&__mail {
 		display: flex;
 		align-items: center;
-
 		margin-bottom: 19px;
+		@include max-screen($mobile) {
+			flex-direction: column;
+			margin-bottom: 30px;
+		}
 
 		&-link {
 			color: $titleColor;
@@ -1202,7 +1624,7 @@ a {
 			&:hover,
 			&:active,
 			&.active {
-				color: $textColor;
+				color: $highlightColor;
 			}
 		}
 	}
@@ -1210,8 +1632,11 @@ a {
 	&__address {
 		display: flex;
 		align-items: center;
-
 		margin-bottom: 19px;
+		@include max-screen($mobile) {
+			flex-direction: column;
+			margin-bottom: 30px;
+		}
 	}
 
 	&__location {
@@ -1226,6 +1651,12 @@ a {
 		font-size: 24px;
 		font-weight: bold;
 		line-height: 36px;
+		@include max-screen($mobile) {
+			color: #363636;
+			font-size: 18px;
+			line-height: 22px;
+			text-align: center;
+		}
 
 		p {
 			margin: 0;
@@ -1244,7 +1675,6 @@ a {
 	&__wrapper {
 		margin: 0;
 		padding: 0;
-
 		border: none;
 	}
 
@@ -1252,19 +1682,26 @@ a {
 		display: block;
 		margin: 0 0 30px;
 		padding: 0;
-
 		color: $highlightColor;
 		font-family: $openSansFont;
 		font-size: 36px;
 		font-weight: bold;
 		line-height: 24px;
 		text-transform: uppercase;
+		@include max-screen($mobile) {
+			text-align: center;
+		}
 	}
 
 	&__control {
 		display: inline-block;
 		width: 100%;
 		max-width: 220px;
+		@include max-screen($mobile) {
+			display: block;
+			max-width: 100%;
+			margin-bottom: 10px;
+		}
 
 		&--name {
 			margin-right: 15px;
@@ -1275,13 +1712,20 @@ a {
 			width: 100%;
 			max-width: 100%;
 			margin-top: 20px;
+			@include max-screen($mobile) {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
 		}
 
 		&--button {
 			max-width: 100%;
 			margin-top: 20px;
-
 			text-align: right;
+			@include max-screen($mobile) {
+				margin-bottom: 50px;
+				text-align: center;
+			}
 		}
 
 		input,
@@ -1294,7 +1738,7 @@ a {
 			color: $titleColor;
 			font-family: $openSansFont;
 			font-size: 14px;
-			font-weight: bold;
+			font-weight: 400;
 			line-height: 1.4;
 
 			border: 1px solid $grayColor;
@@ -1312,6 +1756,9 @@ a {
 			width: 100%;
 			height: 90px;
 			resize: none;
+			@include max-screen($mobile) {
+				height: 144px;
+			}
 		}
 
 		button {
@@ -1327,25 +1774,41 @@ a {
 
 .footer-copyrights {
 	padding: 11.5px 0;
-
 	color: #c3c3c3;
 	font-family: $openSansFont;
 	font-size: 12px;
 	font-weight: normal;
 	line-height: 24px;
 	text-align: center;
-
 	background-color: #363636;
+	@include max-screen($mobile) {
+		padding: 12px 0;
+	}
 
 	small {
 		font-size: 12px;
+		@include max-screen($mobile) {
+			font-size: 11px;
+			line-height: 24px;
+		}
 	}
 }
 
 
-// ==================================================
-//  ### PAGE BOTTOM LINK ###
-// ==================================================
+// *** THANK YOU PAGE ***
+// ======================
+.inner-page {
+	margin-top: 71px;
+	padding: 180px;
+}
+.thank-you {
+	color: $titleColor;
+	text-align: center;
+}
+
+
+// *** PAGE BOTTOM LINK ***
+// ========================
 .page-bottom-link {
 	position: fixed;
 	bottom: 0;
