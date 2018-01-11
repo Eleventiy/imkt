@@ -7,9 +7,6 @@ $(function() {
 		$('a[rel="m_PageScroll2id"]').mPageScroll2id();
 	});
 
-	// JqueryUI accordions
-	// $('#whyUsAccordion').accordion();
-
 	// Toggle tabs on Section "Why us"
 	$('#tab1').click(function() {
 		$('#tabThumb1').addClass('active');
@@ -88,7 +85,7 @@ $(function() {
 		arrows: false,
 		infinite: true,
 		autoplay: true,
-		autoplaySpeed: 1500,
+		autoplaySpeed: 1000,
 		pauseOnFocus: false,
 		slidesToShow: 5,
 		slidesToScroll: 1,
@@ -115,16 +112,59 @@ $(function() {
 		arrows: false,
 		infinite: true,
 		autoplay: true,
-		autoplaySpeed: 1500,
+		autoplaySpeed: 1000,
 		pauseOnFocus: false,
 		slidesToShow: 5,
-		slidesToScroll: 1
+		slidesToScroll: 1,
+
+		responsive: [
+			{
+				breakpoint: 481,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					draggable: true,
+					dots: true,
+					autoplay: false
+				}
+			}
+		]
 	});
 
 	// Jquery Validation form
 	var requestForm = $('#requestForm');
-
 	requestForm.validate();
+
+	// Page bottom link
+	$(window).scroll(function() {
+		var scroll = $(window).scrollTop(),
+			windowHeight = $(window).height(),
+			documentHeight = $(document).height(),
+			pageBotLink = $('#pageBotLink');
+
+		if (scroll + windowHeight == documentHeight) {
+			pageBotLink.addClass('hidden');
+		} else {
+			pageBotLink.removeClass('hidden');
+		}
+	});
+
+	// ToTop
+	var toTop = $('#toTop');
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop() <= 500) {
+			toTop.addClass('hidden');
+		} else {
+			toTop.removeClass('hidden');
+		}
+	});
+
+	toTop.click(function() {
+		$('body, html').animate({ scrollTop: 0 }, 700 );
+		return false;
+	});
+
 
 
 	// *** Scripts for mobile ***
@@ -153,29 +193,17 @@ $(function() {
 		mSandwich.removeClass('active');
 	});
 
-	// Mobile accordions
-	var servAccordBtn1 = $('#servAccordBtn1'),
-			servContent1 = $('#servContent1');
-
-	servAccordBtn1.click(function(e) {
-		e.preventDefault();
-
-		$(this).toggleClass('active');
-		servContent1.toggleClass('active');
+	// Accordions
+	$('#mServicesAcc').accordion({
+		heightStyle: "content"
+	});
+	$('#mPricingAcc').accordion({
+		heightStyle: "content"
 	});
 
 
 	// *** Functions ***
 	// =================
-	// function custom_accordion(id) {
-	// 	var elm = document.getElementById(id);
-	// 	if (elm.className.indexOf("show") == -1) {
-	// 		elm.className += " show";
-	// 	} else {
-	// 		elm.className = elm.className.replace(" show", "");
-	// 	}
-	//
-	// }
 
 });
 

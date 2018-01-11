@@ -45,6 +45,7 @@ gulp.task('js-libs', function() {
 				'./node_modules/jquery/dist/jquery.min.js',
 				'./node_modules/jquery-migrate/dist/jquery-migrate.min.js',
 				'./node_modules/jquery-validation/dist/jquery.validate.min.js',
+				'./node_modules/jquery-validation/dist/localization/messages_ru.js',
 				'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 				'./node_modules/slick-carousel/slick/slick.min.js'
 			])
@@ -88,10 +89,8 @@ gulp.task('fonts', function() {
 });
 
 // Clean cache
-gulp.task('clean', function() {
-	return del.sync('dist').then(function(callback) {
-		return plugins.cache.clearAll(callback);
-	});
+gulp.task('clean', function(callback) {
+	return plugins.cache.clearAll(callback);
 });
 
 // Clear production folder
@@ -105,7 +104,7 @@ gulp.task('build', ['clear', 'clean', 'imagemin', 'fonts'], function() {
 	var buildHtml = gulp.src('app/*.html')
 			.pipe(gulp.dest('dist'));
 
-	var buildCss = gulp.src('app/css/**/*.css')
+	var buildCss = gulp.src('app/css/**/*')
 			.pipe(gulp.dest('dist/css'));
 
 	var buildScripts = gulp.src('app/js/**/*.js')

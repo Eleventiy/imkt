@@ -2,37 +2,53 @@
 <html lang="ru">
 
 	<head>
-		<!-- Meta tags -->
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="description" content="">
-		<!--/. Meta tags -->
-
-		<!-- Manifest -->
-		<link rel="manifest" href="#">
-		<!--/. Manifest -->
-
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="favicon.png" sizes="31x31" type="image/png">
-		<!--/. Favicon -->
-
-		<!-- Page title -->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>IMKT</title>
-		<!--/. Page title -->
+
+		<!-- Disable tap highlight on IE -->
+		<meta name="msapplication-tap-highlight" content="no">
+
+		<!-- Web Application Manifest -->
+		<link rel="manifest" href="#">
+
+		<!-- Tile icon -->
+		<link rel="shortcut icon" href="favicon.png" sizes="31x31" type="image/png">
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="IMKT">
+		<!--<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#0093e5">
+		<meta name="apple-mobile-web-app-title" content="IMKT">
+		<!--<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">-->
+		<meta name="msapplication-TileColor" content="#0093e5">
+
+		<!-- Color the status bar on mobile devices -->
+		<meta name="theme-color" content="#0093e5">
+
+		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+		<!--
+		<link rel="canonical" href="http://www.example.com/">
+		-->
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Jura:400,700|Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
-		<!--/. Google Fonts -->
 		
 		<!-- Modernizr -->
 		<script src="js/modernizr-custom.js"></script>
-		<!--/. Modernizr -->
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="css/libs.min.css">
 		<link rel="stylesheet" href="css/styles.min.css">
-		<!--/. Stylesheets -->
 	</head>
 
 	<body>
@@ -121,6 +137,8 @@
 		<!-- SECTION "SERVICES" -->
 		<section class="sect-services" id="services">
 			<div class="container">
+
+				<!-- Desktop version -->
 				<div class="services-items">
 
 					<!-- Service item #1 -->
@@ -149,12 +167,12 @@
 
 						<h3 class="services-item__title">Создание сайтов</h3>
 
-						<button class="service-accordion-btn" id="servAccordBtn1">
-							<span></span>
-							<span></span>
-						</button>
+						<!--<button class="service-accordion-btn" id="servAccordBtn1">-->
+							<!--<span></span>-->
+							<!--<span></span>-->
+						<!--</button>-->
 
-						<div class="services-item__content" id="servContent1">
+						<div class="services-item__content">
 							<ul class="services-item__list">
 								<li class="services-item__list-item">лендинг</li>
 								<li class="services-item__list-item">сайт визитка</li>
@@ -199,10 +217,10 @@
 
 						<h3 class="services-item__title">РЕКЛАМА САЙТОВ</h3>
 
-						<button class="service-accordion-btn">
-							<span></span>
-							<span></span>
-						</button>
+						<!--<button class="service-accordion-btn">-->
+							<!--<span></span>-->
+							<!--<span></span>-->
+						<!--</button>-->
 
 						<div class="services-item__content">
 							<ul class="services-item__list">
@@ -249,10 +267,10 @@
 
 						<h3 class="services-item__title">SEo продвижение</h3>
 
-						<button class="service-accordion-btn">
-							<span></span>
-							<span></span>
-						</button>
+						<!--<button class="service-accordion-btn">-->
+							<!--<span></span>-->
+							<!--<span></span>-->
+						<!--</button>-->
 
 						<div class="services-item__content">
 							<ul class="services-item__list">
@@ -268,6 +286,144 @@
 					</div>
 					<!--/. Service item #3 -->
 				</div>
+				<!--/. Desktop version -->
+
+				<!-- Mobile version -->
+				<div class="m-services-items" id="mServicesAcc">
+
+					<!-- Service item #1 -->
+					<h3 class="m-services-items__title">
+						<svg version="1.1"
+							     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							     x="0px" y="0px"
+									 viewBox="0 0 508 508"
+							     width="71" height="70"
+									 xml:space="preserve">
+
+								<g>
+									<path d="M0,0v114.7V508h508V114.7V0H0z M491.6,491.6H16.4v-32.8h131.1h8.2h49.7l245.7-245.7c16-16,16-42,0-57.9
+											c-7.7-7.7-18-12-29-12c-10.9,0-21.2,4.3-29,12l-29,29l-17.4-17.4l-69.5,69.5l11.6,11.6l57.9-57.9l5.8,5.8l-205,205.1v41.5H16.4
+											V114.7h475.2V491.6z M399,242.1L207.8,433.3L173,398.5l191.2-191.2L399,242.1z M375.8,195.7l29-29c9.3-9.3,25.5-9.3,34.8,0
+											c9.6,9.6,9.6,25.2,0,34.8l-29,29L375.8,195.7z M193.9,442.5h-30v-30L193.9,442.5z M491.6,98.3H16.4V16.4h475.2V98.3z"></path>
+									<rect x="41" y="49.2" width="245.8" height="16.4"></rect>
+									<rect x="385.1" y="49.2" width="16.4" height="16.4"></rect>
+									<rect x="417.9" y="49.2" width="16.4" height="16.4"></rect>
+									<rect x="450.6" y="49.2" width="16.4" height="16.4"></rect>
+								</g>
+						</svg>
+
+						<span class="m-services-items__descr">Создание сайтов</span>
+
+						<button class="service-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-services-items__content">
+						<ul class="m-services-items__list">
+							<li class="m-services-items__list-item">лендинг</li>
+							<li class="m-services-items__list-item">сайт визитка</li>
+							<li class="m-services-items__list-item">корпоративный сайт</li>
+							<li class="m-services-items__list-item">сайт Каталог</li>
+							<li class="m-services-items__list-item">интернет магазин</li>
+							<li class="m-services-items__list-item">портал</li>
+						</ul>
+					</div>
+					<!--/. Service item #1 -->
+
+					<!-- Service item #2 -->
+					<h3 class="m-services-items__title">
+						<svg version="1.1"
+							     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							     x="0px" y="0px"
+							     viewBox="0 0 119.9 107.3"
+							     width="78" height="70"
+							     xml:space="preserve">
+
+								<g>
+									<path d="M37.4,64.4h10.1c1.1,0,2-0.9,2-2v-0.6c1.6,0.5,3.3,0.7,5,0.7H75c3.1,0,5.6-2.4,5.7-5.5l0.2-0.1c1.6-1.2,2.5-3,2.6-5
+										c0-0.8-0.1-1.7-0.4-2.5c1-1.1,1.6-2.6,1.6-4.1c0-1.2-0.4-2.4-1-3.4c0.7-1.1,1-2.3,1-3.7c0-2.2-1.2-4.3-3.2-5.4
+										c-0.9-0.5-1.9-0.7-2.8-0.7l0,0H66.2c0.6-3.5,0.9-7,0.7-10.5v-0.3c-0.1-1.9-0.9-3.8-2.3-5.2c-1.3-1.4-3.3-2-5.1-1.6
+										c-0.6,0.1-1.1,0.4-1.6,0.7L56.6,16c-0.6,0.4-1,1-1,1.7v3.9c0,1.8-0.4,3.6-1.1,5.3s-1.7,3.2-3,4.6l-2.3,2.3c-0.3-0.6-1-1-1.7-1H37.4
+										c-1.1,0-2,0.9-2,2v27.6C35.4,63.5,36.2,64.4,37.4,64.4z M54.3,34.3c1.7-1.7,3-3.7,3.9-5.9s1.4-4.5,1.4-6.9v-2.7l0.4-0.2
+										c0.1-0.1,0.3-0.1,0.5-0.2c0.4-0.1,0.9,0.1,1.3,0.5c0.7,0.7,1.1,1.6,1.1,2.5v0.3c0.1,3.3-0.1,6.6-0.7,9.8l-0.4,2.2
+										c-0.1,0.6,0,1.2,0.4,1.6c0.4,0.5,0.9,0.7,1.5,0.7l0,0h14.9l0,0c0.3,0,0.7,0.1,1,0.3c0.7,0.4,1.1,1.1,1.1,1.9s-0.3,1.5-0.9,2.1
+										l-0.2,0.2c-0.8,0.8-0.8,2,0,2.8l0.6,0.7c0.3,0.4,0.5,0.8,0.5,1.4c0,0.7-0.3,1.3-0.8,1.7l-0.4,0.3c-0.7,0.5-0.9,1.5-0.6,2.3l0.4,1.1
+										c0.1,0.3,0.2,0.7,0.2,1.1c0,0.8-0.4,1.5-1,2l-1,0.7c-0.5,0.4-0.8,1-0.8,1.6v0.6c0,0.9-0.8,1.7-1.7,1.7H54.4c-1.7,0-3.4-0.3-5-0.9
+										V39.1L54.3,34.3z M39.4,36.7h6.1v1.6v20.6v1.5h-6.1V36.7z"></path>
+									<path d="M117.5,0H2.5C1.1,0,0,1.1,0,2.5v73.7c0,1.4,1.1,2.5,2.5,2.5h11.8v26.1c0,1.4,1.1,2.5,2.5,2.5h10.1c1.4,0,2.5-1.1,2.5-2.5
+										V78.7h61.1v26.1c0,1.4,1.1,2.5,2.5,2.5h10.1c1.4,0,2.5-1.1,2.5-2.5V78.7h11.8c1.4,0,2.5-1.1,2.5-2.5V2.5C120,1.2,118.9,0,117.5,0z
+										 M24.4,102.3h-5.1V78.7h5.1V102.3z M100.7,102.3h-5.1V78.7h5.1V102.3z M115,73.7h-11.8H93.1H26.9H16.8H5V5h110V73.7z"></path>
+								</g>
+						</svg>
+
+						<span class="m-services-items__descr">РЕКЛАМА САЙТОВ</span>
+
+						<button class="service-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-services-items__content">
+						<ul class="m-services-items__list">
+							<li class="m-services-items__list-item">запуск рекламной кампании</li>
+							<li class="m-services-items__list-item">звонки и заказы в первый день</li>
+							<li class="m-services-items__list-item">анализ бизнеса</li>
+							<li class="m-services-items__list-item">отчеты и варианты оптимизации</li>
+							<li class="m-services-items__list-item">настраиваем площадки: Google, Facebook, Instagram</li>
+						</ul>
+					</div>
+					<!--/. Service item #2 -->
+
+					<!-- Service item #3 -->
+					<h3 class="m-services-items__title">
+						<svg version="1.1"
+							     xmlns="http://www.w3.org/2000/svg"
+							     xmlns:xlink="http://www.w3.org/1999/xlink"
+							     x="0px" y="0px"
+							     viewBox="0 0 89.2 87.1"
+							     width="71" height="70"
+							     xml:space="preserve">
+
+								<path d="M87.4,87.1H74.1c-1,0-1.8-0.8-1.8-1.8V19.6c0-1,0.8-1.8,1.8-1.8h13.3c1,0,1.8,0.8,1.8,1.8v65.8
+									C89.2,86.3,88.4,87.1,87.4,87.1z M75.9,83.6h9.8V21.4h-9.8L75.9,83.6z M63.2,87.1H49.9c-1,0-1.8-0.8-1.8-1.8V39.9
+									c0-1,0.8-1.8,1.8-1.8h13.3c1,0,1.8,0.8,1.8,1.8v45.5C64.9,86.3,64.2,87.1,63.2,87.1z M51.6,83.6h9.8v-42h-9.8V83.6z M39.3,87.1H26
+									c-1,0-1.8-0.8-1.8-1.8V48c0-1,0.8-1.8,1.8-1.8h13.3c1,0,1.8,0.8,1.8,1.8v37.4C41.1,86.3,40.3,87.1,39.3,87.1z M27.8,83.6h9.8V49.7
+									h-9.8V83.6z M15.1,87.1H1.8c-1,0-1.8-0.8-1.8-1.8V59.5c0-1,0.8-1.8,1.8-1.8h13.3c1,0,1.8,0.8,1.8,1.8v25.9
+									C16.8,86.3,16.1,87.1,15.1,87.1z M3.5,83.6h9.8V61.3H3.5V83.6z M8.4,55.5c-3.2,0-5.7-2.6-5.7-5.7s2.6-5.7,5.7-5.7
+									c1.7,0,3.2,0.7,4.3,1.9l13.8-8.1c0-0.2,0-0.4,0-0.7c0-3.2,2.6-5.7,5.7-5.7c1.9,0,3.5,0.9,4.6,2.3l13.7-4.1c0-0.1,0-0.1,0-0.2
+									c0-3.2,2.6-5.7,5.7-5.7c1.1,0,2.1,0.3,2.9,0.8L74.7,8.4C74.3,7.6,74,6.7,74,5.7C74,2.6,76.6,0,79.7,0c3.2,0,5.7,2.6,5.7,5.7
+									s-2.6,5.7-5.7,5.7c-0.9,0-1.8-0.2-2.6-0.6L61.3,27.2c0.3,0.7,0.5,1.5,0.5,2.3c0,3.2-2.6,5.7-5.7,5.7c-1.8,0-3.5-0.9-4.5-2.2
+									l-13.7,4.1c0,0,0,0.1,0,0.1c0,3.2-2.6,5.7-5.7,5.7c-1.7,0-3.2-0.7-4.2-1.9l-13.8,8.2c0,0.2,0,0.4,0,0.6C14.1,53,11.5,55.5,8.4,55.5z
+									 M8.4,47.6c-1.2,0-2.2,1-2.2,2.2s1,2.2,2.2,2.2s2.2-1,2.2-2.2c0-0.3,0-0.5-0.1-0.8c0,0,0,0,0-0.1C10.1,48.2,9.3,47.6,8.4,47.6z
+									 M30,38.1c0.3,0.8,1.1,1.3,2,1.3c1.2,0,2.2-1,2.2-2.2c0-0.3,0-0.5-0.1-0.7c0,0,0,0,0-0.1C33.8,35.6,33,35,32.1,35
+									c-1.2,0-2.2,1-2.2,2.2C29.9,37.5,29.9,37.8,30,38.1C30,38,30,38.1,30,38.1z M56.1,27.3c-1.2,0-2.2,1-2.2,2.2s1,2.2,2.2,2.2
+									s2.2-1,2.2-2.2c0-0.5-0.2-1-0.5-1.4c0,0,0,0,0,0C57.4,27.6,56.8,27.3,56.1,27.3z M79.7,3.5c-1.2,0-2.2,1-2.2,2.2s1,2.2,2.2,2.2
+									c1.2,0,2.2-1,2.2-2.2S81,3.5,79.7,3.5z"></path>
+						</svg>
+
+						<span class="m-services-items__descr">SEo продвижение</span>
+
+						<button class="service-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-services-items__content">
+						<ul class="m-services-items__list">
+							<li class="m-services-items__list-item">аудит и исправление ошибок</li>
+							<li class="m-services-items__list-item">составление семантического ядра</li>
+							<li class="m-services-items__list-item">поисковая оптимизация</li>
+							<li class="m-services-items__list-item">вывод в ТОП10</li>
+							<li class="m-services-items__list-item">увеличение целевого трафика</li>
+							<li class="m-services-items__list-item">прозрачная отчетность</li>
+						</ul>
+					</div>
+					<!--/. Service item #3 -->
+
+				</div>
+				<!--/. Mobile version -->
+
 			</div>
 		</section>
 		<!--/. SECTION "SERVICES" -->
@@ -652,7 +808,7 @@
 		<!-- SECTION "TESTIMONIALS" -->
 		<section class="sect-testimonials" id="testimonials">
 			<div class="container">
-				<h2 class="sect-testimonials__title">отзывы <span>наших клиентов</span></h2>
+				<h2 class="sect-testimonials__title">наши клиенты</h2>
 
 				<div class="testimonials-list" id="testimonialSlider">
 
@@ -691,7 +847,7 @@
 
 					<!-- Testimonials item #4 -->
 					<div class="testimonials-item">
-						<img src="img/testimonials/new/4.png" alt="Логотип Regent Hill">
+						<img src="img/testimonials/new/4.svg" alt="Логотип Regent Hill">
 
 						<!--<div class="testimonials-head">-->
 							<!--<b class="testimonials-head__name">Qeensland</b>-->
@@ -736,6 +892,7 @@
 			<div class="container">
 				<h2 class="sect-pricing__title">Цены на <span>наши услуги</span></h2>
 
+				<!-- Desktop version -->
 				<div class="pricing-grid">
 
 					<!-- Pricing box #1 -->
@@ -744,11 +901,6 @@
 							<b class="pricing-box__service">Реклама<br>в Facebook</b>
 							<span class="pricing-box__price">1500<small>грн.</small></span>
 							<span class="pricing-box__month">месяц</span>
-
-							<button class="pricing-accordion-btn" id="priceAccordBtn1">
-								<span></span>
-								<span></span>
-							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -759,7 +911,7 @@
 							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#">Заказать</a>
+						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #1 -->
 
@@ -769,11 +921,6 @@
 							<b class="pricing-box__service">Реклама<br>в Google</b>
 							<span class="pricing-box__price">1500<small>грн.</small></span>
 							<span class="pricing-box__month">месяц</span>
-
-							<button class="pricing-accordion-btn" id="priceAccordBtn2">
-								<span></span>
-								<span></span>
-							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -784,7 +931,7 @@
 							<li class="pricing-box__item">Рекомендации по улучшению кампании</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#">Заказать</a>
+						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #2 -->
 
@@ -794,11 +941,6 @@
 							<b class="pricing-box__service">SEO<br>продвижение</b>
 							<span class="pricing-box__price">3500<small>грн.</small></span>
 							<span class="pricing-box__month">месяц</span>
-
-							<button class="pricing-accordion-btn" id="priceAccordBtn3">
-								<span></span>
-								<span></span>
-							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -809,7 +951,7 @@
 							<li class="pricing-box__item">Ведение проекта в ручном режиме</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#">Заказать</a>
+						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #3 -->
 
@@ -818,11 +960,6 @@
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Landing <br> Page</b>
 							<span class="pricing-box__price">5000<small>грн.</small></span>
-
-							<button class="pricing-accordion-btn" id="priceAccordBtn4">
-								<span></span>
-								<span></span>
-							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -831,12 +968,12 @@
 							<li class="pricing-box__item">Адаптивная верстка</li>
 							<li class="pricing-box__item">Создание меню сайта</li>
 							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
-							<li class="pricing-box__item">Регистрация домена и хостинга</li>
 							<li class="pricing-box__item">Установка Google analitics</li>
+							<li class="pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
 							<li class="pricing-box__item">Обучение и тех.поддержка - 1 мес.</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#">Заказать</a>
+						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #4 -->
 
@@ -845,11 +982,6 @@
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Сайт <br> визитка</b>
 							<span class="pricing-box__price">6000<small>грн.</small></span>
-
-							<button class="pricing-accordion-btn" id="priceAccordBtn5">
-								<span></span>
-								<span></span>
-							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -858,12 +990,12 @@
 							<li class="pricing-box__item">Адаптивная верстка</li>
 							<li class="pricing-box__item">Создание меню сайта</li>
 							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
-							<li class="pricing-box__item">Регистрация домена и хостинга</li>
 							<li class="pricing-box__item">Создание 5 страниц сайта</li>
+							<li class="pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
 							<li class="pricing-box__item">Обучение и тех.поддержка - 1 месяц</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#">Заказать</a>
+						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #5 -->
 
@@ -872,11 +1004,6 @@
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Интернет <br> магазин</b>
 							<span class="pricing-box__price">10 000<small>грн.</small></span>
-
-							<button class="pricing-accordion-btn" id="priceAccordBtn6">
-								<span></span>
-								<span></span>
-							</button>
 						</div>
 
 						<ul class="pricing-box__list">
@@ -885,16 +1012,188 @@
 							<li class="pricing-box__item">Адаптивная верстка</li>
 							<li class="pricing-box__item">Создание меню сайта</li>
 							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
-							<li class="pricing-box__item">Регистрация домена и хостинга</li>
 							<li class="pricing-box__item">Установка Google analitics</li>
+							<li class="pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
 							<li class="pricing-box__item">Консультация по работе с сайтом - 1 мес</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#">Заказать</a>
+						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #6 -->
 
 				</div>
+				<!--/. Desktop version -->
+
+				<!-- Mobile version -->
+				<div class="m-pricing-grid" id="mPricingAcc">
+
+					<!-- Pricing box #1 -->
+					<h3 class="m-pricing-box">
+						<b class="m-pricing-box__title">Реклама <br> в Facebook</b>
+						<span class="m-pricing-box__price">1 500 <small>грн.</small></span>
+						<span class="m-pricing-box__month">месяц</span>
+
+						<span class="m-pricing-box__order">
+							<a href="#contacts">Заказать</a>
+						</span>
+
+						<button class="pricing-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-pricing-box__content">
+						<ul class="m-pricing-box__list">
+							<li class="m-pricing-box__item">Создание рекламного аккаунта</li>
+							<li class="m-pricing-box__item">Определение целевой аудитории</li>
+							<li class="m-pricing-box__item">Настройка и запуск рекламной кампании</li>
+							<li class="m-pricing-box__item">Оптимизация рекламной компании</li>
+							<li class="m-pricing-box__item">Создание 1-ого почтового ящика</li>
+						</ul>
+					</div>
+					<!--/. Pricing box #1 -->
+
+					<!-- Pricing box #2 -->
+					<h3 class="m-pricing-box">
+						<b class="m-pricing-box__title">Реклама <br> в Google</b>
+						<span class="m-pricing-box__price">1 500 <small>грн.</small></span>
+						<span class="m-pricing-box__month">месяц</span>
+
+						<span class="m-pricing-box__order">
+							<a href="#contacts">Заказать</a>
+						</span>
+
+						<button class="pricing-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-pricing-box__content">
+						<ul class="m-pricing-box__list">
+							<li class="m-pricing-box__item">Анализируем бизнес направление</li>
+							<li class="m-pricing-box__item">Создание рекламных кампаний</li>
+							<li class="m-pricing-box__item">Отслеживание статистики переходов</li>
+							<li class="m-pricing-box__item">Анализ полученного результата</li>
+							<li class="m-pricing-box__item">Рекомендации по улучшению кампании</li>
+						</ul>
+					</div>
+					<!--/. Pricing box #2 -->
+
+					<!-- Pricing box #3 -->
+					<h3 class="m-pricing-box">
+						<b class="m-pricing-box__title">SEO <br> продвижение</b>
+						<span class="m-pricing-box__price">3 500 <small>грн.</small></span>
+						<span class="m-pricing-box__month">месяц</span>
+
+						<span class="m-pricing-box__order">
+							<a href="#contacts">Заказать</a>
+						</span>
+
+						<button class="pricing-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-pricing-box__content">
+						<ul class="m-pricing-box__list">
+							<li class="m-pricing-box__item">50 поисковых запросов</li>
+							<li class="m-pricing-box__item">СЕО-оптимизация включена</li>
+							<li class="m-pricing-box__item">Мета-теги</li>
+							<li class="m-pricing-box__item">Копирайт текстов</li>
+							<li class="m-pricing-box__item">Ведение проекта в ручном режиме</li>
+						</ul>
+					</div>
+					<!--/. Pricing box #3 -->
+
+					<!-- Pricing box #4 -->
+					<h3 class="m-pricing-box">
+						<b class="m-pricing-box__title">Landing <br> Page</b>
+						<span class="m-pricing-box__price">5 000 <small>грн.</small></span>
+						<span class="m-pricing-box__month">месяц</span>
+
+						<span class="m-pricing-box__order">
+							<a href="#contacts">Заказать</a>
+						</span>
+
+						<button class="pricing-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-pricing-box__content">
+						<ul class="m-pricing-box__list">
+							<li class="m-pricing-box__item">Шаблон под задачи клиента (до 5 шт.)</li>
+							<li class="m-pricing-box__item">Удобная система управления сайтом</li>
+							<li class="m-pricing-box__item">Адаптивная верстка</li>
+							<li class="m-pricing-box__item">Создание меню сайта</li>
+							<li class="m-pricing-box__item">Создание 1-ого почтового ящика</li>
+							<li class="m-pricing-box__item">Установка Google analitics</li>
+							<li class="m-pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
+							<li class="m-pricing-box__item">Обучение и тех.поддержка - 1 мес.</li>
+						</ul>
+					</div>
+					<!--/. Pricing box #4 -->
+
+					<!-- Pricing box #5 -->
+					<h3 class="m-pricing-box">
+						<b class="m-pricing-box__title">Сайт <br> визитка</b>
+						<span class="m-pricing-box__price">6 000 <small>грн.</small></span>
+						<span class="m-pricing-box__month">месяц</span>
+
+						<span class="m-pricing-box__order">
+							<a href="#contacts">Заказать</a>
+						</span>
+
+						<button class="pricing-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-pricing-box__content">
+						<ul class="m-pricing-box__list">
+							<li class="m-pricing-box__item">Шаблон под задачи клиента (до 5 шт.)</li>
+							<li class="m-pricing-box__item">Удобная система управления сайтом</li>
+							<li class="m-pricing-box__item">Адаптивная верстка</li>
+							<li class="m-pricing-box__item">Создание меню сайта</li>
+							<li class="m-pricing-box__item">Создание 1-ого почтового ящика</li>
+							<li class="m-pricing-box__item">Создание 5 страниц сайта</li>
+							<li class="m-pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
+							<li class="m-pricing-box__item">Обучение и тех.поддержка - 1 месяц</li>
+						</ul>
+					</div>
+					<!--/. Pricing box #5 -->
+
+					<!-- Pricing box #6 -->
+					<h3 class="m-pricing-box">
+						<b class="m-pricing-box__title">Интернет <br> магазин</b>
+						<span class="m-pricing-box__price">10 000 <small>грн.</small></span>
+						<span class="m-pricing-box__month">месяц</span>
+
+						<span class="m-pricing-box__order">
+							<a href="#contacts">Заказать</a>
+						</span>
+
+						<button class="pricing-accordion-btn">
+							<span></span>
+							<span></span>
+						</button>
+					</h3>
+					<div class="m-pricing-box__content">
+						<ul class="m-pricing-box__list">
+							<li class="m-pricing-box__item">Шаблон под задачи клиента (до 3 шт.)</li>
+							<li class="m-pricing-box__item">Удобная система управления сайтом</li>
+							<li class="m-pricing-box__item">Адаптивная верстка</li>
+							<li class="m-pricing-box__item">Создание меню сайта</li>
+							<li class="m-pricing-box__item">Создание 1-ого почтового ящика</li>
+							<li class="m-pricing-box__item">Установка Google analitics</li>
+							<li class="m-pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
+							<li class="m-pricing-box__item">Консультация по работе с сайтом - 1 мес</li>
+						</ul>
+					</div>
+					<!--/. Pricing box #6 -->
+
+				</div>
+				<!--/. Mobile version -->
 			</div>
 		</section>
 		<!--/. SECTION "PRICING" -->
@@ -1021,7 +1320,7 @@
 		<!--/. SECTION "MAP" -->
 
 		<!-- MAIN FOOTER -->
-		<footer class="main-footer" id="contacts">
+		<footer class="main-footer">
 			<div class="container">
 
 				<div class="footer-contacts">
@@ -1097,13 +1396,13 @@
 
 					</div>
 
-					<div class="footer-contacts__form">
-						<form class="contacts-form" id="requestForm" action="form.php" method="post">
+					<div class="footer-contacts__form" id="contacts">
+						<form class="contacts-form" id="requestForm" action="form.php" name="footer_form" method="post">
 							<fieldset class="contacts-form__wrapper">
 								<legend class="contacts-form__title">ПИШИТЕ НАМ</legend>
 
 								<div class="contacts-form__control  contacts-form__control--name">
-									<input type="text" name="client-name" placeholder="Ваше имя" minlength="2" required>
+									<input type="text" name="client-name" placeholder="Ваше имя" minlength="3" required>
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--email">
@@ -1126,14 +1425,21 @@
 			</div>
 
 			<div class="footer-copyrights">
-				<small>&copy; 2017 IMKT.Pro. All right reserved.</small>
+				<small>&copy; 2018 IMKT.Pro. All right reserved.</small>
 			</div>
 		</footer>
 		<!--/. MAIN FOOTER -->
 
 		<!-- BOTTOM LINK -->
-		<!--<a href="#" class="page-bottom-link">Портфолио</a>-->
+		<a class="page-bottom-link" id="pageBotLink" href="http://www.web-intellectus.com/#portfolio"  target="_blank">Портфолио</a>
 		<!--/. BOTTOM LINK -->
+
+		<!-- TOTOP -->
+		<button class="to-top hidden" id="toTop">
+			<span></span>
+			<span></span>
+		</button>
+		<!--/. TOTOP -->
 
 
 		<!-- JavaScript -->
