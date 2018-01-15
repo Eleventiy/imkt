@@ -62,21 +62,7 @@ $(function() {
 		customPaging : function(slider, i) {
 			var title = $(slider.$slides[i]).data('title');
 			return '<a class="portfolio-slider__pager"> '+title+' </a>';
-		},
-
-		responsive: [
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					draggable: true
-				}
-			}
-			// You can unslick at a given breakpoint now by adding:
-			// settings: "unslick"
-			// instead of a settings object
-		]
+		}
 	});
 
 	// Slick slider init on Section "Technologies"
@@ -92,7 +78,7 @@ $(function() {
 
 		responsive: [
 			{
-				breakpoint: 481,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
@@ -119,7 +105,7 @@ $(function() {
 
 		responsive: [
 			{
-				breakpoint: 481,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
@@ -129,25 +115,92 @@ $(function() {
 				}
 			}
 		]
+		// You can unslick at a given breakpoint now by adding:
+		// settings: "unslick"
+		// instead of a settings object
 	});
+
+	// Add data-attr to hidden input in "contacts form"
+	var seoFacebook = $('#seoFacebook'), // service button #1
+			seoGoogle = $('#seoGoogle'), // service button #2
+			seoAdvanse = $('#seoAdvanse'), // service button #3
+			devLanding = $('#devLanding'), // service button #4
+			devWebCard = $('#devWebCard'), // service button #5
+			devCorporate = $('#devCorporate'), // service button #6
+			mSeoFacebook = $('#mSeoFacebook'), // mobile service button #1
+			mSeoGoogle = $('#mSeoGoogle'), // mobile service button #2
+			mSeoAdvanse = $('#mSeoAdvanse'), // mobile service button #3
+			mDevLanding = $('#mDevLanding'), // mobile service button #4
+			mDevWebCard = $('#mDevWebCard'), // mobile service button #5
+			mDevCorporate = $('#mDevCorporate'), // mobile service button #6
+			serviceName = $('#serviceName'); // hidden input
+
+	// Service item #1
+	seoFacebook.click(function() {
+		serviceName.val('Реклама в Facebook');
+	});
+	mSeoFacebook.click(function() {
+		serviceName.val('Реклама в Facebook');
+	});
+
+	// Service item #2
+	seoGoogle.click(function() {
+		serviceName.val('Реклама в Google');
+	});
+	mSeoGoogle.click(function() {
+		serviceName.val('Реклама в Google');
+	});
+
+	// Service item #3
+	seoAdvanse.click(function() {
+		serviceName.val('SEO продвижение');
+	});
+	mSeoAdvanse.click(function() {
+		serviceName.val('SEO продвижение');
+	});
+
+	// Service item #4
+	devLanding.click(function() {
+		serviceName.val('Landing Page');
+	});
+	mDevLanding.click(function() {
+		serviceName.val('Landing Page');
+	});
+
+	// Service item #5
+	devWebCard.click(function() {
+		serviceName.val('Сайт визитка');
+	});
+	mDevWebCard.click(function() {
+		serviceName.val('Сайт визитка');
+	});
+
+	// Service item #6
+	devCorporate.click(function() {
+		serviceName.val('Интернет магазин');
+	});
+	mDevCorporate.click(function() {
+		serviceName.val('Интернет магазин');
+	});
+
 
 	// Jquery Validation form
 	var requestForm = $('#requestForm');
 	requestForm.validate();
 
 	// Page bottom link
-	$(window).scroll(function() {
-		var scroll = $(window).scrollTop(),
-			windowHeight = $(window).height(),
-			documentHeight = $(document).height(),
-			pageBotLink = $('#pageBotLink');
-
-		if (scroll + windowHeight == documentHeight) {
-			pageBotLink.addClass('hidden');
-		} else {
-			pageBotLink.removeClass('hidden');
-		}
-	});
+	// $(window).scroll(function() {
+	// 	var scroll = $(window).scrollTop(),
+	// 		windowHeight = $(window).height(),
+	// 		documentHeight = $(document).height(),
+	// 		pageBotLink = $('#pageBotLink');
+	//
+	// 	if (scroll + windowHeight == documentHeight) {
+	// 		pageBotLink.addClass('hidden');
+	// 	} else {
+	// 		pageBotLink.removeClass('hidden');
+	// 	}
+	// });
 
 	// ToTop
 	var toTop = $('#toTop');
@@ -199,6 +252,17 @@ $(function() {
 	});
 	$('#mPricingAcc').accordion({
 		heightStyle: "content"
+	});
+
+	// Portfolio slider
+	$('#mPortfolioSlider').not('.slick-initialized').slick({
+		centerMode: true,
+		centerPadding: '40px',
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: true,
+		infinite: true
 	});
 
 

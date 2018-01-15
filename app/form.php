@@ -3,6 +3,7 @@ require 'PHPMailer/PHPMailerAutoload.php';
 // Variables
 $name = trim($_POST['client-name']);
 $email = trim($_POST['client-email']);
+$service = trim($_POST['client-service']);
 $content = trim($_POST['client-message']);
 ?>
 
@@ -79,7 +80,7 @@ $content = trim($_POST['client-message']);
 					</button>
 
 					<div class="m-top-line__logo">
-						<a href="index.html"><img src="img/logos/header-logo.png" alt="IMKT логотип"></a>
+						<a href="#"><img src="img/logos/header-logo.png" alt="IMKT логотип"></a>
 					</div>
 				</div>
 				<!--/. Mobile top line -->
@@ -87,19 +88,19 @@ $content = trim($_POST['client-message']);
 				<!-- Main header navigation -->
 				<nav class="top-nav" id="mTopNav">
 					<ul class="top-nav__list">
-						<li class="top-nav__item"><a class="top-nav__link" href="index.html#services" rel="m_PageScroll2id">УСЛУГИ</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="index.html#why-us" rel="m_PageScroll2id">почему мы</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="index.html#portfolio" rel="m_PageScroll2id">портфолио</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#services" rel="m_PageScroll2id">УСЛУГИ</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#why-us" rel="m_PageScroll2id">почему мы</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#portfolio" rel="m_PageScroll2id">портфолио</a></li>
 					</ul>
 
-					<a class="top-nav__logo" href="index.html">
+					<a class="top-nav__logo" href="#">
 						<img src="img/logos/header-logo.png" alt="IMKT логотип">
 					</a>
 
 					<ul class="top-nav__list">
-						<li class="top-nav__item"><a class="top-nav__link" href="index.html#testimonials" rel="m_PageScroll2id">ОТЗЫВЫ</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="index.html#pricing" rel="m_PageScroll2id">цены</a></li>
-						<li class="top-nav__item"><a class="top-nav__link" href="index.html#contacts" rel="m_PageScroll2id">контакты</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#testimonials" rel="m_PageScroll2id">ОТЗЫВЫ</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#pricing" rel="m_PageScroll2id">цены</a></li>
+						<li class="top-nav__item"><a class="top-nav__link" href="#contacts" rel="m_PageScroll2id">контакты</a></li>
 					</ul>
 				</nav>
 				<!--/. Main header navigation -->
@@ -213,15 +214,23 @@ $content = trim($_POST['client-message']);
 								<legend class="contacts-form__title">ПИШИТЕ НАМ</legend>
 
 								<div class="contacts-form__control  contacts-form__control--name">
-									<input type="text" name="client-name" placeholder="Ваше имя" minlength="3" required>
+									<input id="clientName" type="text" name="client-name" placeholder="Ваше имя" minlength="3" required>
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--email">
-									<input type="email" name="client-email" placeholder="Ваш E-mail" required>
+									<input id="clientMail" type="email" name="client-email" placeholder="Ваш E-mail" required>
+								</div>
+
+								<div class="contacts-form__control  contacts-form__control--phone">
+									<input id="clientPhone" type="text" name="client-phone" placeholder="Ваш телефон" minlength="10" maxlength="20" required>
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--textarea">
 									<textarea name="client-message" placeholder="Сообщение"></textarea>
+								</div>
+
+								<div class="contacts-form__control  contacts-form__control--hidden">
+									<input type="text" name="client-service" id="serviceName" value="Название услуги">
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--button">
@@ -269,7 +278,7 @@ $mail->setFrom('info@intellectus-studio.com', 'intellectus-studio');
 //$mail->addAddress('k@kirill.pp.ua');
 
 /* вставить mail */
-$mail->addAddress('info@imkt.pro');
+$mail->addAddress('eleventiy96@gmail.com');
 /* */
 
 $mail->isHTML(true);
@@ -277,7 +286,8 @@ $mail->Subject = 'Форма с IMKT';
 $mail->Body    = <<<EOD
 
   <strong>Мое имя:</strong> $name <br>
-  <strong>Мой еmail:</strong> <a href="mailto:$email?subject=feedback" "email me">$email</a> <br> <br>
+  <strong>Мой еmail:</strong> <a href="mailto:$email?subject=feedback" "email me">$email</a> <br>
+  <strong>Услуга:</strong> $service <br> <br>
   <strong>Сообщение:</strong> $content
 
 EOD;

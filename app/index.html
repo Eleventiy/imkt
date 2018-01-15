@@ -714,9 +714,40 @@
 				<h2 class="m-sect-portfolio__title">ПРИМЕРЫ <span>НАШИХ РАБОТ</span></h2>
 				<p class="sect-portfolio__subtitle">Закажите поисковую оптимизацию и органическое продвижение сайтов в компании Intellectus Studio и наши квалифицированные специалисты сделают все необходимое для роста посещаемости и роста продаж Вашего интернет-ресурса.</p>
 
+				<!-- Desktop version -->
 				<div class="portfolio-slider" id="portfolioSlider">
 
 					<!-- Portfolio slide #1 -->
+					<div class="portfolio-slide" data-title="МАЗ">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
+							<img src="img/portfolio/4.png" alt="SEO MAZ-UA Macbook">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #1 -->
+
+					<!-- Portfolio slide #2 -->
+					<div class="portfolio-slide" data-title="Мойдодыр">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
+							<img src="img/portfolio/5.png" alt="SEO Мойдодыр Macbook">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #2 -->
+
+					<!-- Portfolio slide #3 -->
+					<div class="portfolio-slide" data-title="Оптимакс">
+
+						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
+							<img src="img/portfolio/6.png" alt="SEO Optimax Macbook">
+						</div>
+
+					</div>
+					<!--/. Portfolio slide #3 -->
+
+					<!-- Portfolio slide #4 -->
 					<div class="portfolio-slide" data-title="Подарки">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--imac">
@@ -732,9 +763,9 @@
 						</div>
 
 					</div>
-					<!--/. Portfolio slide #1 -->
+					<!--/. Portfolio slide #4 -->
 
-					<!-- Portfolio slide #2 -->
+					<!-- Portfolio slide #5 -->
 					<div class="portfolio-slide" data-title="Кофе">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--imac">
@@ -750,9 +781,9 @@
 						</div>
 
 					</div>
-					<!--/. Portfolio slide #2 -->
+					<!--/. Portfolio slide #5 -->
 
-					<!-- Portfolio slide #3 -->
+					<!-- Portfolio slide #6 -->
 					<div class="portfolio-slide" data-title="Треннинг">
 
 						<div class="portfolio-slide__img  portfolio-slide__img--imac">
@@ -768,39 +799,49 @@
 						</div>
 
 					</div>
-					<!--/. Portfolio slide #3 -->
-
-					<!-- Portfolio slide #4 -->
-					<div class="portfolio-slide" data-title="МАЗ">
-
-						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
-							<img src="img/portfolio/4.png" alt="SEO MAZ-UA Macbook">
-						</div>
-
-					</div>
-					<!--/. Portfolio slide #4 -->
-
-					<!-- Portfolio slide #5 -->
-					<div class="portfolio-slide" data-title="Мойдодыр">
-
-						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
-							<img src="img/portfolio/5.png" alt="Мойдодыр Macbook">
-						</div>
-
-					</div>
-					<!--/. Portfolio slide #5 -->
-
-					<!-- Portfolio slide #6 -->
-					<div class="portfolio-slide" data-title="Оптимакс">
-
-						<div class="portfolio-slide__img  portfolio-slide__img--macbook">
-							<img src="img/portfolio/6.png" alt="Optimax Macbook">
-						</div>
-
-					</div>
 					<!--/. Portfolio slide #6 -->
 
 				</div>
+				<!--/. Desktop version -->
+
+				<!-- Mobile version -->
+				<div class="m-portfolio-slider" id="mPortfolioSlider">
+
+					<!-- Portfolio slide #1 -->
+					<div class="m-portfolio-slide">
+						<div class="m-portfolio-slide__title">
+							<span>Подарки</span>
+						</div>
+						<div class="m-portfolio-slide__img">
+							<img src="img/portfolio/mobile/1.png" alt="Подарки">
+						</div>
+					</div>
+					<!--/. Portfolio slide #1 -->
+
+					<!-- Portfolio slide #2 -->
+					<div class="m-portfolio-slide">
+						<div class="m-portfolio-slide__title">
+							<span>CoffeShop</span>
+						</div>
+						<div class="m-portfolio-slide__img">
+							<img src="img/portfolio/mobile/2.png" alt="CoffeShop">
+						</div>
+					</div>
+					<!--/. Portfolio slide #2 -->
+
+					<!-- Portfolio slide #3 -->
+					<div class="m-portfolio-slide">
+						<div class="m-portfolio-slide__title">
+							<span>Треннинг</span>
+						</div>
+						<div class="m-portfolio-slide__img">
+							<img src="img/portfolio/mobile/3.png" alt="Треннинг">
+						</div>
+					</div>
+					<!--/. Portfolio slide #3 -->
+
+				</div>
+				<!--/. Mobile version -->
 			</div>
 		</section>
 		<!--/. SECTION "PORTFOLIO" -->
@@ -899,8 +940,8 @@
 					<div class="pricing-box">
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Реклама<br>в Facebook</b>
-							<span class="pricing-box__price">1500<small>грн.</small></span>
-							<span class="pricing-box__month">месяц</span>
+							<span class="pricing-box__price">1500<small>грн. / мес.</small></span>
+							<!--<span class="pricing-box__month">месяц</span>-->
 						</div>
 
 						<ul class="pricing-box__list">
@@ -911,7 +952,7 @@
 							<li class="pricing-box__item">Создание 1-ого почтового ящика</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
+						<a class="pricing-box__order" href="#contacts" id="seoFacebook"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #1 -->
 
@@ -919,8 +960,8 @@
 					<div class="pricing-box">
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">Реклама<br>в Google</b>
-							<span class="pricing-box__price">1500<small>грн.</small></span>
-							<span class="pricing-box__month">месяц</span>
+							<span class="pricing-box__price">1500<small>грн. / мес.</small></span>
+							<!--<span class="pricing-box__month">месяц</span>-->
 						</div>
 
 						<ul class="pricing-box__list">
@@ -931,7 +972,7 @@
 							<li class="pricing-box__item">Рекомендации по улучшению кампании</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
+						<a class="pricing-box__order" href="#contacts" id="seoGoogle"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #2 -->
 
@@ -939,8 +980,8 @@
 					<div class="pricing-box">
 						<div class="pricing-box__head">
 							<b class="pricing-box__service">SEO<br>продвижение</b>
-							<span class="pricing-box__price">3500<small>грн.</small></span>
-							<span class="pricing-box__month">месяц</span>
+							<span class="pricing-box__price">3500<small>грн. / мес.</small></span>
+							<!--<span class="pricing-box__month">месяц</span>-->
 						</div>
 
 						<ul class="pricing-box__list">
@@ -951,7 +992,7 @@
 							<li class="pricing-box__item">Ведение проекта в ручном режиме</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
+						<a class="pricing-box__order" href="#contacts" id="seoAdvanse"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #3 -->
 
@@ -973,7 +1014,7 @@
 							<li class="pricing-box__item">Обучение и тех.поддержка - 1 мес.</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
+						<a class="pricing-box__order" href="#contacts" id="devLanding"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #4 -->
 
@@ -995,7 +1036,7 @@
 							<li class="pricing-box__item">Обучение и тех.поддержка - 1 месяц</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
+						<a class="pricing-box__order" href="#contacts" id="devWebCard"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #5 -->
 
@@ -1017,7 +1058,7 @@
 							<li class="pricing-box__item">Консультация по работе с сайтом - 1 мес</li>
 						</ul>
 
-						<a class="pricing-box__order" href="#contacts"  rel="m_PageScroll2id">Заказать</a>
+						<a class="pricing-box__order" href="#contacts" id="devCorporate"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
 					</div>
 					<!--/. Pricing box #6 -->
 
@@ -1030,12 +1071,8 @@
 					<!-- Pricing box #1 -->
 					<h3 class="m-pricing-box">
 						<b class="m-pricing-box__title">Реклама <br> в Facebook</b>
-						<span class="m-pricing-box__price">1 500 <small>грн.</small></span>
-						<span class="m-pricing-box__month">месяц</span>
-
-						<span class="m-pricing-box__order">
-							<a href="#contacts">Заказать</a>
-						</span>
+						<span class="m-pricing-box__price">1 500<small>грн. / мес.</small></span>
+						<!--<span class="m-pricing-box__month">месяц</span>-->
 
 						<button class="pricing-accordion-btn">
 							<span></span>
@@ -1050,18 +1087,18 @@
 							<li class="m-pricing-box__item">Оптимизация рекламной компании</li>
 							<li class="m-pricing-box__item">Создание 1-ого почтового ящика</li>
 						</ul>
+
+						<div class="m-pricing-box__order">
+							<a href="#contacts" id="mSeoFacebook"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
+						</div>
 					</div>
 					<!--/. Pricing box #1 -->
 
 					<!-- Pricing box #2 -->
 					<h3 class="m-pricing-box">
 						<b class="m-pricing-box__title">Реклама <br> в Google</b>
-						<span class="m-pricing-box__price">1 500 <small>грн.</small></span>
-						<span class="m-pricing-box__month">месяц</span>
-
-						<span class="m-pricing-box__order">
-							<a href="#contacts">Заказать</a>
-						</span>
+						<span class="m-pricing-box__price">1 500<small>грн. / мес.</small></span>
+						<!--<span class="m-pricing-box__month">месяц</span>-->
 
 						<button class="pricing-accordion-btn">
 							<span></span>
@@ -1076,18 +1113,18 @@
 							<li class="m-pricing-box__item">Анализ полученного результата</li>
 							<li class="m-pricing-box__item">Рекомендации по улучшению кампании</li>
 						</ul>
+
+						<div class="m-pricing-box__order">
+							<a href="#contacts" id="mSeoGoogle"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
+						</div>
 					</div>
 					<!--/. Pricing box #2 -->
 
 					<!-- Pricing box #3 -->
 					<h3 class="m-pricing-box">
 						<b class="m-pricing-box__title">SEO <br> продвижение</b>
-						<span class="m-pricing-box__price">3 500 <small>грн.</small></span>
-						<span class="m-pricing-box__month">месяц</span>
-
-						<span class="m-pricing-box__order">
-							<a href="#contacts">Заказать</a>
-						</span>
+						<span class="m-pricing-box__price">3 500<small>грн. / мес.</small></span>
+						<!--<span class="m-pricing-box__month">месяц</span>-->
 
 						<button class="pricing-accordion-btn">
 							<span></span>
@@ -1102,18 +1139,17 @@
 							<li class="m-pricing-box__item">Копирайт текстов</li>
 							<li class="m-pricing-box__item">Ведение проекта в ручном режиме</li>
 						</ul>
+
+						<div class="m-pricing-box__order">
+							<a href="#contacts" id="mSeoAdvanse"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
+						</div>
 					</div>
 					<!--/. Pricing box #3 -->
 
 					<!-- Pricing box #4 -->
 					<h3 class="m-pricing-box">
 						<b class="m-pricing-box__title">Landing <br> Page</b>
-						<span class="m-pricing-box__price">5 000 <small>грн.</small></span>
-						<span class="m-pricing-box__month">месяц</span>
-
-						<span class="m-pricing-box__order">
-							<a href="#contacts">Заказать</a>
-						</span>
+						<span class="m-pricing-box__price">5 000<small>грн.</small></span>
 
 						<button class="pricing-accordion-btn">
 							<span></span>
@@ -1131,18 +1167,17 @@
 							<li class="m-pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
 							<li class="m-pricing-box__item">Обучение и тех.поддержка - 1 мес.</li>
 						</ul>
+
+						<div class="m-pricing-box__order">
+							<a href="#contacts" id="mDevLanding"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
+						</div>
 					</div>
 					<!--/. Pricing box #4 -->
 
 					<!-- Pricing box #5 -->
 					<h3 class="m-pricing-box">
 						<b class="m-pricing-box__title">Сайт <br> визитка</b>
-						<span class="m-pricing-box__price">6 000 <small>грн.</small></span>
-						<span class="m-pricing-box__month">месяц</span>
-
-						<span class="m-pricing-box__order">
-							<a href="#contacts">Заказать</a>
-						</span>
+						<span class="m-pricing-box__price">6 000<small>грн.</small></span>
 
 						<button class="pricing-accordion-btn">
 							<span></span>
@@ -1160,18 +1195,17 @@
 							<li class="m-pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
 							<li class="m-pricing-box__item">Обучение и тех.поддержка - 1 месяц</li>
 						</ul>
+
+						<div class="m-pricing-box__order">
+							<a href="#contacts" id="mDevWebCard"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
+						</div>
 					</div>
 					<!--/. Pricing box #5 -->
 
 					<!-- Pricing box #6 -->
 					<h3 class="m-pricing-box">
 						<b class="m-pricing-box__title">Интернет <br> магазин</b>
-						<span class="m-pricing-box__price">10 000 <small>грн.</small></span>
-						<span class="m-pricing-box__month">месяц</span>
-
-						<span class="m-pricing-box__order">
-							<a href="#contacts">Заказать</a>
-						</span>
+						<span class="m-pricing-box__price">10 000<small>грн.</small></span>
 
 						<button class="pricing-accordion-btn">
 							<span></span>
@@ -1189,6 +1223,10 @@
 							<li class="m-pricing-box__item"><span class="highlight-color">БЕСПЛАТНО</span> на 6 мес. домен и хостинг</li>
 							<li class="m-pricing-box__item">Консультация по работе с сайтом - 1 мес</li>
 						</ul>
+
+						<div class="m-pricing-box__order">
+							<a href="#contacts" id="mDevCorporate"  onclick="change()" rel="m_PageScroll2id">Заказать</a>
+						</div>
 					</div>
 					<!--/. Pricing box #6 -->
 
@@ -1402,15 +1440,23 @@
 								<legend class="contacts-form__title">ПИШИТЕ НАМ</legend>
 
 								<div class="contacts-form__control  contacts-form__control--name">
-									<input type="text" name="client-name" placeholder="Ваше имя" minlength="3" required>
+									<input id="clientName" type="text" name="client-name" placeholder="Ваше имя" minlength="3" required>
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--email">
-									<input type="email" name="client-email" placeholder="Ваш E-mail" required>
+									<input id="clientMail" type="email" name="client-email" placeholder="Ваш E-mail" required>
+								</div>
+
+								<div class="contacts-form__control  contacts-form__control--phone">
+									<input id="clientPhone" type="text" name="client-phone" placeholder="Ваш телефон" minlength="10" maxlength="20" required>
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--textarea">
 									<textarea name="client-message" placeholder="Сообщение"></textarea>
+								</div>
+
+								<div class="contacts-form__control  contacts-form__control--hidden">
+									<input type="text" name="client-service" id="serviceName" value="Название услуги">
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--button">
@@ -1430,9 +1476,22 @@
 		</footer>
 		<!--/. MAIN FOOTER -->
 
-		<!-- BOTTOM LINK -->
-		<a class="page-bottom-link" id="pageBotLink" href="http://www.web-intellectus.com/#portfolio"  target="_blank">Портфолио</a>
-		<!--/. BOTTOM LINK -->
+		<!-- PORTFOLIO LINK -->
+		<a class="portfolio-link" id="pageBotLink" href="http://www.web-intellectus.com/#portfolio"  target="_blank">
+			<svg version="1.2" baseProfile="tiny"
+			  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+				x="0px" y="0px"
+				viewBox="0 0 180.9 44"
+				overflow="scroll" xml:space="preserve">
+
+				<path d="M170,4.5C168.3,0,165,0,165,0s-7.8,0-19.5,0c-0.1,0-0.2,0-0.2,0c-0.3,0-1,0-2.1,0c-14.5,0-34.1,0-52.7,0
+					c-18.6,0-38.2,0-52.7,0c-1.1,0-1.8,0-2.1,0c-0.1,0-0.2,0-0.2,0C23.7,0,15.9,0,15.9,0s-3.3,0-5.1,4.5C9.7,10,4.9,39.9,0,44h17.9H163
+					h17.9C176,39.9,171.2,10,170,4.5z"></path>
+			</svg>
+
+			<span>Портфолио</span>
+		</a>
+		<!--/. PORTFOLIO LINK -->
 
 		<!-- TOTOP -->
 		<button class="to-top hidden" id="toTop">
