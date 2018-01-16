@@ -62,7 +62,15 @@ $(function() {
 		customPaging : function(slider, i) {
 			var title = $(slider.$slides[i]).data('title');
 			return '<a class="portfolio-slider__pager"> '+title+' </a>';
-		}
+		},
+		responsive: [
+			{
+				breakpoint: 1100,
+				settings: {
+					arrows: false
+				}
+			}
+		]
 	});
 
 	// Slick slider init on Section "Technologies"
@@ -257,7 +265,7 @@ $(function() {
 	// Portfolio slider
 	$('#mPortfolioSlider').not('.slick-initialized').slick({
 		centerMode: true,
-		centerPadding: '40px',
+		centerPadding: '20px',
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
