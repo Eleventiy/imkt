@@ -196,6 +196,9 @@ $(function() {
 	var requestForm = $('#requestForm');
 	requestForm.validate();
 
+	// InputMask
+	$('#clientPhone').inputmask({"mask": "+380(99)999-99-99"});
+
 	// Page bottom link
 	// $(window).scroll(function() {
 	// 	var scroll = $(window).scrollTop(),

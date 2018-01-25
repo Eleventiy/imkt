@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta name="description" content="">
+		<meta name="description" content="Студия IMKT занимается созданием и продвижением сайтов.  &#9884; Регистрация доменов и хостинга, поддержка и обслуживание сайтов. Доступные цены и хороший сервис.">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<title>IMKT</title>
+		<title>IMKT | Создание сайтов в Киеве</title>
 
 		<!-- Disable tap highlight on IE -->
 		<meta name="msapplication-tap-highlight" content="no">
@@ -35,10 +35,23 @@
 		<!-- Color the status bar on mobile devices -->
 		<meta name="theme-color" content="#0093e5">
 
-		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-		<!--
-		<link rel="canonical" href="http://www.example.com/">
-		-->
+		<!-- Facebook Pixel Code -->
+		<script>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+				n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t,s)}(window, document,'script',
+				'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '135876477118548');
+			fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		               src="https://www.facebook.com/tr?id=135876477118548&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Jura:400,700|Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
@@ -56,6 +69,11 @@
 		<!--[if lte IE 9]>
 			<p class="browserupgrade">Вы используете <strong>устаревшую версию</strong> браузера. Пожалуйста <a href="https://browsehappy.com/">обновитесь до новой версии</a> для безопасности данных и вашего удобства.</p>
 		<![endif]-->
+
+		<script>
+			fbq('track', 'ViewContent');
+			fbq('track', 'Lead');
+		</script>
 
 		<!-- MAIN HEADER -->
 		<header class="main-header">
@@ -117,7 +135,7 @@
 						<span class="sect-hero__separator">или</span>
 
 						<div class="sect-hero__phones">
-							<span class="sect-hero__phone">+38 (044) 451 51 49</span>
+							<span class="sect-hero__phone">+38 (044) 227 33 26</span>
 							<span class="sect-hero__phone">+38 (093) 949 04 31</span>
 						</div>
 
@@ -710,7 +728,7 @@
 		<!-- SECTION "PORTFOLIO" -->
 		<section class="sect-portfolio" id="portfolio">
 			<div class="container">
-				<h2 class="sect-portfolio__title">ПРОДВИЖЕНИЕ И СОЗДАНИЕ <br> НА ПРИМЕРЕ НАШИХ КЛИЕНТОВ</h2>
+				<h1 class="sect-portfolio__title">ПРОДВИЖЕНИЕ И СОЗДАНИЕ <br> НА ПРИМЕРЕ НАШИХ КЛИЕНТОВ</h1>
 				<h2 class="m-sect-portfolio__title">ПРИМЕРЫ <span>НАШИХ РАБОТ</span></h2>
 				<p class="sect-portfolio__subtitle">Закажите поисковую оптимизацию и органическое продвижение сайтов в компании Intellectus Studio и наши квалифицированные специалисты сделают все необходимое для роста посещаемости и роста продаж Вашего интернет-ресурса.</p>
 
@@ -1353,7 +1371,7 @@
 		<!-- SECTION "CORRUPT" -->
 		<section class="sect-corrupt">
 			<div class="container">
-				<p class="sect-corrupt__descr">Веб сайт под ключ – это идеальное РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</p>
+				<h2 class="sect-corrupt__descr">Веб сайт под ключ – это идеальное РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</h2>
 			</div>
 		</section>
 		<!--/. SECTION "CORRUPT" -->
@@ -1393,7 +1411,7 @@
 								</svg>
 							</div>
 
-							<span class="footer-contacts__location">Киев  |  пр-т Н. Бажана, 36, офис 239</span>
+							<span class="footer-contacts__location">Киев  |  пр-т Н. Бажана, 36</span>
 						</div>
 
 						<div class="footer-contacts__mail">
@@ -1432,7 +1450,7 @@
 							</div>
 
 							<div class="footer-contacts__phones-block">
-								<a class="footer-contacts__phone" href="tel:+38(044)4515149">+38 (044) 451 51 49</a>
+								<a class="footer-contacts__phone" href="tel:+38(044)2273326">+38 (044) 227-33-26</a>
 								<a class="footer-contacts__phone" href="tel:+38(093)9490431">+38 (093) 949 04 31</a>
 							</div>
 						</div>
@@ -1457,7 +1475,7 @@
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--phone">
-									<input id="clientPhone" type="text" name="client-phone" placeholder="Ваш телефон" minlength="10" maxlength="20" required>
+									<input id="clientPhone" type="tel" name="client-phone" placeholder="Ваш телефон" required>
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--textarea">
@@ -1465,7 +1483,7 @@
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--hidden">
-									<input type="text" name="client-service" id="serviceName" value="Название услуги">
+									<input id="serviceName" type="text" name="client-service" value="Название услуги">
 								</div>
 
 								<div class="contacts-form__control  contacts-form__control--button">
@@ -1520,12 +1538,60 @@
 		<script src="js/common.js"></script>
 		<!--/. JavaScript -->
 
-		<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-		<!--<script>-->
-			<!--window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;-->
-			<!--ga('create','UA-XXXXX-Y','auto');ga('send','pageview')-->
-		<!--</script>-->
-		<!--<script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68784145-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-68784145-1');
+		</script>
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter32614860 = new Ya.Metrika({
+							id:32614860,
+							clickmap:true,
+							trackLinks:true,
+							accurateTrackBounce:true,
+							webvisor:true
+						});
+					} catch(e) { }
+				});
+
+				var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/32614860" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!--/. Yandex.Metrika counter -->
+
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 926838008;
+			var google_custom_params = window.google_tag_params;
+			var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+		</script>
+		<noscript>
+			<div style="display:inline;">
+				<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/926838008/?guid=ON&amp;script=0"/>
+			</div>
+		</noscript>
 
 	</body>
 

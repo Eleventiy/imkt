@@ -47,6 +47,8 @@ gulp.task('js-libs', function() {
 				'./node_modules/jquery-validation/dist/jquery.validate.min.js',
 				'./node_modules/jquery-validation/dist/localization/messages_ru.js',
 				'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
+				'./node_modules/inputmask/dist/jquery.inputmask.bundle.js',
+				'./node_modules/inputmask/dist/inputmask/phone-codes/phone.js',
 				'./node_modules/slick-carousel/slick/slick.min.js'
 			])
 			.pipe(plugins.concat('libs.min.js'))
