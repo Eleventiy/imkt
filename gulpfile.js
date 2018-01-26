@@ -49,7 +49,8 @@ gulp.task('js-libs', function() {
 				'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 				'./node_modules/inputmask/dist/jquery.inputmask.bundle.js',
 				'./node_modules/inputmask/dist/inputmask/phone-codes/phone.js',
-				'./node_modules/slick-carousel/slick/slick.min.js'
+				'./node_modules/slick-carousel/slick/slick.min.js',
+				'./node_modules/snapsvg/dist/snap.svg-min.js'
 			])
 			.pipe(plugins.concat('libs.min.js'))
 			.pipe(plugins.uglify())

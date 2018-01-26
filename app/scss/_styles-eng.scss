@@ -1,0 +1,252 @@
+// *** COMMON STYLES ***
+// =====================
+// Section title
+.sect-title {
+	position: relative;
+	margin: 0;
+	padding-left: 94px;
+	color: $textColor2;
+	font-family: $openSansFont;
+	font-size: 36px;
+	font-weight: bold;
+	line-height: 42px;
+	text-align: left;
+	text-transform: inherit;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 5px;
+		display: inline-block;
+		width: 66px;
+		height: 3px;
+		background-color: $borderColor2;
+	}
+
+	span {
+		color: $highlightColor;
+	}
+}
+
+.sect-descr {
+	color: $textColor2;
+	font-family: $openSansFont;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 26px;
+
+	p {
+		margin: 0;
+	}
+}
+
+
+// *** 1. MAIN HEADER ***
+// ======================
+.main-header--eng {
+	position: absolute;
+	min-height: 103px;
+	border-bottom: 1px solid rgba($whiteColor, 0.1);
+	background-color: transparent;
+	box-shadow: none;
+
+	.top-nav {
+		&__logo {
+			max-width: 165px;
+		}
+
+		&__item {
+			margin-right: 60px;
+		}
+
+		&__link {
+			overflow: visible;
+			padding: 34.5px 0;
+			color: $whiteColor;
+			font-size: 16px;
+			font-weight: 600;
+			text-transform: capitalize;
+			&::after {
+				bottom: -1.5px;
+			}
+			&:hover,
+			&:active,
+			&.active,
+			&.mPS2id-highlight {
+				color: $highlightColor;
+			}
+		}
+	}
+}
+
+
+// *** 2. SECTION "HERO" ***
+// =========================
+.sect-hero--eng {
+	margin-top: 0;
+	padding: 165px 0 420px;
+	background: $blackColor url("../img/intellectus-group/backgrounds/hero_bg.jpg") no-repeat center;
+	background-size: cover;
+
+	.sect-hero__content {
+		margin-left: 100px;
+	}
+
+	.sect-hero__descr {
+		width: 100%;
+		max-width: 35%;
+		h2 {
+			margin: 0;
+			font-size: 36px;
+			font-weight: 500;
+			line-height: 42px;
+		}
+	}
+}
+
+
+// *** 2.1. SECTION "ABOUT US" ***
+// =========================
+.sect-about {
+	padding: 92px 0 102px;
+
+	&__wrapper {
+		width: 100%;
+		max-width: 50%;
+	}
+
+	&__title {
+		margin-bottom: 18px;
+	}
+
+	&__descr {
+		margin-bottom: 42px;
+	}
+
+	&__btn {
+		@include btn-tag();
+		@include button(inline-block);
+		font-family: $openSansFont;
+	}
+}
+
+
+// *** 3. SECTION "SERVICES" ***
+// =============================
+.sect-services--eng {
+	.services-item {
+		padding: 77px 28px 64px 32px;
+		border-left: 0;
+		border-right: 1px solid rgba($borderColor1, 0.4);
+		&:last-child {
+			border-right: 0;
+		}
+		&:hover {
+			transform: scale(1.02);
+			box-shadow: 4px 4px 24px 0 rgba($blackColor, 0.28);
+			&:first-child,
+			&:nth-child(2),
+			&:last-child {
+				box-shadow: 4px 4px 24px 0 rgba($blackColor, 0.28);
+			}
+
+			.services-item__list-item {
+				color: $textColor2;
+			}
+		}
+
+		&__icon {
+			margin-bottom: 23px;
+		}
+
+		&__title {
+			margin: 0 0 18px;
+		}
+
+		&__list-item {
+			margin-bottom: 13px;
+			line-height: 20px;
+		}
+	}
+}
+
+
+// *** 4. SECTION "WHY US" ***
+// ===========================
+.sect-whyUs--eng {
+	padding: 90px 0 123px;
+
+	.sect-whyUs__title {
+		margin-bottom: 15px;
+		text-transform: inherit;
+	}
+
+	.sect-whyUs__descr {
+		margin-bottom: 40px;
+	}
+}
+
+
+// *** 5. SECTION "FEATURES" ***
+// =============================
+.sect-features--eng {
+	padding: 73px 0 63px;
+	background: linear-gradient(-105deg, $highlightColor, $linearColor1);
+
+	.features-item {
+		border-right: 1px solid rgba($whiteColor, 0.5);
+
+		&__descr {
+			font-size: 16px;
+		}
+	}
+
+	.features-head {
+		align-items: flex-end;
+		&__num {
+			line-height: 30px;
+		}
+	}
+}
+
+
+// *** 7. SECTION "TESTIMONIALS" ***
+// =================================
+.sect-testimonials--eng {
+	background: #0a293b url("../img/intellectus-group/backgrounds/clients_bg.jpg") no-repeat;
+	background-size: cover;
+	.sect-testimonials__title {
+		margin-bottom: 40px;
+		color: $whiteColor;
+		text-align: left;
+		text-transform: inherit;
+	}
+}
+
+// *** 8. SECTION "CORRUPT" ***
+// ============================
+.sect-corrupt--eng {
+	padding: 47px 0 65px;
+	background: linear-gradient(-105deg, $highlightColor, $linearColor1);
+
+	.sect-corrupt__descr {
+		text-align: left;
+		line-height: 34px;
+		letter-spacing: -0.025em;
+	}
+}
+
+
+// *** 9. SECTION "PRICING" ***
+// ============================
+.sect-pricing--eng {
+	.sect-pricing__title {
+		margin-bottom: 54px;
+	}
+
+	.pricing-box {
+		flex: 1;
+		width: 100%;
+		max-width: 260px;
+	}
+}

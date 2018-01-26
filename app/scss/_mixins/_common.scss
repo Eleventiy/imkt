@@ -1,24 +1,18 @@
-@import "../vars";
-
 // Buttons
 @mixin button($display) {
 	position: relative;
-	z-index: 2;
-
+	z-index: 1;
 	display: $display;
 	padding: 18.5px 46px;
 	overflow: hidden;
-
 	color: $whiteColor;
 	font-family: $juraFont;
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 1;
 	text-transform: uppercase;
-
 	border: none;
-	background: linear-gradient(135deg, $linearColor2, $linearColor1);
-	box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.15);
+	background: linear-gradient(-105deg, $highlightColor, $linearColor1);
 	transition: all 0.5s ease-in-out;
 	cursor: pointer;
 	outline: 0;
@@ -27,31 +21,22 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: 1;
-
-		width: 100%;
+		z-index: -1;
+		width: 0;
 		height: 100%;
-		//background: linear-gradient(-135deg, $linearColor2, $linearColor1);
 		background-color: $whiteColor;
 		backface-visibility: hidden;
-
-		transition: transform 0.5s cubic-bezier(0.645,0.045,0.355,1.000);
-		transform: translateX(-102%);
+		transition: width 0.5s cubic-bezier(0.645,0.045,0.355,1.000);
 	}
-	&:active,
-	&.active {
-		box-shadow: inset 4px 4px 15px 0 rgba(0, 0, 0, 0.15);
-	}
+	//&:active,
+	//&.active {
+	//	box-shadow: inset 4px 4px 15px 0 rgba(0, 0, 0, 0.15);
+	//}
 	&:hover {
 		color: $blackColor;
 		&::before {
-			transform: translateX(0%);
+			width: 100%;
 		}
-	}
-
-	span {
-		position: relative;
-		z-index: 2;
 	}
 }
 
